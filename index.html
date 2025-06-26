@@ -2617,6 +2617,28 @@
     </footer>
 
     <script>
+        // Smooth-scroll ONLY for links that:
+//  – start with #  AND
+//  – actually target an element on *this* page
+document.querySelectorAll('a.nav-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    const isHash = href.startsWith('#');
+    const targetEl = isHash ? document.querySelector(href) : null;
+
+    if (isHash && targetEl) {
+      // internal smooth scroll
+      e.preventDefault();
+      const offsetTop = targetEl.offsetTop - 80;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+
+      // highlight the active nav item
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    } /* else: let the browser follow the normal link to another page */
+  });
+});
+
         // Remove loading screen when page loads
         window.addEventListener('load', function() {
             document.getElementById('loading').style.display = 'none';
