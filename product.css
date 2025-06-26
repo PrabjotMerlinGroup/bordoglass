@@ -1,0 +1,293 @@
+/* ABOUT.CSS - About page specific styles */
+
+/* About Hero */
+.about-hero {
+    margin-top: 80px;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--text-color) 0%, var(--secondary-color) 100%);
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Company Story Section */
+.company-story {
+    padding: 5rem 0;
+    background-color: var(--accent-color);
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-text h2 {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.story-image {
+    display: flex;
+    justify-content: center;
+}
+
+.architectural-frame {
+    width: 250px;
+    height: 300px;
+    background-color: var(--accent-color);
+    border: 3px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    position: relative;
+    box-shadow: var(--shadow-hover);
+}
+
+.frame-structure {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+}
+
+.vertical-line,
+.horizontal-line {
+    position: absolute;
+    background-color: var(--primary-color);
+}
+
+.vertical-line {
+    width: 2px;
+    height: 100%;
+}
+
+.vertical-line:first-child {
+    left: 33%;
+}
+
+.vertical-line:nth-child(2) {
+    left: 66%;
+}
+
+.horizontal-line {
+    height: 2px;
+    width: 100%;
+}
+
+.horizontal-line:nth-child(3) {
+    top: 33%;
+}
+
+.horizontal-line:nth-child(4) {
+    top: 66%;
+}
+
+/* Values Section */
+.values-section {
+    padding: 5rem 0;
+    background-color: var(--light-grey);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-card {
+    background-color: var(--accent-color);
+    padding: 2rem;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.value-icon {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* Expertise Section */
+.expertise-section {
+    padding: 5rem 0;
+    background-color: var(--accent-color);
+}
+
+.expertise-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.expertise-item {
+    margin-bottom: 2rem;
+}
+
+.expertise-item h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.expertise-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--light-grey);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Certifications Section */
+.certifications-section {
+    padding: 5rem 0;
+    background-color: var(--light-grey);
+}
+
+.certifications-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.cert-item {
+    background-color: var(--accent-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.cert-icon {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.cert-item h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* Team/Commitment Section */
+.team-section {
+    padding: 5rem 0;
+    background-color: var(--accent-color);
+}
+
+.commitment-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.commitment-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.commitment-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.commitment-item {
+    background-color: var(--light-grey);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+    text-align: left;
+}
+
+.commitment-item strong {
+    color: var(--primary-color);
+}
+
+/* About Page Animations */
+.value-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Page Responsive Design */
+@media (max-width: 768px) {
+    .story-content,
+    .expertise-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .expertise-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .certifications-content {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .commitment-values {
+        grid-template-columns: 1fr;
+    }
+}

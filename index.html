@@ -1,0 +1,2990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordoglass - Market-Leading Slim Profile Internal Doors & Partitions</title>
+    <meta name="description" content="Discover the thinnest profile on the market for internal partitions. Minimal. Strong. Beautiful. 3-day delivery on standard glass.">
+    
+    <style>
+        /* Enhanced Bordoglass - Ultra Modern Minimalistic Design */
+
+        /* CSS Variables */
+        :root {
+            --primary-color: #8B1538;
+            --secondary-color: #2C2C2C;
+            --accent-color: #FFFFFF;
+            --text-color: #000000;
+            --light-grey: #F5F5F5;
+            --medium-grey: #888888;
+            --border-color: #E0E0E0;
+            --glass-effect: rgba(255, 255, 255, 0.1);
+            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --gradient-primary: linear-gradient(135deg, #8B1538 0%, #6D0E2A 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--accent-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Enhanced Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-logo h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            letter-spacing: 3px;
+            position: relative;
+        }
+
+        .nav-logo h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.8rem 0;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-quote-btn {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+        }
+
+        .nav-quote-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .bar {
+            width: 28px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 4px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* Enhanced Hero Section with USP Focus */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.95) 100%);
+            z-index: 1;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            margin-top: 80px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        /* USP Badge */
+        .usp-badge {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-usp {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: slideInLeft 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-tagline {
+            display: block;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            animation: slideInLeft 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-minimal {
+            color: var(--text-color);
+            font-weight: 300;
+        }
+
+        .hero-strong {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .hero-beautiful {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--medium-grey);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .hero-subtitle strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.8s forwards;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary-color);
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Made in Britain Badge */
+        .made-in-britain {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            width: 100px;
+            height: 100px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-medium);
+            z-index: 3;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .made-in-britain img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        .made-in-britain::before {
+            content: 'MADE IN BRITAIN';
+            position: absolute;
+            bottom: -25px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        /* Enhanced Configurator Section */
+        .configurator {
+            padding: 8rem 0;
+            background: var(--light-grey);
+            position: relative;
+        }
+
+        .configurator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .configurator-form {
+            background: var(--accent-color);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .config-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .config-tab {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--medium-grey);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .config-tab.active {
+            color: var(--primary-color);
+        }
+
+        .config-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+        }
+
+        .config-step {
+            display: none;
+        }
+
+        .config-step.active {
+            display: block;
+        }
+
+        .config-step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .step-number {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Design Options */
+        .design-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .design-option {
+            padding: 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--accent-color);
+        }
+
+        .design-option:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .design-option.selected {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            border-color: var(--primary-color);
+        }
+
+        .design-option.selected h4,
+        .design-option.selected p {
+            color: var(--accent-color);
+        }
+
+        /* Upload Design Section */
+        .upload-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 2px dashed var(--border-color);
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .upload-section:hover {
+            border-color: var(--primary-color);
+            background: var(--light-grey);
+        }
+
+        .upload-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary-color);
+            color: var(--accent-color);
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-button:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Glass Type Selection */
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .glass-option {
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .glass-option:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .glass-option.selected {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            border-color: var(--primary-color);
+        }
+
+        .glass-option.selected h4,
+        .glass-option.selected p,
+        .glass-option.selected .glass-specs {
+            color: var(--accent-color);
+        }
+
+        .glass-option h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .glass-option p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .glass-specs {
+            list-style: none;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        .glass-specs li {
+            padding: 0.3rem 0;
+        }
+
+        /* Extra Filters */
+        .filter-section {
+            margin: 2rem 0;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light-grey);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-option:hover {
+            background: rgba(139, 21, 56, 0.1);
+        }
+
+        .filter-checkbox {
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        /* Configurator Preview */
+        .configurator-preview {
+            background: var(--accent-color);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            position: sticky;
+            top: 100px;
+        }
+
+        .preview-3d {
+            background: var(--light-grey);
+            height: 500px;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .door-3d-visual {
+            width: 70%;
+            height: 85%;
+            background: var(--accent-color);
+            border: 3px solid var(--secondary-color);
+            border-radius: 5px;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 3px;
+            padding: 3px;
+            transform: perspective(1000px) rotateY(15deg);
+            transition: all 0.5s ease;
+        }
+
+        .door-3d-visual:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .glass-panel {
+            background: rgba(139, 21, 56, 0.05);
+            border: 1px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .preview-details {
+            background: var(--light-grey);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .preview-details h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Quote Request Form */
+        .quote-form-section {
+            background: var(--accent-color);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-top: 3rem;
+        }
+
+        .quote-form-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--accent-color);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+        }
+
+        .optional-label {
+            font-size: 0.85rem;
+            color: var(--medium-grey);
+            font-style: italic;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .callback-option {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: var(--light-grey);
+            border-radius: 10px;
+        }
+
+        .callback-option input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 1rem;
+        }
+
+        /* Delivery Info Banner */
+        .delivery-banner {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .delivery-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .delivery-content {
+            position: relative;
+            z-index: 2;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .delivery-content .highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        /* Product Pages Grid */
+        .products-section {
+            padding: 8rem 0;
+            background: var(--accent-color);
+        }
+
+        .products-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .product-category-card {
+            background: var(--accent-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .product-category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .category-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--light-grey) 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-content {
+            padding: 2rem;
+        }
+
+        .category-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .category-content p {
+            color: var(--medium-grey);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Video Section */
+        .video-showcase {
+            padding: 8rem 0;
+            background: var(--secondary-color);
+            color: var(--accent-color);
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .video-placeholder {
+            position: relative;
+            padding-bottom: 56.25%;
+            background: var(--text-color);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .play-button::after {
+            content: '▶';
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 8rem 0;
+            background: var(--light-grey);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--accent-color);
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-question:hover {
+            background: var(--light-grey);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 2rem 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Ask Question Form */
+        .ask-question {
+            background: var(--accent-color);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .ask-question h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .question-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .question-form input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        /* Brochure Download Section */
+        .brochure-section {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .brochure-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .brochure-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .brochure-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 15px 40px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            padding: 6rem 0;
+            background: var(--accent-color);
+            position: relative;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--accent-color);
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .stat-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Enhanced Contact Section */
+        .contact {
+            padding: 8rem 0;
+            background: var(--accent-color);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 5rem;
+            margin-top: 4rem;
+        }
+
+        .contact-info {
+            padding: 3rem;
+            background: var(--light-grey);
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .contact-info h3 {
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--accent-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .contact-item a {
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            transform: scale(1.05);
+            display: inline-block;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        .contact-form {
+            background: var(--light-grey);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--text-color) 100%);
+            color: var(--accent-color);
+            padding: 5rem 0 2rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .social-link:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active { left: 0; }
+            
+            .nav-item {
+                width: 100%;
+            }
+
+            .hamburger { display: flex; }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .hero-container {
+                text-align: center;
+            }
+
+            .hero-title { font-size: 2.5rem; }
+            .hero-usp { font-size: 1.5rem; }
+            .hero-tagline { font-size: 2rem; }
+            
+            .hero-buttons {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .configurator-container,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .made-in-britain {
+                bottom: 1rem;
+                right: 1rem;
+                width: 80px;
+                height: 80px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .config-tabs {
+                flex-wrap: wrap;
+            }
+
+            .config-tab {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .configurator-preview {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2rem; }
+            .hero-usp { font-size: 1.2rem; }
+            .hero-tagline { font-size: 1.5rem; }
+            .btn { padding: 12px 25px; width: 100%; max-width: 250px; }
+            .stats-container { grid-template-columns: 1fr; }
+            .design-options { grid-template-columns: 1fr; }
+            .glass-grid { grid-template-columns: 1fr; }
+            .products-categories { grid-template-columns: 1fr; }
+            
+            .question-form {
+                flex-direction: column;
+            }
+            
+            .hero-tagline {
+                font-size: 1.8rem;
+            }
+            
+            .hero-minimal,
+            .hero-strong,
+            .offer-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .offer-form input {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            
+            .offer-form .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Scroll Animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-animate.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading State */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--light-grey);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Email Popup Modal */
+        .email-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            backdrop-filter: blur(5px);
+        }
+
+        .email-popup-overlay.show {
+            display: flex;
+        }
+
+        .email-popup {
+            background: var(--accent-color);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            animation: slideInUp 0.5s ease;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: var(--light-grey);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            transform: rotate(90deg);
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .popup-badge {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .popup-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .popup-subtitle {
+            font-size: 1.1rem;
+            color: var(--medium-grey);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .popup-benefits {
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .benefit-item::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .popup-form {
+            margin-top: 2rem;
+        }
+
+        .popup-form input[type="email"] {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .popup-form input[type="email"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+        }
+
+        .popup-form button {
+            width: 100%;
+            padding: 15px 30px;
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .popup-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .popup-privacy {
+            font-size: 0.85rem;
+            color: var(--medium-grey);
+            margin-top: 1rem;
+        }
+
+        .popup-privacy a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Exit Intent Popup - Different Style */
+        .exit-popup .email-popup {
+            background: var(--secondary-color);
+            color: var(--accent-color);
+        }
+
+        .exit-popup .popup-title {
+            color: var(--accent-color);
+        }
+
+        .exit-popup .popup-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .exit-popup .benefit-item {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .exit-popup .popup-badge {
+            background: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Section Title Styling */
+        .section-title {
+            font-size: 3rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--medium-grey);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* 10% Offer Section */
+        .offer-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 21, 56, 0.05) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .offer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .offer-badge {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .offer-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .offer-content p {
+            font-size: 1.2rem;
+            color: var(--medium-grey);
+            margin-bottom: 2rem;
+        }
+
+        .offer-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto 1rem;
+        }
+
+        .offer-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .offer-form input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+        }
+
+        .offer-privacy {
+            font-size: 0.85rem;
+            color: var(--medium-grey);
+        }
+
+        /* Form validation styles */
+        input:invalid,
+        select:invalid,
+        textarea:invalid {
+            border-color: #ff6b6b;
+        }
+
+        input:valid,
+        select:valid,
+        textarea:valid {
+            border-color: var(--border-color);
+        }
+
+        /* Accessibility improvements */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        a:focus,
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .navbar,
+            .delivery-banner,
+            .email-popup-overlay,
+            .footer {
+                display: none;
+            }
+            
+            body {
+                color: black;
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading State -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Email Popup Modal (Entry Popup) -->
+    <div class="email-popup-overlay" id="entryPopup">
+        <div class="email-popup">
+            <button class="popup-close" onclick="closePopup('entryPopup')">&times;</button>
+            <div class="popup-content">
+                <span class="popup-badge">EXCLUSIVE OFFER</span>
+                <h2 class="popup-title">Get 10% Off Your First Order</h2>
+                <p class="popup-subtitle">Join our mailing list for exclusive deals, design tips, and be the first to know about new products.</p>
+                
+                <div class="popup-benefits">
+                    <div class="benefit-item">Early access to new products</div>
+                    <div class="benefit-item">Exclusive discounts & offers</div>
+                    <div class="benefit-item">Free design consultation guide</div>
+                    <div class="benefit-item">Installation tips & tricks</div>
+                </div>
+                
+                <form class="popup-form" id="popupEmailForm" action="https://bordoglass.us17.list-manage.com/subscribe/post?u=25257e0ae619d7399b48247e0&amp;id=2e0a769a55" method="post" target="_blank">
+                    <input type="email" id="popupEmail" name="EMAIL" placeholder="Enter your email address" required>
+                    <input type="hidden" name="TAGS" value="10-percent-offer,popup">
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_25257e0ae619d7399b48247e0_2e0a769a55" tabindex="-1" value="">
+                    </div>
+                    <button type="submit">Get My 10% Discount</button>
+                </form>
+                
+                <p class="popup-privacy">
+                    We respect your privacy. Unsubscribe at any time. 
+                    <a href="#">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exit Intent Popup -->
+    <div class="email-popup-overlay exit-popup" id="exitPopup">
+        <div class="email-popup">
+            <button class="popup-close" onclick="closePopup('exitPopup')">&times;</button>
+            <div class="popup-content">
+                <span class="popup-badge">WAIT! DON'T MISS OUT</span>
+                <h2 class="popup-title">Before You Go...</h2>
+                <p class="popup-subtitle">Get our free guide: "7 Mistakes to Avoid When Choosing Internal Doors"</p>
+                
+                <div class="popup-benefits">
+                    <div class="benefit-item">Learn from others' costly mistakes</div>
+                    <div class="benefit-item">Professional tips from our experts</div>
+                    <div class="benefit-item">Save time and money on your project</div>
+                </div>
+                
+                <form class="popup-form" id="exitPopupForm" action="https://bordoglass.us17.list-manage.com/subscribe/post?u=25257e0ae619d7399b48247e0&amp;id=2e0a769a55" method="post" target="_blank">
+                    <input type="email" id="exitPopupEmail" name="EMAIL" placeholder="Where should we send your guide?" required>
+                    <input type="hidden" name="TAGS" value="free-guide,exit-intent">
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_25257e0ae619d7399b48247e0_2e0a769a55" tabindex="-1" value="">
+                    </div>
+                    <button type="submit">Send Me The Free Guide</button>
+                </form>
+                
+                <p class="popup-privacy">
+                    100% free. No spam. <a href="#">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delivery Banner -->
+    <div class="delivery-banner">
+        <div class="container">
+            <div class="delivery-content">
+                🚚 <span class="highlight">3 WORKING DAYS</span> delivery on standard glass ordered before 12pm! | Custom shapes available with longer lead times
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>BORDOGLASS</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#configurator" class="nav-link">Configure</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#products" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#delivery" class="nav-link">Delivery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#configurator" class="nav-quote-btn">Get Quote</a>
+                </li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Enhanced Hero Section with USP Focus -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="usp-badge">THINNEST PROFILE ON THE MARKET</span>
+                    <h1 class="hero-usp">Market-Leading Slim Profiles for Internal Partitions</h1>
+                    <div class="hero-tagline">
+                        <span class="hero-minimal">Minimal.</span>
+                        <span class="hero-strong">Strong.</span>
+                        <span class="hero-beautiful">Beautiful.</span>
+                    </div>
+                    <p class="hero-subtitle">
+                        Discover why slimmer is smarter. <strong>25mm ultra-slim profiles</strong> that are stronger than conventional 40mm systems. Transform your space with maximum light and minimal frame.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#configurator" class="btn btn-primary">Configure Your Door</a>
+                        <a href="#products" class="btn btn-secondary">View Products</a>
+                    </div>
+                </div>
+            </div>
+            <div class="made-in-britain">
+                <span style="font-size: 2rem;">🇬🇧</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section scroll-animate">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-label">mm Slim Profile</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="3">0</div>
+                    <div class="stat-label">Day Delivery</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="60">0</div>
+                    <div class="stat-label">% Faster Install</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">% British Made</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Configurator Section -->
+    <section id="configurator" class="configurator scroll-animate">
+        <div class="container">
+            <h2 class="section-title">Configure Your Perfect Door</h2>
+            <p class="section-subtitle">
+                Design your custom door or partition system with our intuitive configurator. Get a detailed quote sent to your email.
+            </p>
+            
+            <div class="configurator-container">
+                <div class="configurator-form">
+                    <!-- Configuration Tabs -->
+                    <div class="config-tabs">
+                        <button class="config-tab active" onclick="showConfigStep('design')">Design</button>
+                        <button class="config-tab" onclick="showConfigStep('glass')">Glass Type</button>
+                        <button class="config-tab" onclick="showConfigStep('extras')">Extras</button>
+                        <button class="config-tab" onclick="showConfigStep('details')">Your Details</button>
+                    </div>
+
+                    <!-- Step 1: Design -->
+                    <div class="config-step active" id="design-step">
+                        <h3><span class="step-number">1</span> Choose Your Design</h3>
+                        
+                        <!-- Upload Design Option -->
+                        <div class="upload-section">
+                            <h4>Have your own design?</h4>
+                            <p>Upload your drawings, sketches, or measurements</p>
+                            <input type="file" id="design-upload" accept=".pdf,.jpg,.jpeg,.png,.dwg" style="display: none;">
+                            <label for="design-upload" class="upload-button">Upload Design</label>
+                        </div>
+
+                        <!-- Product Type Selection -->
+                        <h4 style="margin: 2rem 0 1rem;">Or select a product type:</h4>
+                        <div class="design-options">
+                            <div class="design-option selected" data-product="hinged-door">
+                                <h4>Hinged Door</h4>
+                                <p>Left/Right Opening</p>
+                            </div>
+                            <div class="design-option" data-product="sliding-door">
+                                <h4>Sliding Door</h4>
+                                <p>Space Saving</p>
+                            </div>
+                            <div class="design-option" data-product="pivot-door">
+                                <h4>Pivot Door</h4>
+                                <p>Contemporary</p>
+                            </div>
+                            <div class="design-option" data-product="partition">
+                                <h4>Partition System</h4>
+                                <p>Room Divider</p>
+                            </div>
+                        </div>
+
+                        <!-- RAL Color Selection -->
+                        <h4 style="margin: 2rem 0 1rem;">Choose Your Color:</h4>
+                        <div class="form-group">
+                            <label for="ral-color">RAL Color</label>
+                            <select id="ral-color" name="ral-color">
+                                <option value="ral-9005">RAL 9005 - Jet Black</option>
+                                <option value="ral-7016">RAL 7016 - Anthracite Grey</option>
+                                <option value="ral-9016">RAL 9016 - Traffic White</option>
+                                <option value="ral-9006">RAL 9006 - White Aluminium</option>
+                                <option value="custom">Custom RAL Color</option>
+                            </select>
+                        </div>
+
+                        <!-- Profile Type -->
+                        <h4 style="margin: 2rem 0 1rem;">Profile Type:</h4>
+                        <div class="design-options">
+                            <div class="design-option selected" data-profile="slim">
+                                <h4>25mm Slim</h4>
+                                <p>Ultra-minimal</p>
+                            </div>
+                            <div class="design-option" data-profile="standard">
+                                <h4>30mm Standard</h4>
+                                <p>Balanced design</p>
+                            </div>
+                            <div class="design-option" data-profile="thermal">
+                                <h4>40mm Thermal</h4>
+                                <p>Enhanced insulation</p>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary" onclick="nextConfigStep()">Next Step</button>
+                    </div>
+
+                    <!-- Step 2: Glass Type -->
+                    <div class="config-step" id="glass-step">
+                        <h3><span class="step-number">2</span> Select Glass Type</h3>
+                        
+                        <div class="glass-grid">
+                            <div class="glass-option selected" data-glass="double-glazed">
+                                <h4>Double Glazed</h4>
+                                <p>Standard insulation</p>
+                                <ul class="glass-specs">
+                                    <li>✓ 24mm thickness</li>
+                                    <li>✓ Thermal efficient</li>
+                                    <li>✓ Sound reduction</li>
+                                </ul>
+                            </div>
+                            <div class="glass-option" data-glass="tempered">
+                                <h4>Tempered Safety</h4>
+                                <p>Enhanced safety</p>
+                                <ul class="glass-specs">
+                                    <li>✓ 10mm thickness</li>
+                                    <li>✓ 5x stronger</li>
+                                    <li>✓ Safety certified</li>
+                                </ul>
+                            </div>
+                            <div class="glass-option" data-glass="laminated">
+                                <h4>Laminated Glass</h4>
+                                <p>Maximum security</p>
+                                <ul class="glass-specs">
+                                    <li>✓ 6.4mm - 10.2mm</li>
+                                    <li>✓ Security rated</li>
+                                    <li>✓ UV protection</li>
+                                </ul>
+                            </div>
+                            <div class="glass-option" data-glass="frosted">
+                                <h4>Frosted Privacy</h4>
+                                <p>Elegant privacy</p>
+                                <ul class="glass-specs">
+                                    <li>✓ Various patterns</li>
+                                    <li>✓ Light diffusion</li>
+                                    <li>✓ Privacy assured</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Glass Thickness Options -->
+                        <h4 style="margin: 2rem 0 1rem;">Glass Thickness:</h4>
+                        <div class="form-group">
+                            <select id="glass-thickness" name="glass-thickness">
+                                <option value="4mm">4mm Float Glass</option>
+                                <option value="6mm">6mm Float Glass</option>
+                                <option value="6.4mm">6.4mm Laminated</option>
+                                <option value="8.8mm">8.8mm Laminated</option>
+                                <option value="10.2mm">10.2mm Laminated</option>
+                            </select>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                            <button class="btn btn-secondary" onclick="prevConfigStep()">Previous</button>
+                            <button class="btn btn-primary" onclick="nextConfigStep()">Next Step</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Extra Filters -->
+                    <div class="config-step" id="extras-step">
+                        <h3><span class="step-number">3</span> Additional Options</h3>
+                        
+                        <div class="filter-section">
+                            <div class="filter-option">
+                                <input type="checkbox" id="thermal-efficiency" class="filter-checkbox">
+                                <label for="thermal-efficiency">
+                                    <strong>Enhanced Thermal Efficiency</strong><br>
+                                    <small>Triple glazing with argon gas fill</small>
+                                </label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="sound-proofing" class="filter-checkbox">
+                                <label for="sound-proofing">
+                                    <strong>Acoustic Sound Proofing</strong><br>
+                                    <small>Up to 45dB noise reduction</small>
+                                </label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="installation" class="filter-checkbox">
+                                <label for="installation">
+                                    <strong>Professional Installation</strong><br>
+                                    <small>Expert fitting by certified installers</small>
+                                </label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="mirror-glass" class="filter-checkbox">
+                                <label for="mirror-glass">
+                                    <strong>Mirror Glass Option</strong><br>
+                                    <small>One-way mirror effect available</small>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Dimensions -->
+                        <h4 style="margin: 2rem 0 1rem;">Dimensions (mm):</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="width">Width</label>
+                                <input type="number" id="width" name="width" value="1000" min="600" max="3000">
+                            </div>
+                            <div class="form-group">
+                                <label for="height">Height</label>
+                                <input type="number" id="height" name="height" value="2100" min="1800" max="3000">
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                            <button class="btn btn-secondary" onclick="prevConfigStep()">Previous</button>
+                            <button class="btn btn-primary" onclick="nextConfigStep()">Next Step</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Contact Details -->
+                    <div class="config-step" id="details-step">
+                        <h3><span class="step-number">4</span> Your Details</h3>
+                        
+                        <form id="quote-form" onsubmit="submitQuoteForm(event)">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="Your phone number">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="project-notes">Additional Notes <span class="optional-label">(Optional)</span></label>
+                                <textarea id="project-notes" name="project-notes" rows="3" placeholder="Any special requirements or questions?"></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button class="btn btn-secondary" type="button" onclick="prevConfigStep()">Previous</button>
+                                <button type="submit" class="btn btn-primary">Request Quote</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Configurator Preview -->
+                <div class="configurator-preview">
+                    <div class="preview-3d">
+                        <div class="door-3d-visual" id="doorVisual">
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                            <div class="glass-panel"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-details">
+                        <h4>Your Configuration</h4>
+                        <div class="detail-item">
+                            <span>Product Type</span>
+                            <span id="previewProduct">Hinged Door</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Profile</span>
+                            <span id="previewProfile">25mm Slim</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Color</span>
+                            <span id="previewColor">RAL 9005 - Jet Black</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Glass Type</span>
+                            <span id="previewGlass">Double Glazed</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Dimensions</span>
+                            <span id="previewDimensions">1000 x 2100mm</span>
+                        </div>
+                        <div class="detail-item" style="font-weight: 700; color: var(--primary-color);">
+                            <span>Quote Status</span>
+                            <span>Will be sent via email</span>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <p style="color: var(--medium-grey); font-size: 0.9rem;">
+                            Can't configure what you need? <br>
+                            <a href="#contact" style="color: var(--primary-color);">Contact us directly</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Pages Section -->
+    <section id="products" class="products-section scroll-animate">
+        <div class="container">
+            <h2 class="section-title">Our Product Range</h2>
+            <p class="section-subtitle">
+                Explore our comprehensive range of profiles, glass types, and components
+            </p>
+            
+            <div class="products-categories">
+                <div class="product-category-card">
+                    <div class="category-image"></div>
+                    <div class="category-content">
+                        <h3>Glass Types</h3>
+                        <p>From 4mm float to 10.2mm laminated safety glass. Discover the perfect glass for your project.</p>
+                        <a href="#glass-types" class="btn btn-secondary">View Glass Options</a>
+                    </div>
+                </div>
+                
+                <div class="product-category-card">
+                    <div class="category-image"></div>
+                    <div class="category-content">
+                        <h3>Aluminum Profiles</h3>
+                        <p>Ultra-slim 25mm to robust 40mm profiles. Stronger, slimmer, and more beautiful than ever.</p>
+                        <a href="#profiles" class="btn btn-secondary">View Profiles</a>
+                    </div>
+                </div>
+                
+                <div class="product-category-card">
+                    <div class="category-image"></div>
+                    <div class="category-content">
+                        <h3>Hinges & Hardware</h3>
+                        <p>Premium quality hinges, handles, and locks. British engineered for lasting performance.</p>
+                        <a href="#hardware" class="btn btn-secondary">View Hardware</a>
+                    </div>
+                </div>
+                
+                <div class="product-category-card">
+                    <div class="category-image"></div>
+                    <div class="category-content">
+                        <h3>Mirror Glass</h3>
+                        <p>One-way mirror and reflective glass options. Create stunning visual effects.</p>
+                        <a href="#mirror" class="btn btn-secondary">View Mirror Options</a>
+                    </div>
+                </div>
+                
+                <div class="product-category-card">
+                    <div class="category-image"></div>
+                    <div class="category-content">
+                        <h3>External Solutions</h3>
+                        <p>Commercial shutters, windows, and external doors. Complete architectural solutions.</p>
+                        <a href="#external" class="btn btn-secondary">View External</a>
+                    </div>
+                </div>
+                
+                <div class="product-category-card">
+                    <div class="category-image"></div>
+                    <div class="category-content">
+                        <h3>Partition Systems</h3>
+                        <p>Modular and fixed partition solutions. Transform spaces with flexibility.</p>
+                        <a href="#partitions" class="btn btn-secondary">View Partitions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section class="video-showcase scroll-animate">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--accent-color);">See Our Products in Action</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">
+                Watch how different glass types and profiles create unique, bespoke interior looks
+            </p>
+            
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <div class="play-button" onclick="playVideo()"></div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; color: rgba(255,255,255,0.7);">
+                Most competitors don't show you the real difference. We do.
+            </p>
+        </div>
+    </section>
+
+    <!-- Delivery Information Section -->
+    <section id="delivery" class="configurator scroll-animate">
+        <div class="container">
+            <h2 class="section-title">Fast & Reliable Delivery</h2>
+            <p class="section-subtitle">
+                Industry-leading delivery times on standard products
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: var(--accent-color); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-light);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Standard Glass</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--text-color); margin-bottom: 1rem;">3 Working Days</p>
+                    <p>For rectangular glass ordered before 12pm</p>
+                    <ul style="list-style: none; margin-top: 1rem;">
+                        <li>✓ 4mm & 6mm float glass</li>
+                        <li>✓ Standard tempered glass</li>
+                        <li>✓ Double glazed units</li>
+                    </ul>
+                </div>
+                
+                <div style="background: var(--accent-color); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-light);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Custom Shapes</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--text-color); margin-bottom: 1rem;">5-10 Days</p>
+                    <p>For circles, ovals, and special cuts</p>
+                    <ul style="list-style: none; margin-top: 1rem;">
+                        <li>✓ Custom shapes</li>
+                        <li>✓ Special glass types</li>
+                        <li>✓ Large format glass</li>
+                    </ul>
+                </div>
+                
+                <div style="background: var(--accent-color); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-light);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Complete Systems</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--text-color); margin-bottom: 1rem;">7-14 Days</p>
+                    <p>For full door and partition systems</p>
+                    <ul style="list-style: none; margin-top: 1rem;">
+                        <li>✓ Complete assemblies</li>
+                        <li>✓ Custom RAL colors</li>
+                        <li>✓ Installation available</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--light-grey); border-radius: 15px;">
+                <p style="font-size: 1.1rem; color: var(--secondary-color);">
+                    <strong>Cut-off Times:</strong> Orders placed before 12pm are processed same day<br>
+                    <strong>Location:</strong> We deliver nationwide from our Doncaster facility<br>
+                    <strong>Note:</strong> All delivery times subject to stock availability
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section scroll-animate">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">
+                Find answers to common questions about our products and services
+            </p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What makes your profiles thinner yet stronger?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our profiles use advanced aluminum extrusion technology with reinforced corner joints and precision engineering. The 25mm slim profile incorporates internal strengthening ribs that provide superior structural integrity while maintaining an ultra-minimal aesthetic. This allows for larger glass panels without compromising on strength or safety.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What are typical lead times?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Standard rectangular glass: 3 working days if ordered before 12pm. Custom shapes (circles, ovals): 5-10 working days. Complete door/partition systems: 7-14 working days. Custom RAL colors add 3-5 days. All times subject to stock availability.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Do you offer installation services?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer professional installation through our network of certified installers across the UK. Installation can be added during the configuration process. Our Quickfit system also allows for easy DIY installation with basic tools - we provide comprehensive installation guides and video tutorials.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What's the difference between your profile types?
+                    </button>
+                    <div class="faq-answer">
+                        <p>25mm Slim: Our signature ultra-minimal profile, perfect for contemporary interiors. 30mm Standard: Balanced design with enhanced acoustic properties. 40mm Thermal: Features thermal break technology for improved insulation, ideal for external-facing partitions or energy-conscious projects.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I buy as trade?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we welcome trade customers! We offer trade accounts with benefits including: volume discounts, priority processing, dedicated account management, and extended payment terms. Simply select 'Trade' as your customer type when requesting a quote.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What glass thicknesses are available?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Float glass: 4mm, 6mm. Tempered: 6mm, 8mm, 10mm, 12mm. Laminated: 6.4mm, 8.8mm, 10.2mm. Double glazed units: 24mm, 28mm, 32mm total thickness. All glass conforms to BS EN safety standards.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ask a Question -->
+            <div class="ask-question">
+                <h3>Didn't find your answer?</h3>
+                <p>Submit your question and we'll add it to our FAQ</p>
+                <form class="question-form" onsubmit="submitQuestion(event)">
+                    <input type="email" placeholder="Your email" required>
+                    <input type="text" placeholder="Your question" required>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brochure Download Section -->
+    <section class="brochure-section">
+        <div class="container">
+            <div class="brochure-content">
+                <h3>Download Our Brochure</h3>
+                <p>Get detailed specifications, opening types, design inspiration, and technical drawings</p>
+                <a href="#" class="download-btn" onclick="downloadBrochure()">
+                    <span>📥</span>
+                    Download PDF Brochure
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10% Offer Section -->
+    <section class="offer-section">
+        <div class="container">
+            <div class="offer-content">
+                <span class="offer-badge">EXCLUSIVE OFFER</span>
+                <h3>Get 10% Off Your First Order</h3>
+                <p>Join our mailing list for exclusive deals and be the first to know about new products</p>
+                <form class="offer-form" action="https://bordoglass.us17.list-manage.com/subscribe/post?u=25257e0ae619d7399b48247e0&amp;id=2e0a769a55" method="post" target="_blank">
+                    <input type="email" name="EMAIL" id="offer-email" placeholder="Enter your email address" required>
+                    <input type="hidden" name="TAGS" value="10-percent-offer,main-page">
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_25257e0ae619d7399b48247e0_2e0a769a55" tabindex="-1" value="">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Get My 10% Discount Code</button>
+                </form>
+                <p class="offer-privacy">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Contact Section -->
+    <section id="contact" class="contact scroll-animate">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">
+                Have a question or need a quote? We're here to help!
+            </p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Us Directly</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <strong>Call Us</strong><br>
+                            <a href="tel:01217929167" style="color: var(--primary-color); text-decoration: none; font-size: 1.2rem;">0121 792 9167</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <strong>Email Us</strong><br>
+                            <a href="mailto:info@bordoglass.co.uk" style="color: var(--primary-color); text-decoration: none; font-size: 1.2rem;">info@bordoglass.co.uk</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Visit Us</strong><br>
+                            Ogden Road, Wheatley Hills<br>
+                            Doncaster DN2 4SG, UK
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <strong>Opening Hours</strong><br>
+                            Mon-Fri: 8:00 - 17:00<br>
+                            Sat: 9:00 - 13:00
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Quick Message</h3>
+                    <p style="margin-bottom: 2rem; color: var(--medium-grey);">
+                        Prefer to send a quick message? Fill out the form below and we'll get back to you within 24 hours.
+                    </p>
+                    <form id="contact-form" onsubmit="submitContactForm(event)">
+                        <div class="form-group">
+                            <label for="contact-name">Name *</label>
+                            <input type="text" id="contact-name" name="name" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Phone</label>
+                            <input type="tel" id="contact-phone" name="phone" placeholder="Your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" name="message" rows="5" required placeholder="Tell us about your project"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>BORDOGLASS</h3>
+                    <p>Market-leading slim profile internal doors and partitions. Minimal. Strong. Beautiful.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#configurator">Configure</a>
+                    <a href="#products">Products</a>
+                    <a href="#delivery">Delivery Info</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#" onclick="downloadBrochure()">Download Brochure</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <a href="#glass-types">Glass Types</a>
+                    <a href="#profiles">Aluminum Profiles</a>
+                    <a href="#hardware">Hinges & Hardware</a>
+                    <a href="#mirror">Mirror Glass</a>
+                    <a href="#external">External Solutions</a>
+                    <a href="#partitions">Partition Systems</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bordoglass Ltd. All rights reserved. Made with ❤️ in Britain | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Remove loading screen when page loads
+        window.addEventListener('load', function() {
+            document.getElementById('loading').style.display = 'none';
+        });
+
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth Scrolling with offset for fixed navbar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    if (this.classList.contains('nav-link')) {
+                        this.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Configurator Step Navigation
+        let currentStep = 'design';
+        const steps = ['design', 'glass', 'extras', 'details'];
+
+        function showConfigStep(step) {
+            document.querySelectorAll('.config-step').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.config-tab').forEach(t => t.classList.remove('active'));
+            
+            document.getElementById(step + '-step').classList.add('active');
+            document.querySelector(`.config-tab[onclick="showConfigStep('${step}')"]`).classList.add('active');
+            
+            currentStep = step;
+            updatePreview();
+        }
+
+        function nextConfigStep() {
+            const currentIndex = steps.indexOf(currentStep);
+            if (currentIndex < steps.length - 1) {
+                showConfigStep(steps[currentIndex + 1]);
+            }
+        }
+
+        function prevConfigStep() {
+            const currentIndex = steps.indexOf(currentStep);
+            if (currentIndex > 0) {
+                showConfigStep(steps[currentIndex - 1]);
+            }
+        }
+
+        // Configuration Options Selection
+        document.querySelectorAll('.design-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const siblings = this.parentElement.querySelectorAll('.design-option');
+                siblings.forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+                updatePreview();
+            });
+        });
+
+        document.querySelectorAll('.glass-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.glass-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                updatePreview();
+            });
+        });
+
+        // Update Preview
+        function updatePreview() {
+            // Update product type
+            const selectedProduct = document.querySelector('.design-option[data-product].selected');
+            if (selectedProduct) {
+                document.getElementById('previewProduct').textContent = selectedProduct.querySelector('h4').textContent;
+            }
+            
+            // Update profile
+            const selectedProfile = document.querySelector('.design-option[data-profile].selected');
+            if (selectedProfile) {
+                document.getElementById('previewProfile').textContent = selectedProfile.querySelector('h4').textContent;
+            }
+            
+            // Update color
+            const selectedColor = document.getElementById('ral-color');
+            if (selectedColor) {
+                document.getElementById('previewColor').textContent = selectedColor.options[selectedColor.selectedIndex].text;
+            }
+            
+            // Update glass
+            const selectedGlass = document.querySelector('.glass-option.selected');
+            if (selectedGlass) {
+                document.getElementById('previewGlass').textContent = selectedGlass.querySelector('h4').textContent;
+            }
+            
+            // Update dimensions
+            const width = document.getElementById('width')?.value || 1000;
+            const height = document.getElementById('height')?.value || 2100;
+            document.getElementById('previewDimensions').textContent = `${width} x ${height}mm`;
+            
+            // Update 3D visualization
+            updateDoorVisualization();
+        }
+
+        // Update Door Visualization
+        function updateDoorVisualization() {
+            const doorVisual = document.getElementById('doorVisual');
+            const selectedProfile = document.querySelector('.design-option[data-profile].selected');
+            
+            if (selectedProfile && selectedProfile.dataset.profile === 'thermal') {
+                doorVisual.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                doorVisual.style.gridTemplateRows = 'repeat(4, 1fr)';
+            } else {
+                doorVisual.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                doorVisual.style.gridTemplateRows = 'repeat(3, 1fr)';
+            }
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Form Submissions
+        function submitQuestion(event) {
+            event.preventDefault();
+            alert('Thank you for your question! We\'ll add it to our FAQ soon.');
+            event.target.reset();
+        }
+
+        function downloadBrochure() {
+            alert('Brochure download started! Check your downloads folder.');
+            // In real implementation, this would trigger actual PDF download
+        }
+
+        function playVideo() {
+            alert('Video player would open here. This is where your AI-generated product showcase video would play.');
+            // In real implementation, this would embed/play the video
+        }
+
+        // Quote Form Submission
+        function submitQuoteForm(event) {
+            event.preventDefault();
+            
+            // Collect all configuration data
+            const configData = {
+                product: document.getElementById('previewProduct').textContent,
+                profile: document.getElementById('previewProfile').textContent,
+                color: document.getElementById('previewColor').textContent,
+                glass: document.getElementById('previewGlass').textContent,
+                dimensions: document.getElementById('previewDimensions').textContent,
+                extras: {
+                    thermal: document.getElementById('thermal-efficiency').checked,
+                    soundproof: document.getElementById('sound-proofing').checked,
+                    installation: document.getElementById('installation').checked,
+                    mirror: document.getElementById('mirror-glass').checked
+                }
+            };
+            
+            // Collect form data
+            const formData = new FormData(event.target);
+            formData.append('configuration', JSON.stringify(configData));
+            
+            // Show success message
+            alert('Thank you for your quote request! We\'ll send you a detailed quote via email within 24 hours.');
+            
+            // Reset form
+            event.target.reset();
+            showConfigStep('design');
+        }
+
+        // Contact Form Submission
+        function submitContactForm(event) {
+            event.preventDefault();
+            alert('Thank you for contacting us! We\'ll get back to you within 24 hours.');
+            event.target.reset();
+        }
+
+        // Counter Animation
+        function animateCounter(element) {
+            const target = parseInt(element.dataset.count);
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    
+                    // Trigger counter animation for stats
+                    if (entry.target.classList.contains('stats-section')) {
+                        const counters = entry.target.querySelectorAll('[data-count]');
+                        counters.forEach(counter => animateCounter(counter));
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            }
+            
+            // Update active nav link based on scroll position
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // File Upload Handling
+        const designUpload = document.getElementById('design-upload');
+        if (designUpload) {
+            designUpload.addEventListener('change', function(e) {
+                const fileName = e.target.files[0]?.name;
+                if (fileName) {
+                    alert(`Design file "${fileName}" uploaded successfully!`);
+                }
+            });
+        }
+
+        // Initialize preview on load
+        updatePreview();
+
+        // Email Popup Functions
+        let hasSeenEntryPopup = sessionStorage.getItem('bordoglassEntryPopup');
+        let hasSeenExitPopup = sessionStorage.getItem('bordoglassExitPopup');
+
+        // Show entry popup after delay
+        setTimeout(function() {
+            if (!hasSeenEntryPopup) {
+                document.getElementById('entryPopup').classList.add('show');
+            }
+        }, 5000); // Show after 5 seconds
+
+        // Exit intent detection
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY <= 0 && !hasSeenExitPopup && hasSeenEntryPopup && !exitIntentShown) {
+                document.getElementById('exitPopup').classList.add('show');
+                exitIntentShown = true;
+            }
+        });
+
+        // Close popup function
+        function closePopup(popupId) {
+            document.getElementById(popupId).classList.remove('show');
+            if (popupId === 'entryPopup') {
+                sessionStorage.setItem('bordoglassEntryPopup', 'true');
+                hasSeenEntryPopup = true;
+            } else if (popupId === 'exitPopup') {
+                sessionStorage.setItem('bordoglassExitPopup', 'true');
+                hasSeenExitPopup = true;
+            }
+        }
+
+        // Close popup on overlay click
+        document.querySelectorAll('.email-popup-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closePopup(overlay.id);
+                }
+            });
+        });
+
+        // Handle Mailchimp form submissions
+        document.querySelectorAll('form[action*="list-manage.com"]').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                // Close popup after submission
+                setTimeout(() => {
+                    const popup = this.closest('.email-popup-overlay');
+                    if (popup) {
+                        closePopup(popup.id);
+                    }
+                }, 1000);
+            });
+        });
+
+        // Prevent form submission on Enter in text inputs (except textarea)
+        document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]').forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Add event listeners for dimension inputs
+        const widthInput = document.getElementById('width');
+        const heightInput = document.getElementById('height');
+
+        if (widthInput) {
+            widthInput.addEventListener('input', updatePreview);
+        }
+        if (heightInput) {
+            heightInput.addEventListener('input', updatePreview);
+        }
+
+        // Add event listener for color selection
+        const colorSelect = document.getElementById('ral-color');
+        if (colorSelect) {
+            colorSelect.addEventListener('change', updatePreview);
+        }
+    </script>
+</body>
+</html>

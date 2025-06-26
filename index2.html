@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BordoGlass - Premium Glass Door Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --maroon: #4c0d0a;
+            --grey: #808080;
+            --light-grey: #f5f5f5;
+            --dark-grey: #333;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            background-color: var(--white);
+            color: var(--dark-grey);
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 10px 0;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--maroon);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--maroon);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--maroon);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--maroon);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light-grey) 0%, var(--white) 50%, var(--light-grey) 100%);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--maroon);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--grey);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--maroon);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-grey);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Floating Elements with Gravity Effect */
+        .floating-element {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: var(--maroon);
+            opacity: 0.1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* USP Section */
+        .usp {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--maroon);
+            margin-bottom: 60px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .section-title.visible {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .usp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .usp-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--light-grey);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .usp-card.visible {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .usp-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .usp-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--maroon);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 36px;
+        }
+
+        .usp-card h3 {
+            color: var(--maroon);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--light-grey) 0%, var(--white) 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .about-text.visible {
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+
+        .about-image {
+            position: relative;
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        .about-image.visible {
+            animation: fadeInRight 0.8s ease forwards;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .product-card {
+            position: relative;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .product-card.visible {
+            animation: scaleIn 0.8s ease forwards;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: var(--white);
+            padding: 40px 30px 30px;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-info {
+            transform: translateY(0);
+        }
+
+        .product-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Expanded Product View */
+        .product-expanded {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-expanded.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .expanded-content {
+            background: var(--white);
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 20px;
+            position: relative;
+            transform: scale(0.8) rotateY(90deg);
+            transition: transform 0.5s ease;
+        }
+
+        .product-expanded.active .expanded-content {
+            transform: scale(1) rotateY(0deg);
+        }
+
+        .close-expanded {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--maroon);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .close-expanded:hover {
+            transform: rotate(90deg);
+        }
+
+        .expanded-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .expanded-details {
+            padding: 40px;
+        }
+
+        .expanded-details h2 {
+            color: var(--maroon);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .expanded-details p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .product-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .product-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-grey);
+        }
+
+        .product-features li:before {
+            content: "✓ ";
+            color: var(--maroon);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--dark-grey) 0%, var(--black) 100%);
+            color: var(--white);
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .contact-info.visible {
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+
+        .contact-form {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        .contact-form.visible {
+            animation: fadeInRight 0.8s ease forwards;
+        }
+
+        .contact-item {
+            margin-bottom: 30px;
+        }
+
+        .contact-item h3 {
+            color: var(--maroon);
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--light-grey);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .submit-btn {
+            background: var(--maroon);
+            color: var(--white);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--white);
+            color: var(--maroon);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 15px 20px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .usp-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">BordoGlass</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#usp">Why Choose Us</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floating-element" style="top: 20%; left: 10%;"></div>
+        <div class="floating-element" style="top: 60%; right: 15%;"></div>
+        <div class="floating-element" style="bottom: 20%; left: 30%;"></div>
+        <div class="hero-content">
+            <h1>Transforming Spaces with Glass</h1>
+            <p>Premium Glass Door Solutions for Modern Living</p>
+            <a href="#products" class="cta-button">Explore Our Collection</a>
+        </div>
+    </section>
+
+    <!-- USP Section -->
+    <section id="usp" class="usp">
+        <div class="container">
+            <h2 class="section-title">Why Choose BordoGlass</h2>
+            <div class="usp-grid">
+                <div class="usp-card">
+                    <div class="usp-icon">✨</div>
+                    <h3>Premium Quality</h3>
+                    <p>We partner with industry leaders like Exlabesa to deliver exceptional glass door systems that combine elegance with durability.</p>
+                </div>
+                <div class="usp-card">
+                    <div class="usp-icon">🏗️</div>
+                    <h3>Expert Installation</h3>
+                    <p>Our certified technicians ensure perfect installation with minimal disruption to your space and daily routine.</p>
+                </div>
+                <div class="usp-card">
+                    <div class="usp-icon">🎨</div>
+                    <h3>Custom Design</h3>
+                    <p>From Georgian-style to ultra-modern, we offer endless customization options to match your unique vision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About BordoGlass</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Crafting Beautiful Spaces Since 2010</h3>
+                    <p>At BordoGlass, we specialize in transforming ordinary spaces into extraordinary environments through our premium glass door solutions. With over a decade of experience, we've become the trusted choice for architects, designers, and homeowners seeking the perfect blend of functionality and aesthetics.</p>
+                    <p>Our partnership with leading manufacturers ensures that every product we offer meets the highest standards of quality, innovation, and design. We believe that glass doors aren't just functional elements – they're artistic statements that define the character of your space.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop" alt="Modern glass door installation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Premium Collection</h2>
+            <div class="products-grid">
+                <div class="product-card" data-product="1">
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=400&h=400&fit=crop" alt="Georgian Style Glass Door" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Georgian Style</h3>
+                        <p class="product-description">Classic elegance meets modern functionality</p>
+                    </div>
+                </div>
+                <div class="product-card" data-product="2">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=400&fit=crop" alt="Industrial Glass Partition" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Industrial Partition</h3>
+                        <p class="product-description">Bold statements for contemporary spaces</p>
+                    </div>
+                </div>
+                <div class="product-card" data-product="3">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=400&h=400&fit=crop" alt="Sliding Glass System" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Sliding Systems</h3>
+                        <p class="product-description">Space-saving solutions with seamless operation</p>
+                    </div>
+                </div>
+                <div class="product-card" data-product="4">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop" alt="Pivot Glass Door" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Pivot Doors</h3>
+                        <p class="product-description">Architectural masterpieces that make an entrance</p>
+                    </div>
+                </div>
+                <div class="product-card" data-product="5">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&h=400&fit=crop" alt="French Glass Doors" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">French Doors</h3>
+                        <p class="product-description">Timeless sophistication for any interior</p>
+                    </div>
+                </div>
+                <div class="product-card" data-product="6">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=400&fit=crop" alt="Corner Glass Configuration" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Corner Solutions</h3>
+                        <p class="product-description">Maximize light and create open floor plans</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expanded Product View -->
+    <div class="product-expanded" id="productExpanded">
+        <div class="expanded-content">
+            <button class="close-expanded" onclick="closeExpanded()">×</button>
+            <img src="" alt="" class="expanded-image" id="expandedImage">
+            <div class="expanded-details">
+                <h2 id="expandedTitle"></h2>
+                <p id="expandedDescription"></p>
+                <ul class="product-features" id="expandedFeatures"></ul>
+                <p id="expandedSpecs"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Visit Our Showroom</h3>
+                        <p>123 Design District<br>Manchester, UK M1 2AB</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Call Us</h3>
+                        <p>+44 123 456 7890</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p>info@bordoglass.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Showroom Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Project Type</label>
+                        <input type="text" id="project" name="project" placeholder="e.g., Residential, Commercial">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 BordoGlass. All rights reserved. | Premium Glass Door Solutions</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Gravity effect for floating elements
+        const floatingElements = document.querySelectorAll('.floating-element');
+        let mouseX = 0;
+        let mouseY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateFloatingElements() {
+            floatingElements.forEach((element, index) => {
+                const rect = element.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const deltaX = mouseX - centerX;
+                const deltaY = mouseY - centerY;
+                const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                
+                const maxDistance = 200;
+                const force = Math.max(0, 1 - distance / maxDistance);
+                
+                const moveX = (deltaX * force * 0.1) + Math.sin(Date.now() * 0.001 + index) * 20;
+                const moveY = (deltaY * force * 0.1) + Math.cos(Date.now() * 0.001 + index) * 20;
+                
+                element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+            
+            requestAnimationFrame(animateFloatingElements);
+        }
+
+        animateFloatingElements();
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.section-title, .usp-card, .about-text, .about-image, .product-card, .contact-info, .contact-form').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Product data
+        const productData = {
+            1: {
+                title: "Georgian Style Glass Doors",
+                description: "Our Georgian style glass doors combine the timeless elegance of traditional design with modern functionality. Perfect for creating sophisticated room dividers or statement entrances.",
+                features: [
+                    "Ultra-slim 25mm profiles for maximum light",
+                    "Available in hinged, pivoting, and sliding configurations",
+                    "Customizable grid patterns",
+                    "Premium powder-coated finishes",
+                    "Double-glazed options available"
+                ],
+                specs: "Maximum dimensions: 3150mm x 2500mm | Weight capacity: up to 200kg | Glass options: 6-12mm monolithic or 3+3 to 5+5 laminated"
+            },
+            2: {
+                title: "Industrial Glass Partitions",
+                description: "Make a bold statement with our industrial-style glass partitions. These sleek systems are perfect for open-plan offices, loft conversions, or creating defined spaces in modern homes.",
+                features: [
+                    "Robust 40mm structural profiles",
+                    "Floor-to-ceiling configurations",
+                    "Acoustic glass options for sound control",
+                    "Integrated blinds available",
+                    "Quick-fit assembly system"
+                ],
+                specs: "Maximum height: 3500mm | Acoustic rating: up to 42dB | Fire rating options available | Multiple finish options including black, grey, and custom RAL colors"
+            },
+            3: {
+                title: "Premium Sliding Systems",
+                description: "Our sliding glass door systems offer the perfect solution for spaces where swing clearance is limited. Smooth, quiet operation combined with stunning aesthetics.",
+                features: [
+                    "Soft-close mechanism included",
+                    "Single or double track options",
+                    "Concealed floor guides",
+                    "Anti-jump safety features",
+                    "Synchronized sliding for double doors"
+                ],
+                specs: "Maximum panel weight: 140kg | Track lengths up to 6m | Bottom-rolling or top-hung options | Stainless steel hardware included"
+            },
+            4: {
+                title: "Architectural Pivot Doors",
+                description: "Create a dramatic entrance with our pivot door systems. These architectural masterpieces rotate on a central axis, allowing for impressive door sizes and unique design possibilities.",
+                features: [
+                    "Central or offset pivot options",
+                    "Self-closing mechanism available",
+                    "Handles up to 200kg door weight",
+                    "Minimal frame design",
+                    "360-degree rotation possible"
+                ],
+                specs: "Maximum door size: 1400mm x 3000mm | Pivot placement customizable | Heavy-duty bearings | Wind-resistant design"
+            },
+            5: {
+                title: "Classic French Doors",
+                description: "Bring European sophistication to your space with our French door systems. Perfect for connecting indoor and outdoor spaces or creating elegant room transitions.",
+                features: [
+                    "Traditional or modern profiles available",
+                    "Multi-point locking systems",
+                    "Thermally broken options",
+                    "Decorative hardware choices",
+                    "Screen door compatibility"
+                ],
+                specs: "Standard sizes and custom options | Security glass available | Weather-sealed for exterior use | Handle heights customizable"
+            },
+            6: {
+                title: "Corner Glass Solutions",
+                description: "Maximize natural light and create seamless transitions between spaces with our innovative corner glass systems. Perfect for modern architecture and open-plan living.",
+                features: [
+                    "90-degree corner configurations",
+                    "Structural glass options",
+                    "Minimal visible framework",
+                    "Sliding or fixed combinations",
+                    "Engineered for stability"
+                ],
+                specs: "Custom angles available | Wind load tested | Thermal performance options | Compatible with our full range of door systems"
+            }
+        };
+
+        // Product card click handling
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const productId = this.getAttribute('data-product');
+                const product = productData[productId];
+                const productImage = this.querySelector('.product-image');
+                
+                // Update expanded view content
+                document.getElementById('expandedImage').src = productImage.src;
+                document.getElementById('expandedTitle').textContent = product.title;
+                document.getElementById('expandedDescription').textContent = product.description;
+                
+                // Update features list
+                const featuresList = document.getElementById('expandedFeatures');
+                featuresList.innerHTML = '';
+                product.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    featuresList.appendChild(li);
+                });
+                
+                document.getElementById('expandedSpecs').textContent = product.specs;
+                
+                // Show expanded view
+                document.getElementById('productExpanded').classList.add('active');
+            });
+        });
+
+        // Close expanded view
+        function closeExpanded() {
+            document.getElementById('productExpanded').classList.remove('active');
+        }
+
+        // Close on background click
+        document.getElementById('productExpanded').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeExpanded();
+            }
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We\'ll get back to you within 24 hours.');
+            this.reset();
+        });
+
+        // Parallax scrolling effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero, .about, .contact');
+            
+            parallaxElements.forEach(element => {
+                const speed = element.classList.contains('hero') ? 0.5 : 0.2;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

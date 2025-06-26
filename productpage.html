@@ -1,0 +1,2400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Types & Profiles - Bordoglass Products</title>
+    <meta name="description" content="Explore our comprehensive range of glass types, aluminum profiles, and hardware. From 4mm float glass to ultra-slim 25mm profiles.">
+    
+    <style>
+        /* Import main styles from landing page */
+        :root {
+            --primary-color: #8B1538;
+            --secondary-color: #2C2C2C;
+            --accent-color: #FFFFFF;
+            --text-color: #000000;
+            --light-grey: #F5F5F5;
+            --medium-grey: #888888;
+            --border-color: #E0E0E0;
+            --glass-effect: rgba(255, 255, 255, 0.1);
+            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --gradient-primary: linear-gradient(135deg, #8B1538 0%, #6D0E2A 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--accent-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation (same as main page) */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-logo h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            letter-spacing: 3px;
+            position: relative;
+        }
+
+        .nav-logo h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.8rem 0;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-quote-btn {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+        }
+
+        .nav-quote-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Product Hero Section */
+        .product-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--light-grey) 0%, #ffffff 100%);
+            text-align: center;
+        }
+
+        .product-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .product-hero .highlight {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .product-hero p {
+            font-size: 1.3rem;
+            color: var(--medium-grey);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Product Navigation Tabs */
+        .product-tabs {
+            background: var(--accent-color);
+            padding: 2rem 0;
+            position: sticky;
+            top: 70px;
+            z-index: 900;
+            box-shadow: var(--shadow-light);
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tab-button::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .tab-button.active,
+        .tab-button:hover {
+            color: var(--primary-color);
+        }
+
+        .tab-button.active::after {
+            width: 100%;
+        }
+
+        /* Product Sections */
+        .product-section {
+            padding: 80px 0;
+            display: none;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .product-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1;
+        }
+
+        .product-section > .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Individual section backgrounds */
+        #glass {
+            background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+        }
+
+        #profiles {
+            background-image: url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+        }
+
+        #hardware {
+            background-image: url('https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+        }
+
+        #mirror {
+            background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+        }
+
+        .product-section.active {
+            display: block;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--medium-grey);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Glass Types Grid */
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 60px;
+        }
+
+        .glass-card {
+            background: var(--accent-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .glass-image {
+            height: 250px;
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-visual {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Glass icon styles */
+        .glass-icon {
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+
+        /* Float Glass Icon */
+        .float-glass-icon {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            border: 3px solid var(--secondary-color);
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Tempered Glass Icon */
+        .tempered-glass-icon {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(200,200,200,0.9));
+            border: 3px solid var(--secondary-color);
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tempered-glass-icon::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: -20%;
+            width: 140%;
+            height: 3px;
+            background: var(--primary-color);
+            transform: rotate(45deg);
+        }
+
+        .tempered-glass-icon::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            left: -20%;
+            width: 140%;
+            height: 3px;
+            background: var(--primary-color);
+            transform: rotate(45deg);
+        }
+
+        /* Laminated Glass Icon */
+        .laminated-glass-icon {
+            position: relative;
+        }
+
+        .laminated-layer {
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            border: 2px solid var(--secondary-color);
+            border-radius: 3px;
+        }
+
+        .laminated-layer:nth-child(1) { top: 0; }
+        .laminated-layer:nth-child(2) { 
+            top: 35%; 
+            background: rgba(139, 21, 56, 0.3);
+            border-color: var(--primary-color);
+        }
+        .laminated-layer:nth-child(3) { bottom: 0; }
+
+        /* Double Glazed Icon */
+        .double-glazed-icon {
+            position: relative;
+            perspective: 200px;
+        }
+
+        .glazing-panel {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            border: 3px solid var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        .glazing-panel:first-child {
+            transform: translateZ(-20px);
+        }
+
+        .glazing-panel:last-child {
+            transform: translateZ(20px);
+            background: linear-gradient(to bottom, rgba(200,220,255,0.9), rgba(200,220,255,0.7));
+        }
+
+        /* Frosted Glass Icon */
+        .frosted-glass-icon {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,240,240,0.9));
+            border: 3px solid var(--secondary-color);
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .frosted-glass-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.3) 10px,
+                rgba(255,255,255,0.3) 20px
+            );
+        }
+
+        /* Profile Icons */
+        .profile-icon {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-cross {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .profile-bar {
+            position: absolute;
+            background: var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-bar.horizontal {
+            width: 100%;
+            height: var(--profile-width, 25px);
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .profile-bar.vertical {
+            width: var(--profile-width, 25px);
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        /* Hardware Icons */
+        .hinge-icon {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .hinge-plate {
+            position: absolute;
+            width: 30%;
+            height: 80%;
+            background: linear-gradient(to right, #c0c0c0, #808080);
+            border-radius: 5px;
+            top: 10%;
+        }
+
+        .hinge-plate.left { left: 10%; }
+        .hinge-plate.right { right: 10%; }
+
+        .hinge-pin {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hinge-pin:nth-child(3) { top: 20%; }
+        .hinge-pin:nth-child(4) { top: 50%; }
+        .hinge-pin:nth-child(5) { bottom: 20%; }
+
+        /* Handle Icon */
+        .handle-icon {
+            width: 30px;
+            height: 100px;
+            background: linear-gradient(to bottom, #c0c0c0, #808080);
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .handle-icon::before,
+        .handle-icon::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background: inherit;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+
+        .handle-icon::before { top: -10px; }
+        .handle-icon::after { bottom: -10px; }
+
+        /* Lock Icon */
+        .lock-icon {
+            width: 80px;
+            height: 100px;
+            position: relative;
+        }
+
+        .lock-body {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to bottom, #c0c0c0, #808080);
+            border-radius: 10px;
+        }
+
+        .lock-shackle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 50%;
+            border: 8px solid var(--secondary-color);
+            border-bottom: none;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .lock-keyhole {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 20px;
+            background: var(--secondary-color);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+
+        .glass-content {
+            padding: 2.5rem;
+        }
+
+        .glass-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .glass-badge {
+            display: inline-block;
+            background: var(--light-grey);
+            color: var(--secondary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .glass-description {
+            color: var(--medium-grey);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .glass-specs {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .spec-label {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .spec-value {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .glass-benefits {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .glass-benefits li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--secondary-color);
+        }
+
+        .glass-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .glass-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            font-size: 0.95rem;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Profile Comparison Table */
+        .profile-comparison {
+            background: var(--accent-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            margin: 60px 0;
+        }
+
+        .comparison-header {
+            background: var(--gradient-primary);
+            color: var(--accent-color);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .comparison-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background: var(--light-grey);
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(139, 21, 56, 0.02);
+        }
+
+        .profile-highlight {
+            background: rgba(139, 21, 56, 0.1);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Hardware Grid */
+        .hardware-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .hardware-item {
+            background: var(--accent-color);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .hardware-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-color);
+        }
+
+        .hardware-icon {
+            width: 80px;
+            height: 80px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hardware-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .hardware-item p {
+            color: var(--medium-grey);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Opening Types Visual */
+        .opening-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 60px 0;
+        }
+
+        .opening-type-card {
+            text-align: center;
+        }
+
+        .opening-visual {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .opening-visual:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Mirror icon styles */
+        .mirror-icon {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 50%, #e0e0e0 100%);
+            border: 3px solid var(--secondary-color);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .mirror-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.5) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .mirror-icon.one-way {
+            background: linear-gradient(to right, #e0e0e0 0%, #e0e0e0 50%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%);
+        }
+
+        .mirror-icon.tinted {
+            background: linear-gradient(135deg, #d4a574 0%, #8b6914 50%, #d4a574 100%);
+        }
+
+        .mirror-icon.antique {
+            background: linear-gradient(135deg, #b8a590 0%, #8e7860 25%, #b8a590 50%, #6e5840 75%, #b8a590 100%);
+        }
+
+        .mirror-icon.antique::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(
+                from 0deg at 50% 50%,
+                transparent 0deg,
+                rgba(0,0,0,0.1) 10deg,
+                transparent 20deg
+            );
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 30px;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(245, 245, 245, 0.95);
+            z-index: 1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: var(--medium-grey);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .glass-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .tab-container {
+                gap: 1rem;
+            }
+            
+            .tab-button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem 0.5rem;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--light-grey);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .bar {
+            width: 28px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 4px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+        .hinge-body{
+  position:absolute;
+  top:10%;
+  left:35%;
+  width:30%;
+  height:80%;
+  background:linear-gradient(to right,#c0c0c0,#808080);
+  border-radius:4px;
+}
+.hinge-knuckle{
+  position:absolute;
+  left:10%;
+  width:80%;
+  height:12%;
+  background:#2C2C2C;
+  border-radius:2px;
+}
+/* knuckle positions */
+.hinge-knuckle:nth-child(2){top:20%;}
+.hinge-knuckle:nth-child(3){top:45%;}
+.hinge-knuckle:nth-child(4){top:70%;}
+.hardware-icon{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:auto;   /* or a larger fixed height like 120 px */
+}
+
+   /* ─────────────────────────── Pivot / Floor-spring icon ────────────────────────── */
+.floor-spring-icon{
+    width:100px;            /* same visual footprint as the hinge icon */
+    height:60px;
+    position:relative;
+}
+
+.spring-housing{           /* outer box */
+    position:absolute;
+    inset:0;
+    border:3px solid var(--secondary-color);
+    border-radius:6px;
+    background:linear-gradient(to bottom,#d6d6d6 0%,#b3b3b3 100%);
+}
+
+.spring-cover{            /* coloured “lid” */
+    position:absolute;
+    inset:15% 10% 15% 10%;
+    background:var(--primary-color);
+    border-radius:4px;
+}
+
+.spring-pivot{            /* circular spindle in the middle */
+    position:absolute;
+    top:50%;left:50%;
+    width:14px;height:14px;
+    background:var(--secondary-color);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+}
+
+/* ─────────────────────────── Soft-close / Damper icon ─────────────────────────── */
+.damper-icon{
+    width:24px;            /* thin cylinder */
+    height:100px;
+    position:relative;
+}
+
+.damper-cylinder{         /* main tube */
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom,#c0c0c0 0%,#7d7d7d 100%);
+    border-radius:12px;
+}
+
+.damper-mount,
+.damper-piston{           /* top and bottom brackets */
+    position:absolute;
+    left:50%;
+    width:42px;
+    height:16px;
+    background:inherit;
+    transform:translateX(-50%);
+    border-radius:8px;
+}
+.damper-mount{  top:-8px; }
+.damper-piston{ bottom:-8px; }
+
+/* ────────────────── Make sure the icon doesn’t get clipped ───────────────────── */
+.hardware-icon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:120px;          /* enough room for the tallest icon */
+}
+/* Proportional heights for each laminated variant */
+.laminated-64  .laminated-layer:nth-child(1){height:47%}   /* 3 mm glass  */
+.laminated-64  .laminated-layer:nth-child(2){top:47%;height: 6%} /* 0.4 PVB */
+.laminated-64  .laminated-layer:nth-child(3){height:47%}   /* 3 mm glass  */
+
+.laminated-88  .laminated-layer:nth-child(1){height:45.5%} /* 4 mm glass  */
+.laminated-88  .laminated-layer:nth-child(2){top:45.5%;height: 9%} /* 0.8 PVB */
+.laminated-88  .laminated-layer:nth-child(3){height:45.5%} /* 4 mm glass  */
+
+.laminated-102 .laminated-layer:nth-child(1){height:46%}   /* 5 mm glass  */
+.laminated-102 .laminated-layer:nth-child(2){top:46%;height: 8%}  /* 0.76 PVB */
+.laminated-102 .laminated-layer:nth-child(3){height:46%}   /* 5 mm glass  */
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>BORDOGLASS</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#configurator" class="nav-link">Configure</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#delivery" class="nav-link">Delivery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#faq" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#configurator" class="nav-quote-btn">Get Quote</a>
+                </li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Product Hero -->
+    <section class="product-hero">
+        <div class="container">
+            <h1>Our <span class="highlight">Products</span></h1>
+            <p>Discover our comprehensive range of glass types, aluminum profiles, and hardware. Each product is engineered for superior performance and aesthetic excellence.</p>
+        </div>
+    </section>
+
+    <!-- Product Navigation Tabs -->
+    <div class="product-tabs">
+        <div class="container">
+            <div class="tab-container">
+                <button class="tab-button active" onclick="showProductSection('glass')">Glass Types</button>
+                <button class="tab-button" onclick="showProductSection('profiles')">Aluminum Profiles</button>
+                <button class="tab-button" onclick="showProductSection('hardware')">Hinges & Hardware</button>
+                <button class="tab-button" onclick="showProductSection('mirror')">Mirror Glass</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Glass Types Section -->
+    <section id="glass" class="product-section active">
+        <div class="container">
+            <div class="section-header">
+                <h2>Glass Types</h2>
+                <p>From standard float glass to advanced safety options, we offer the perfect glass for every application</p>
+            </div>
+
+            <div class="glass-grid">
+                <!-- Float Glass 4mm -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="glass-icon float-glass-icon"></div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Float Glass 4mm</h3>
+                        <span class="glass-badge">Standard</span>
+                        <p class="glass-description">
+                            Our standard 4mm float glass offers excellent clarity and light transmission. Perfect for internal partitions where safety glass isn't required.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Thickness</span>
+                                <span class="spec-value">4mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Light Transmission</span>
+                                <span class="spec-value">90%</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Delivery</span>
+                                <span class="spec-value">3 days</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Excellent optical clarity</li>
+                            <li>Cost-effective solution</li>
+                            <li>Easy to cut and process</li>
+                            <li>Suitable for frames up to 1.5m²</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Float Glass 6mm -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="glass-icon float-glass-icon" style="border-width: 4px;"></div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Float Glass 6mm</h3>
+                        <span class="glass-badge">Enhanced</span>
+                        <p class="glass-description">
+                            Thicker 6mm float glass provides additional strength and acoustic properties while maintaining excellent clarity.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Thickness</span>
+                                <span class="spec-value">6mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Sound Reduction</span>
+                                <span class="spec-value">29dB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Delivery</span>
+                                <span class="spec-value">3 days</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>50% stronger than 4mm</li>
+                            <li>Better sound insulation</li>
+                            <li>Suitable for larger panels</li>
+                            <li>Reduced vibration</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tempered Glass -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="glass-icon tempered-glass-icon"></div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Tempered Safety Glass</h3>
+                        <span class="glass-badge">Safety Certified</span>
+                        <p class="glass-description">
+                            Heat-treated safety glass that's 5x stronger than standard glass. Breaks into small, safe fragments if shattered.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Thickness</span>
+                                <span class="spec-value">6-12mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Strength</span>
+                                <span class="spec-value">5x Standard</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">BS EN Standard</span>
+                                <span class="spec-value">12150</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Safety certified to BS EN 12150</li>
+                            <li>Thermal resistance up to 250°C</li>
+                            <li>Required for doors & low-level glazing</li>
+                            <li>Scratch resistant surface</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laminated Glass 6.4mm -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="glass-icon laminated-glass-icon laminated-64">
+                                <div class="laminated-layer"></div>
+                                <div class="laminated-layer"></div>
+                                <div class="laminated-layer"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Laminated Glass 6.4mm</h3>
+                        <span class="glass-badge">Security</span>
+                        <p class="glass-description">
+                            Two layers of 3mm glass bonded with PVB interlayer. Holds together when broken for enhanced security.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Composition</span>
+                                <span class="spec-value">3+0.4+3mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">UV Protection</span>
+                                <span class="spec-value">99%</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Sound Reduction</span>
+                                <span class="spec-value">35dB</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Security rated P2A</li>
+                            <li>99% UV protection</li>
+                            <li>Superior sound insulation</li>
+                            <li>Holds together if broken</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laminated Glass 8.8mm -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                        <div class="glass-icon laminated-glass-icon laminated-88">
+                                <div class="laminated-layer" style="height: 35%;"></div>
+                                <div class="laminated-layer" style="height: 35%; top: 32.5%;"></div>
+                                <div class="laminated-layer" style="height: 35%; bottom: -5%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Laminated Glass 8.8mm</h3>
+                        <span class="glass-badge">High Security</span>
+                        <p class="glass-description">
+                            Enhanced security laminated glass with thicker layers for maximum protection and acoustic performance.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Composition</span>
+                                <span class="spec-value">4+0.8+4mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Security Rating</span>
+                                <span class="spec-value">P4A</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Sound Reduction</span>
+                                <span class="spec-value">38dB</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Enhanced security rating</li>
+                            <li>Excellent sound barrier</li>
+                            <li>Anti-vandal protection</li>
+                            <li>Ideal for ground floor</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laminated Glass 10.2mm -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+             <div class="glass-icon laminated-glass-icon laminated-102">
+                                <div class="laminated-layer" style="height: 40%;"></div>
+                                <div class="laminated-layer" style="height: 40%; top: 30%; background: rgba(139, 21, 56, 0.4);"></div>
+                                <div class="laminated-layer" style="height: 40%; bottom: -10%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Laminated Glass 10.2mm</h3>
+                        <span class="glass-badge">Maximum Security</span>
+                        <p class="glass-description">
+                            Our highest specification laminated glass for critical security applications and maximum acoustic control.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Composition</span>
+                                <span class="spec-value">5+0.76+5mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Security Rating</span>
+                                <span class="spec-value">P5A</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Sound Reduction</span>
+                                <span class="spec-value">42dB</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Maximum security rating</li>
+                            <li>Blast resistant option</li>
+                            <li>Superior acoustic barrier</li>
+                            <li>Commercial grade</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Double Glazed -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="glass-icon double-glazed-icon">
+                                <div class="glazing-panel"></div>
+                                <div class="glazing-panel"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Double Glazed Units</h3>
+                        <span class="glass-badge">Thermal</span>
+                        <p class="glass-description">
+                            Insulated glass units with argon gas fill for superior thermal and acoustic performance.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Total Thickness</span>
+                                <span class="spec-value">24-32mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">U-Value</span>
+                                <span class="spec-value">1.1 W/m²K</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Sound Reduction</span>
+                                <span class="spec-value">45dB</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Energy efficient</li>
+                            <li>Condensation resistant</li>
+                            <li>Noise reduction</li>
+                            <li>10 year warranty</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frosted Glass -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="glass-icon frosted-glass-icon"></div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Frosted Privacy Glass</h3>
+                        <span class="glass-badge">Privacy</span>
+                        <p class="glass-description">
+                            Acid-etched glass providing privacy while maintaining light transmission. Available in various patterns.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Thickness</span>
+                                <span class="spec-value">4-12mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Light Transmission</span>
+                                <span class="spec-value">85%</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Privacy Level</span>
+                                <span class="spec-value">Level 5</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Maintains natural light</li>
+                            <li>Easy to clean surface</li>
+                            <li>Custom patterns available</li>
+                            <li>Fingerprint resistant</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Request CTA -->
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h3>Need Something Special?</h3>
+                    <p>We can source and supply specialist glass types including curved, colored, smart glass, and more. Upload your specifications or contact our team.</p>
+                    <div class="cta-buttons">
+                        <a href="index.html#configurator" class="btn btn-primary">Upload Your Plans</a>
+                        <a href="index.html#contact" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aluminum Profiles Section -->
+    <section id="profiles" class="product-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Aluminum Profiles</h2>
+                <p>Market-leading slim profiles that are stronger, more elegant, and easier to install than conventional systems</p>
+            </div>
+
+            <!-- USP Banner -->
+            <div style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; color: var(--accent-color); padding: 3rem; border-radius: 20px; text-align: center; margin-bottom: 60px; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-primary); opacity: 0.9; border-radius: 20px;"></div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="font-size: 2.5rem; margin-bottom: 1rem;">Why Slimmer is Better</h3>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                        Our 25mm ultra-slim profiles are 40% thinner yet 20% stronger than standard 40mm systems. 
+                        Advanced engineering means more glass, more light, and less frame - without compromising strength.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Individual Profile Cards -->
+            <div class="glass-grid">
+                <!-- 25mm Ultra-Slim Profile -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="profile-icon">
+                                <div class="profile-cross">
+                                    <div class="profile-bar horizontal" style="--profile-width: 25px;"></div>
+                                    <div class="profile-bar vertical" style="--profile-width: 25px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>25mm Ultra-Slim Profile</h3>
+                        <span class="glass-badge">BEST SELLER</span>
+                        <p class="glass-description">
+                            Our signature profile. The thinnest on the market without compromising strength. Perfect for contemporary minimalist designs.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Profile Width</span>
+                                <span class="spec-value">25mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Material</span>
+                                <span class="spec-value">6063-T5 Aluminum</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Finish Options</span>
+                                <span class="spec-value">Any RAL</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>40% thinner than standard</li>
+                            <li>Quickfit installation system</li>
+                            <li>Hidden drainage channels</li>
+                            <li>Magnetic seals included</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Technical Drawing</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 30mm Standard Profile -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="profile-icon">
+                                <div class="profile-cross">
+                                    <div class="profile-bar horizontal" style="--profile-width: 30px;"></div>
+                                    <div class="profile-bar vertical" style="--profile-width: 30px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>30mm Standard Profile</h3>
+                        <span class="glass-badge">Balanced Performance</span>
+                        <p class="glass-description">
+                            The perfect balance between slim aesthetics and enhanced acoustic performance. Ideal for offices and commercial spaces.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Profile Width</span>
+                                <span class="spec-value">30mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Acoustic Rating</span>
+                                <span class="spec-value">42dB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Max Height</span>
+                                <span class="spec-value">3.5m</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Enhanced sound insulation</li>
+                            <li>Accommodates thicker glass</li>
+                            <li>Double seal system</li>
+                            <li>Concealed hinges option</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Technical Drawing</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 40mm Thermal Break Profile -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="profile-icon">
+                                <div class="profile-cross">
+                                    <div class="profile-bar horizontal" style="--profile-width: 40px; background: linear-gradient(to right, var(--secondary-color) 40%, var(--primary-color) 40%, var(--primary-color) 60%, var(--secondary-color) 60%);"></div>
+                                    <div class="profile-bar vertical" style="--profile-width: 40px; background: linear-gradient(to bottom, var(--secondary-color) 40%, var(--primary-color) 40%, var(--primary-color) 60%, var(--secondary-color) 60%);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>40mm Thermal Break Profile</h3>
+                        <span class="glass-badge">Energy Efficient</span>
+                        <p class="glass-description">
+                            Advanced thermal break technology for superior insulation. Perfect for external-facing partitions or energy-conscious projects.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Profile Width</span>
+                                <span class="spec-value">40mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">U-Value</span>
+                                <span class="spec-value">1.4 W/m²K</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Thermal Break</span>
+                                <span class="spec-value">24mm Polyamide</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>60% better thermal performance</li>
+                            <li>Condensation resistant</li>
+                            <li>Triple glazing compatible</li>
+                            <li>BREEAM compliant</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Technical Drawing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Installation Benefits -->
+            <div style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112d4e5190?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; padding: 60px 0; border-radius: 30px; margin: 60px 0; position: relative;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(245, 245, 245, 0.95); border-radius: 30px;"></div>
+                <div class="container" style="position: relative; z-index: 2;">
+                    <h3 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">Quickfit Installation System</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">⚡</div>
+                            <h4>60% Faster</h4>
+                            <p>Pre-assembled components reduce installation time</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">🔧</div>
+                            <h4>No Special Tools</h4>
+                            <p>Install with basic tools - no specialist equipment needed</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">📹</div>
+                            <h4>Video Guides</h4>
+                            <p>Step-by-step installation videos for every product</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">📞</div>
+                            <h4>Tech Support</h4>
+                            <p>Direct line to our technical team during installation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hardware Section -->
+    <section id="hardware" class="product-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hinges & Hardware</h2>
+                <p>Premium quality British-engineered hardware designed to complement our slim profile systems</p>
+            </div>
+
+            <div class="hardware-grid">
+                <!-- Concealed Hinges -->
+                <div class="hardware-item">
+                    <div class="hardware-icon">
+                        <div class="hinge-icon">
+                            <div class="hinge-body"></div>
+                            <div class="hinge-knuckle"></div>
+                            <div class="hinge-knuckle"></div>
+                            <div class="hinge-knuckle"></div>
+                        </div>
+                    </div>
+                    <h4>Concealed Hinges</h4>
+                    <p>3D adjustable concealed hinges</p>
+                    <ul class="glass-benefits">
+                        <li>180° opening</li>
+                        <li>80kg capacity</li>
+                        <li>Soft-close option</li>
+                    </ul>
+                    <a href="index.html#configurator" class="btn btn-primary">Select</a>
+                </div>
+
+                <!-- Pivot Hinges -->
+                <div class="hardware-item">
+                    <div class="hardware-icon">
+                        <div class="floor-spring-icon" style="transform: rotate(90deg);">
+                            <div class="spring-housing"></div>
+                            <div class="spring-cover"></div>
+                            <div class="spring-pivot"></div>
+                        </div>
+                    </div>
+                    <h4>Pivot Hinges</h4>
+                    <p>Floor and ceiling pivot systems</p>
+                    <ul class="glass-benefits">
+                        <li>150kg capacity</li>
+                        <li>Self-closing</li>
+                        <li>Hold-open function</li>
+                    </ul>
+                    <a href="index.html#configurator" class="btn btn-primary">Select</a>
+                </div>
+
+       
+                <!-- Locks -->
+                <div class="hardware-item">
+                    <div class="hardware-icon">
+                        <div class="lock-icon">
+                            <div class="lock-shackle"></div>
+                            <div class="lock-body">
+                                <div class="lock-cylinder">
+                                    <div class="lock-keyhole"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Security Locks</h4>
+                    <p>Multi-point locking systems</p>
+                    <ul class="glass-benefits">
+                        <li>3-point locking</li>
+                        <li>Euro cylinder</li>
+                        <li>Privacy options</li>
+                    </ul>
+                    <a href="index.html#configurator" class="btn btn-primary">Select</a>
+                </div>
+
+                <!-- Soft Close -->
+                <div class="hardware-item">
+                    <div class="hardware-icon">
+                        <div class="damper-icon">
+                            <div class="damper-cylinder">
+                                <div class="damper-mount"></div>
+                                <div class="damper-piston"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Soft-Close Systems</h4>
+                    <p>Hydraulic dampers for silent operation</p>
+                    <ul class="glass-benefits">
+                        <li>Adjustable speed</li>
+                        <li>50,000 cycles</li>
+                        <li>Retrofit compatible</li>
+                    </ul>
+                    <a href="index.html#configurator" class="btn btn-primary">Select</a>
+                </div>
+
+                <!-- Floor Springs -->
+                <div class="hardware-item">
+                    <div class="hardware-icon">
+                        <div class="floor-spring-icon">
+                            <div class="spring-housing">
+                                <div class="spring-cover"></div>
+                            </div>
+                            <div class="spring-pivot"></div>
+                        </div>
+                    </div>
+                    <h4>Floor Springs</h4>
+                    <p>Heavy-duty floor springs</p>
+                    <ul class="glass-benefits">
+                        <li>EN1154 certified</li>
+                        <li>Power adjustable</li>
+                        <li>Hold-open option</li>
+                    </ul>
+                    <a href="index.html#configurator" class="btn btn-primary">Select</a>
+                </div><a href="index.html#configurator" class="btn btn-primary">Select</a>
+                </div>
+
+                <!-- Handles -->
+                <div class="hardware-item">
+                    <div class="hardware-icon" style="background-image: url('https://images.unsplash.com/photo-1626957540346-0802fb2307e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <h4>Designer Handles</h4>
+                    <p>Premium handles in various finishes to match your aesthetic</p>
+                    <ul class="glass-benefits">
+                        <li>Brushed steel</li>
+                        <li>Matt black</li>
+                        <li>Brass finishes</li>
+                    </ul>
+                    <a href="index.html#configurator" class="btn btn-primary">Select</a>
+                </div>
+
+                <!-- Locks -->
+                <div class="hardware-item">
+                    <div class="hardware-icon" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <h4>Security Locks</h4>
+                    <p>Multi-point locking systems for enhanced security</p>
+                    <ul class="glass-benefits">
+                        <li>3-point locking</li>
+                        <li>Euro cylinder</li>
+                        <li>Privacy options</li>
+                    </ul>
+                    <a href="index.html#configurator" class="btn btn-primary">Select</a>
+                </div>
+
+                <!-- Soft Close -->
+                <div class="hardware-item">
+                    <div class="hardware-icon" style="background-image: url('https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <h4>Soft-Close Systems</h4>
+                    <p>Hydraulic dampers for silent, smooth operation</p>
+                    <ul class="glass-benefits">
+                        <li>Adjustable speed</li>
+                        <li>50,000 cycle tested</li>
+                        <li>Retrofit compatible</li>
+                    </ul>
+                    <a href="index.html#configurator" class="btn btn-primary">Select</a>
+                </div>
+
+                <!-- Floor Springs -->
+                <div class="hardware-item">
+                    <div class="hardware-icon" style="background-image: url('https://images.unsplash.com/photo-1609839897442-c9350862479b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <h4>Floor Springs</h4>
+                    <p>Heavy-duty floor springs for commercial applications</p>
+                    <ul class="glass-benefits">
+                        <li>EN1154 certified</li>
+                        <li>Power adjustable</li>
+                        <li>Hold-open option</li>
+                    </ul>
+                    <a href="index.html#configurator" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mirror Glass Section -->
+    <section id="mirror" class="product-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mirror & Reflective Glass</h2>
+                <p>Create stunning visual effects with our range of mirror and one-way glass options</p>
+            </div>
+
+            <div class="glass-grid">
+                <!-- Standard Mirror -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="mirror-icon">
+                                <div class="mirror-surface">
+                                    <div class="mirror-reflection"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Standard Mirror</h3>
+                        <span class="glass-badge">Classic</span>
+                        <p class="glass-description">
+                            High-quality silver-backed mirror glass with excellent reflectivity.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Thickness</span>
+                                <span class="spec-value">4-6mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Reflectivity</span>
+                                <span class="spec-value">95%</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Backing</span>
+                                <span class="spec-value">Silver/Copper</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Safety backing available</li>
+                            <li>Custom shapes</li>
+                            <li>Anti-corrosion coating</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- One-Way Mirror -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="mirror-icon one-way">
+                                <div class="mirror-surface">
+                                    <div class="mirror-reflection"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>One-Way Mirror</h3>
+                        <span class="glass-badge">Privacy</span>
+                        <p class="glass-description">
+                            Privacy glass - mirror from one side, transparent from the other.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Light Ratio</span>
+                                <span class="spec-value">70/30</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Thickness</span>
+                                <span class="spec-value">6mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Privacy Level</span>
+                                <span class="spec-value">High</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Observation rooms</li>
+                            <li>Security monitoring</li>
+                            <li>Light dependent</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tinted Mirror -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="mirror-icon tinted">
+                                <div class="mirror-surface">
+                                    <div class="mirror-reflection"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Tinted Mirror</h3>
+                        <span class="glass-badge">Decorative</span>
+                        <p class="glass-description">
+                            Bronze, grey, and green tinted decorative mirror options.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Colors</span>
+                                <span class="spec-value">3 Options</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">UV Protection</span>
+                                <span class="spec-value">85%</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Thickness</span>
+                                <span class="spec-value">4-6mm</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>UV resistant coating</li>
+                            <li>Custom colors</li>
+                            <li>Fade resistant</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Antique Mirror -->
+                <div class="glass-card">
+                    <div class="glass-image">
+                        <div class="glass-visual">
+                            <div class="mirror-icon antique">
+                                <div class="mirror-surface">
+                                    <div class="mirror-reflection"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-content">
+                        <h3>Antique Mirror</h3>
+                        <span class="glass-badge">Vintage</span>
+                        <p class="glass-description">
+                            Hand-distressed finishes for authentic vintage aesthetics.
+                        </p>
+                        <div class="glass-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Finish</span>
+                                <span class="spec-value">Hand-distressed</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Patterns</span>
+                                <span class="spec-value">Various</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Custom</span>
+                                <span class="spec-value">Available</span>
+                            </div>
+                        </div>
+                        <ul class="glass-benefits">
+                            <li>Unique patterns</li>
+                            <li>Bespoke aging</li>
+                            <li>Authentic look</li>
+                        </ul>
+                        <div class="glass-cta">
+                            <a href="index.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Datasheet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opening Types Section -->
+    <section id="opening" class="product-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Door Opening Types</h2>
+                <p>Choose the perfect opening mechanism for your space and requirements</p>
+            </div>
+
+            <div class="opening-types">
+                <!-- Hinged Left -->
+                <div class="opening-type-card">
+                    <div class="opening-visual" style="background-image: url('https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                    <h3>Left Hinged</h3>
+                    <p>Traditional left-hand opening. Hinges on the left, handle on the right.</p>
+                    <ul class="glass-benefits">
+                        <li>Most common type</li>
+                        <li>Full 180° opening</li>
+                        <li>Easy to install</li>
+                    </ul>
+                </div>
+
+                <!-- Hinged Right -->
+                <div class="opening-type-card">
+                    <div class="opening-visual" style="background-image: url('https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                    <h3>Right Hinged</h3>
+                    <p>Traditional right-hand opening. Hinges on the right, handle on the left.</p>
+                    <ul class="glass-benefits">
+                        <li>Mirror of left hinged</li>
+                        <li>Full 180° opening</li>
+                        <li>Standard hardware</li>
+                    </ul>
+                </div>
+
+                <!-- Sliding -->
+                <div class="opening-type-card">
+                    <div class="opening-visual" style="background-image: url('https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                    <h3>Sliding</h3>
+                    <p>Space-saving sliding mechanism. Perfect for tight spaces.</p>
+                    <ul class="glass-benefits">
+                        <li>No swing space needed</li>
+                        <li>Soft-close option</li>
+                        <li>Single or double track</li>
+                    </ul>
+                </div>
+
+                <!-- Pivot -->
+                <div class="opening-type-card">
+                    <div class="opening-visual" style="background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                    <h3>Pivot</h3>
+                    <p>Central axis rotation for dramatic architectural effect.</p>
+                    <ul class="glass-benefits">
+                        <li>Contemporary look</li>
+                        <li>Handles heavy doors</li>
+                        <li>360° rotation possible</li>
+                    </ul>
+                </div>
+
+                <!-- Bi-fold -->
+                <div class="opening-type-card">
+                    <div class="opening-visual" style="background-image: url('https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                    <h3>Bi-fold</h3>
+                    <p>Folding panels that stack to one or both sides.</p>
+                    <ul class="glass-benefits">
+                        <li>Maximum opening</li>
+                        <li>2-6 panel options</li>
+                        <li>Indoor/outdoor flow</li>
+                    </ul>
+                </div>
+
+                <!-- French Doors -->
+                <div class="opening-type-card">
+                    <div class="opening-visual" style="background-image: url('https://images.unsplash.com/photo-1519947486511-46149fa0a254?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                    <h3>French Doors</h3>
+                    <p>Double doors that meet in the middle. Classic elegance.</p>
+                    <ul class="glass-benefits">
+                        <li>Wide opening</li>
+                        <li>Symmetrical design</li>
+                        <li>Rebated meeting stile</li>
+                    </ul>
+                </div>    <p>Double doors that meet in the middle. Classic elegance.</p>
+                    <ul class="glass-benefits">
+                        <li>Wide opening</li>
+                        <li>Symmetrical design</li>
+                        <li>Rebated meeting stile</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Download Brochure CTA -->
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h3>Need More Details?</h3>
+                    <p>Download our comprehensive brochure with all opening types, technical drawings, and installation guides</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary" onclick="downloadBrochure()">📥 Download Brochure</a>
+                        <a href="index.html#contact" class="btn btn-secondary">Request Samples</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- External Solutions Teaser -->
+    <section style="padding: 80px 0; background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; background-attachment: fixed; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(245, 245, 245, 0.95);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-header">
+                <h2>Commercial & External Solutions</h2>
+                <p>We also provide a comprehensive range of commercial and external products</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="text-align: center; padding: 2rem; background: var(--accent-color); border-radius: 20px; box-shadow: var(--shadow-light);">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏢</div>
+                    <h3>Commercial Shutters</h3>
+                    <p>Security shutters and grilles for retail and commercial properties</p>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: var(--accent-color); border-radius: 20px; box-shadow: var(--shadow-light);">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🪟</div>
+                    <h3>External Windows</h3>
+                    <p>High-performance aluminum windows with thermal break technology</p>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: var(--accent-color); border-radius: 20px; box-shadow: var(--shadow-light);">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🚪</div>
+                    <h3>External Doors</h3>
+                    <p>Secure entrance doors with multi-point locking systems</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">These specialist products require consultation</p>
+                <a href="index.html#contact" class="btn btn-primary">Discuss Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>BORDOGLASS</h3>
+                    <p>Market-leading slim profile internal doors and partitions. Minimal. Strong. Beautiful.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#configurator">Configure</a>
+                    <a href="#">Products</a>
+                    <a href="index.html#delivery">Delivery Info</a>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="#" onclick="downloadBrochure()">Download Brochure</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <a href="#glass">Glass Types</a>
+                    <a href="#profiles">Aluminum Profiles</a>
+                    <a href="#hardware">Hinges & Hardware</a>
+                    <a href="#mirror">Mirror Glass</a>
+                    <a href="index.html#contact">External Solutions</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bordoglass Ltd. All rights reserved. Made with ❤️ in Britain | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Product Section Tabs
+        function showProductSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.product-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-button').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Scroll to top of tabs
+            document.querySelector('.product-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Download Brochure
+        function downloadBrochure() {
+            alert('Brochure download started! Check your downloads folder.');
+            // In real implementation, this would trigger actual PDF download
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 150; // Account for fixed headers
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Enhanced navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Add hover effects to door animations
+        document.querySelectorAll('.opening-type-card').forEach(card => {
+            const animation = card.querySelector('.door-animation');
+            
+            card.addEventListener('mouseenter', () => {
+                if (animation.classList.contains('sliding')) {
+                    animation.style.transform = 'translateX(40px)';
+                } else if (animation.classList.contains('pivot')) {
+                    animation.style.transform = 'rotateY(25deg)';
+                } else if (animation.style.transformOrigin === 'right center') {
+                    animation.style.transform = 'rotateY(-25deg)';
+                } else {
+                    animation.style.transform = 'rotateY(25deg)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                animation.style.transform = 'none';
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.glass-card, .hardware-item, .opening-type-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if there's a hash in the URL to show specific section
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                // Find the corresponding tab button
+                const tabButton = document.querySelector(`.tab-button[onclick*="${hash}"]`);
+                if (tabButton) {
+                    tabButton.click();
+                }
+            }
+        });
+
+        // Profile comparison table hover effect
+        const comparisonRows = document.querySelectorAll('.comparison-table tbody tr');
+        comparisonRows.forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = 'rgba(139, 21, 56, 0.02)';
+            });
+            row.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body>
+</html>
