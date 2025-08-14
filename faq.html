@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Bordoglass</title>
+    <meta name="description" content="Find answers to common questions about our ultra-slim glass systems, delivery, installation and more.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a1a;
+            --accent: #8B1538;
+            --gray: #666;
+            --light-gray: #f8f8f8;
+            --white: #ffffff;
+            --success: #22c55e;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--primary);
+            background-color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light-gray);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Search Bar */
+        .search-section {
+            background: var(--white);
+            padding: 3rem 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            font-size: 1.1rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+        
+        /* FAQ Categories */
+        .categories-section {
+            padding: 4rem 2rem 2rem;
+            background: var(--light-gray);
+        }
+        
+        .categories-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .category-btn {
+            padding: 10px 25px;
+            background: var(--white);
+            border: 2px solid var(--white);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--primary);
+            border-radius: 50px;
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        /* FAQ Content */
+        .faq-section {
+            padding: 4rem 2rem 6rem;
+            background: var(--light-gray);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: var(--light-gray);
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 2rem 1.5rem;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            line-height: 1.8;
+            color: var(--gray);
+        }
+        
+        .faq-answer ul {
+            margin-top: 1rem;
+            margin-left: 1.5rem;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+        
+        /* Still Have Questions */
+        .questions-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+            text-align: center;
+        }
+        
+        .questions-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .questions-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .questions-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            padding: 2rem;
+            background: var(--light-gray);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column a {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .search-section {
+                position: relative;
+                top: 0;
+            }
+            
+            .categories-container {
+                gap: 0.5rem;
+            }
+            
+            .category-btn {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .contact-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">BORDOGLASS</a>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="delivery.html" class="nav-link">Delivery</a></li>
+                <li><a href="faq.html" class="nav-link active">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="home.html#configurator" class="nav-cta">Configure Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>Everything you need to know about our ultra-slim glass systems</p>
+    </header>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search for answers..." id="faqSearch">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories-section">
+        <div class="categories-container">
+            <button class="category-btn active" onclick="filterFAQ('all')">All Questions</button>
+            <button class="category-btn" onclick="filterFAQ('products')">Products</button>
+            <button class="category-btn" onclick="filterFAQ('ordering')">Ordering</button>
+            <button class="category-btn" onclick="filterFAQ('delivery')">Delivery</button>
+            <button class="category-btn" onclick="filterFAQ('installation')">Installation</button>
+            <button class="category-btn" onclick="filterFAQ('warranty')">Warranty</button>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <!-- Products Category -->
+            <div class="faq-category" data-category="products">
+                <h2 class="category-title">Products</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What makes your 25mm profile stronger than standard 40mm profiles?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our 25mm profiles use advanced aluminum extrusion technology with internal strengthening ribs and reinforced corner joints. The precision engineering and high-grade aluminum alloy provide superior structural integrity while maintaining an ultra-minimal aesthetic. This allows for larger glass panels without compromising strength or safety.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What glass thicknesses are available?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer a comprehensive range of glass thicknesses:</p>
+                        <ul>
+                            <li>Float glass: 4mm, 6mm</li>
+                            <li>Tempered glass: 6mm, 8mm, 10mm, 12mm</li>
+                            <li>Laminated glass: 6.4mm, 8.8mm, 10.2mm</li>
+                            <li>Double glazed units: 24mm, 28mm, 32mm total thickness</li>
+                        </ul>
+                        <p>All glass conforms to BS EN safety standards.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What's the difference between your profile types?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>25mm Slim:</strong> Our signature ultra-minimal profile, perfect for contemporary interiors where maximum transparency is desired.</p>
+                        <p><strong>30mm Standard:</strong> Balanced design with enhanced acoustic properties, ideal for office environments.</p>
+                        <p><strong>40mm Thermal:</strong> Features thermal break technology for improved insulation, perfect for external-facing partitions or energy-conscious projects.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I get custom RAL colors?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We can powder coat our profiles in any RAL color. Standard colors (RAL 9005 Jet Black, RAL 7016 Anthracite Grey, RAL 9016 Pure White) are available with standard lead times. Custom RAL colors add 3-5 days to your delivery time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ordering Category -->
+            <div class="faq-category" data-category="ordering">
+                <h2 class="category-title">Ordering Process</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How does the configurator work?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our online configurator guides you through 4 simple steps:</p>
+                        <ul>
+                            <li>Choose your door/partition type</li>
+                            <li>Select glass type and thickness</li>
+                            <li>Enter your dimensions</li>
+                            <li>Provide contact details for your quote</li>
+                        </ul>
+                        <p>You'll see a real-time preview of your selection and receive a detailed quote via email within 24 hours.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I order custom sizes?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We specialize in made-to-measure solutions. Our standard maximum sizes are:</p>
+                        <ul>
+                            <li>Hinged doors: Up to 1200 x 2400mm</li>
+                            <li>Sliding doors: Up to 2000 x 2400mm</li>
+                            <li>Pivot doors: Up to 1500 x 2800mm</li>
+                            <li>Fixed partitions: Up to 3000 x 4000mm</li>
+                        </ul>
+                        <p>For larger sizes, please contact us for a custom solution.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do you offer trade accounts?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we welcome trade customers! Trade account benefits include:</p>
+                        <ul>
+                            <li>Volume discounts starting from 5 units</li>
+                            <li>Priority processing and delivery</li>
+                            <li>Dedicated account management</li>
+                            <li>30-day payment terms (subject to credit approval)</li>
+                            <li>Access to our trade portal with technical resources</li>
+                        </ul>
+                        <p>Apply for a trade account through our contact form or call our trade team.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delivery Category -->
+            <div class="faq-category" data-category="delivery">
+                <h2 class="category-title">Delivery Information</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What are your delivery times?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Standard rectangular glass:</strong> 3 working days if ordered before 12pm</p>
+                        <p><strong>Custom shapes (circles, ovals):</strong> 5-10 working days</p>
+                        <p><strong>Complete door/partition systems:</strong> 7-14 working days</p>
+                        <p><strong>Custom RAL colors:</strong> Add 3-5 days to standard times</p>
+                        <p>All times are subject to stock availability. Express next-day delivery available for Zone 1 locations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do you deliver nationwide?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we deliver throughout the UK including:</p>
+                        <ul>
+                            <li>England and Wales: 2-3 days standard delivery</li>
+                            <li>Scotland: 3-5 days standard delivery</li>
+                            <li>Northern Ireland: 3-5 days standard delivery</li>
+                            <li>Channel Islands & Isle of Man: Please contact for quote</li>
+                        </ul>
+                        <p>Free delivery on orders over £2500 to Zone 1 (Central England).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How is glass packaged for delivery?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All glass is professionally packaged to ensure safe delivery:</p>
+                        <ul>
+                            <li>Custom wooden crates for large panels</li>
+                            <li>Edge protection and corner guards</li>
+                            <li>Non-slip interlayers between glass sheets</li>
+                            <li>Clearly marked fragile labels</li>
+                            <li>Moisture-resistant packaging</li>
+                        </ul>
+                        <p>Delivery requires signature and inspection before acceptance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Installation Category -->
+            <div class="faq-category" data-category="installation">
+                <h2 class="category-title">Installation</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do you offer installation services?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer professional installation through our network of certified installers across the UK. Installation can be added during the configuration process. Benefits include:</p>
+                        <ul>
+                            <li>Experienced, insured installers</li>
+                            <li>Guaranteed workmanship</li>
+                            <li>Site survey included</li>
+                            <li>All fixings and sealants provided</li>
+                            <li>Clean and tidy service</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I install the systems myself?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Our Quickfit system is designed for easy DIY installation. We provide:</p>
+                        <ul>
+                            <li>Comprehensive installation guides</li>
+                            <li>Video tutorials</li>
+                            <li>Technical support hotline</li>
+                            <li>All necessary fixings included</li>
+                            <li>Pre-drilled profiles for easy assembly</li>
+                        </ul>
+                        <p>Basic tools required: drill, level, screwdriver, and measuring tape.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How long does installation take?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Installation times vary by project size:</p>
+                        <ul>
+                            <li>Single door: 2-3 hours</li>
+                            <li>Sliding door system: 3-4 hours</li>
+                            <li>Small partition (up to 3m): 4-6 hours</li>
+                            <li>Large partition system: 1-2 days</li>
+                        </ul>
+                        <p>Professional installers work efficiently to minimize disruption.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Warranty Category -->
+            <div class="faq-category" data-category="warranty">
+                <h2 class="category-title">Warranty & Support</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What warranty do you offer?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We stand behind our products with comprehensive warranties:</p>
+                        <ul>
+                            <li>Aluminum profiles: 10 years</li>
+                            <li>Glass (manufacturing defects): 5 years</li>
+                            <li>Hardware (hinges, handles, locks): 5 years</li>
+                            <li>Powder coating finish: 5 years</li>
+                            <li>Installation workmanship: 2 years</li>
+                        </ul>
+                        <p>All warranties cover manufacturing defects under normal use conditions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How do I maintain my glass system?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Minimal maintenance keeps your system looking perfect:</p>
+                        <ul>
+                            <li>Clean glass with standard glass cleaner monthly</li>
+                            <li>Wipe aluminum frames with damp cloth</li>
+                            <li>Lubricate hinges annually with silicone spray</li>
+                            <li>Check and adjust soft-close mechanisms if needed</li>
+                            <li>Avoid abrasive cleaners on all surfaces</li>
+                        </ul>
+                        <p>Download our maintenance guide for detailed instructions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What if my glass gets damaged?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer fast replacement service for damaged glass:</p>
+                        <ul>
+                            <li>24-hour emergency response available</li>
+                            <li>Replacement glass from 3 days</li>
+                            <li>Insurance claim assistance</li>
+                            <li>Temporary boarding service</li>
+                            <li>Competitive replacement pricing</li>
+                        </ul>
+                        <p>Contact our support team immediately for assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Still Have Questions -->
+    <section class="questions-section">
+        <div class="questions-content">
+            <h2>Still Have Questions?</h2>
+            <p>Our team is here to help with any questions about our products or services</p>
+            
+            <div class="contact-options">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p>Speak to an expert</p>
+                    <a href="tel:01217929167">0121 792 9167</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email Us</h3>
+                    <p>Get a detailed response</p>
+                    <a href="mailto:info@bordoglass.co.uk">info@bordoglass.co.uk</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>Live Chat</h3>
+                    <p>Instant assistance</p>
+                    <a href="#" onclick="startChat()">Start Chat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>BORDOGLASS</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">
+                    The UK's leading supplier of ultra-slim glass partition systems. 
+                    Minimal. Strong. Beautiful.
+                </p>
+                <p style="opacity: 0.6;">Made with pride in Britain 🇬🇧</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="home.html">Home</a>
+                <a href="products.html">All Products</a>
+                <a href="delivery.html">Delivery Info</a>
+                <a href="faq.html">FAQs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h3>Products</h3>
+                <a href="products.html#glass">Glass Types</a>
+                <a href="products.html#profiles">Profiles</a>
+                <a href="products.html#hardware">Hardware</a>
+                <a href="products.html#systems">Complete Systems</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <a href="tel:01217929167">0121 792 9167</a>
+                <a href="mailto:info@bordoglass.co.uk">info@bordoglass.co.uk</a>
+                <p style="margin-top: 1rem; opacity: 0.8;">
+                    Ogden Road, Doncaster<br>
+                    DN2 4SG, United Kingdom
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bordoglass Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle FAQ
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+        
+        // Filter FAQs by category
+        function filterFAQ(category) {
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide categories
+            const categories = document.querySelectorAll('.faq-category');
+            categories.forEach(cat => {
+                if (category === 'all' || cat.dataset.category === category) {
+                    cat.style.display = 'block';
+                } else {
+                    cat.style.display = 'none';
+                }
+            });
+        }
+        
+        // Search functionality
+        const searchInput = document.getElementById('faqSearch');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show all categories when searching
+            if (searchTerm.length > 0) {
+                document.querySelectorAll('.faq-category').forEach(cat => {
+                    cat.style.display = 'block';
+                });
+            }
+        });
+        
+        // Start chat function
+        function startChat() {
+            alert('Live chat would open here. Available Mon-Fri 9am-5pm.');
+        }
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 5px 30px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
