@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Bordoglass Ultra-Slim Glass Systems</title>
+    <meta name="description" content="Explore our range of ultra-slim glass doors, partitions, profiles and hardware. 25mm profiles, British made quality.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a1a;
+            --accent: #8B1538;
+            --gray: #666;
+            --light-gray: #f8f8f8;
+            --white: #ffffff;
+            --success: #22c55e;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--primary);
+            background-color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light-gray);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Product Categories */
+        .categories-nav {
+            background: var(--white);
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+        
+        .categories-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+        
+        .category-btn {
+            padding: 10px 25px;
+            background: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+            color: var(--primary);
+            display: inline-block;
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Product Sections */
+        .product-section {
+            padding: 6rem 2rem;
+            scroll-margin-top: 150px;
+        }
+        
+        .product-section:nth-child(even) {
+            background: var(--light-gray);
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 250px;
+            background: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: var(--white);
+            padding: 5px 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .product-info {
+            padding: 2rem;
+        }
+        
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-info p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        .product-specs {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-specs li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .product-specs li:last-child {
+            border-bottom: none;
+        }
+        
+        .product-action {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Feature Comparison */
+        .comparison-table {
+            overflow-x: auto;
+            margin-top: 3rem;
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .comparison-table th {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: var(--light-gray);
+        }
+        
+        .check {
+            color: var(--success);
+            font-size: 1.2rem;
+        }
+        
+        .cross {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        /* Download Section */
+        .download-section {
+            background: var(--accent);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .download-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .download-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .download-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 15px 40px;
+            background: var(--white);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column a {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .categories-container {
+                gap: 1rem;
+            }
+            
+            .category-btn {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">BORDOGLASS</a>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link active">Products</a></li>
+                <li><a href="delivery.html" class="nav-link">Delivery</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="home.html#configurator" class="nav-cta">Configure Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Our Product Range</h1>
+        <p>Discover the UK's slimmest profile glass systems. Every product engineered for perfection.</p>
+    </header>
+
+    <!-- Category Navigation -->
+    <div class="categories-nav">
+        <div class="categories-container">
+            <a href="#glass-types" class="category-btn active">Glass Types</a>
+            <a href="#profiles" class="category-btn">Aluminium Profiles</a>
+            <a href="#door-systems" class="category-btn">Door Systems</a>
+            <a href="#partitions" class="category-btn">Partitions</a>
+            <a href="#hardware" class="category-btn">Hardware</a>
+            <a href="#accessories" class="category-btn">Accessories</a>
+        </div>
+    </div>
+
+    <!-- Glass Types Section -->
+    <section id="glass-types" class="product-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Glass Types</h2>
+                <p>From clear float to specialist safety glass, we offer every type for your project</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800" alt="Clear Glass">
+                        <span class="product-badge">Most Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Clear Float Glass</h3>
+                        <p>Maximum transparency and light transmission</p>
+                        <ul class="product-specs">
+                            <li><span>Thickness</span><span>4mm - 12mm</span></li>
+                            <li><span>Light Trans.</span><span>90%</span></li>
+                            <li><span>Lead Time</span><span>3 days</span></li>
+                        </ul>
+                        <div class="product-action">
+                            <a href="home.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Specs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800" alt="Tempered Glass">
+                        <span class="product-badge">Safety Rated</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tempered Safety Glass</h3>
+                        <p>5x stronger than standard glass, shatterproof</p>
+                        <ul class="product-specs">
+                            <li><span>Thickness</span><span>6mm - 12mm</span></li>
+                            <li><span>Strength</span><span>5x Standard</span></li>
+                            <li><span>Lead Time</span><span>5 days</span></li>
+                        </ul>
+                        <div class="product-action">
+                            <a href="home.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Specs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Laminated Glass">
+                    </div>
+                    <div class="product-info">
+                        <h3>Laminated Glass</h3>
+                        <p>Security glass with PVB interlayer</p>
+                        <ul class="product-specs">
+                            <li><span>Thickness</span><span>6.4mm - 10.2mm</span></li>
+                            <li><span>Security</span><span>P2A Rated</span></li>
+                            <li><span>Lead Time</span><span>7 days</span></li>
+                        </ul>
+                        <div class="product-action">
+                            <a href="home.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Specs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800" alt="Frosted Glass">
+                    </div>
+                    <div class="product-info">
+                        <h3>Frosted Privacy Glass</h3>
+                        <p>Elegant privacy solution with light diffusion</p>
+                        <ul class="product-specs">
+                            <li><span>Thickness</span><span>4mm - 10mm</span></li>
+                            <li><span>Privacy</span><span>Level 5</span></li>
+                            <li><span>Lead Time</span><span>5 days</span></li>
+                        </ul>
+                        <div class="product-action">
+                            <a href="home.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Specs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800" alt="Tinted Glass">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tinted Glass</h3>
+                        <p>Solar control with aesthetic appeal</p>
+                        <ul class="product-specs">
+                            <li><span>Options</span><span>Grey, Bronze, Blue</span></li>
+                            <li><span>Solar Control</span><span>Up to 70%</span></li>
+                            <li><span>Lead Time</span><span>7 days</span></li>
+                        </ul>
+                        <div class="product-action">
+                            <a href="home.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Specs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800" alt="Mirror Glass">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mirror Glass</h3>
+                        <p>One-way vision and reflective options</p>
+                        <ul class="product-specs">
+                            <li><span>Types</span><span>Silver, Grey, Bronze</span></li>
+                            <li><span>Reflection</span><span>80-90%</span></li>
+                            <li><span>Lead Time</span><span>10 days</span></li>
+                        </ul>
+                        <div class="product-action">
+                            <a href="home.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Specs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profiles Section -->
+    <section id="profiles" class="product-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Aluminium Profiles</h2>
+                <p>The UK's slimmest profiles - stronger, lighter, more beautiful</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">25mm Ultra-Slim</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Slim Profile System</h3>
+                        <p>Our signature 25mm profile - the slimmest on the market</p>
+                        <ul class="product-specs">
+                            <li><span>Width</span><span>25mm</span></li>
+                            <li><span>Max Glass</span><span>12mm</span></li>
+                            <li><span>Colors</span><span>Any RAL</span></li>
+                        </ul>
+                        <div class="product-action">
+                            <a href="home.html#configurator" class="btn btn-primary">Configure</a>
+                            <a href="#" class="btn btn-secondary">Specs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
