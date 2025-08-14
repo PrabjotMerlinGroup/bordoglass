@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Information - Bordoglass</title>
+    <meta name="description" content="Fast UK-wide delivery. 3-day delivery on standard glass. Learn about our delivery options and lead times.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a1a;
+            --accent: #8B1538;
+            --gray: #666;
+            --light-gray: #f8f8f8;
+            --white: #ffffff;
+            --success: #22c55e;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--primary);
+            background-color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light-gray);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Delivery Options */
+        .delivery-options {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .delivery-card {
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+        
+        .delivery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .delivery-card.express {
+            border-top-color: var(--accent);
+        }
+        
+        .delivery-card.standard {
+            border-top-color: var(--primary);
+        }
+        
+        .delivery-card.custom {
+            border-top-color: var(--gray);
+        }
+        
+        .delivery-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .delivery-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .delivery-time {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .delivery-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .delivery-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .delivery-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .delivery-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 45%;
+            position: relative;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            z-index: 1;
+        }
+        
+        /* Coverage Map */
+        .coverage-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+        
+        .coverage-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .coverage-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .coverage-zones {
+            margin-top: 2rem;
+        }
+        
+        .zone-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: 8px;
+        }
+        
+        .zone-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+        
+        .zone-1 { background: var(--success); }
+        .zone-2 { background: #fbbf24; }
+        .zone-3 { background: #fb923c; }
+        
+        .coverage-map {
+            background: var(--light-gray);
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Pricing Table */
+        .pricing-section {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+        
+        .pricing-table {
+            overflow-x: auto;
+            margin-top: 3rem;
+        }
+        
+        .pricing-table table {
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-collapse: collapse;
+        }
+        
+        .pricing-table th,
+        .pricing-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .pricing-table th {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .pricing-table tr:hover {
+            background: var(--light-gray);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: var(--accent);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--white);
+            color: var(--accent);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column a {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: column !important;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+            
+            .timeline-icon {
+                left: 30px;
+            }
+            
+            .coverage-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-table {
+                font-size: 0.9rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">BORDOGLASS</a>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="delivery.html" class="nav-link active">Delivery</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="home.html#configurator" class="nav-cta">Configure Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Delivery Information</h1>
+        <p>Fast, reliable delivery across the UK. Standard glass in just 3 days.</p>
+    </header>
+
+    <!-- Delivery Options -->
+    <section class="delivery-options">
+        <div class="section-container">
+            <div class="options-grid">
+                <div class="delivery-card express">
+                    <span class="delivery-icon">🚀</span>
+                    <h3>Express Delivery</h3>
+                    <div class="delivery-time">3 Days</div>
+                    <p>For standard rectangular glass ordered before 12pm</p>
+                    <ul class="delivery-list">
+                        <li>4mm & 6mm float glass</li>
+                        <li>Standard tempered glass</li>
+                        <li>Clear & frosted options</li>
+                        <li>Maximum 2000 x 3000mm</li>
+                        <li>Orders before 12pm</li>
+                    </ul>
+                </div>
+                
+                <div class="delivery-card standard">
+                    <span class="delivery-icon">📦</span>
+                    <h3>Standard Delivery</h3>
+                    <div class="delivery-time">5-7 Days</div>
+                    <p>For custom shapes and special glass types</p>
+                    <ul class="delivery-list">
+                        <li>All glass thicknesses</li>
+                        <li>Custom shapes & cuts</li>
+                        <li>Laminated glass</li>
+                        <li>Tinted & mirror glass</li>
+                        <li>Double glazed units</li>
+                    </ul>
+                </div>
+                
+                <div class="delivery-card custom">
+                    <span class="delivery-icon">🏗️</span>
+                    <h3>Project Delivery</h3>
+                    <div class="delivery-time">10-14 Days</div>
+                    <p>For complete systems and large projects</p>
+                    <ul class="delivery-list">
+                        <li>Complete door systems</li>
+                        <li>Partition installations</li>
+                        <li>Custom RAL colors</li>
+                        <li>Project management</li>
+                        <li>Installation service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Timeline -->
+    <section class="timeline-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Your Order Journey</h2>
+                <p>Track your order from configuration to delivery</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">1</div>
+                    <div class="timeline-content">
+                        <h3>Order Placed</h3>
+                        <p>Confirmation email sent immediately with order details and reference number</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">2</div>
+                    <div class="timeline-content">
+                        <h3>Processing</h3>
+                        <p>Your glass is cut to specification in our Doncaster facility</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">3</div>
+                    <div class="timeline-content">
+                        <h3>Quality Check</h3>
+                        <p>Every piece inspected for perfection before packaging</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">4</div>
+                    <div class="timeline-content">
+                        <h3>Dispatch</h3>
+                        <p>Securely packaged and shipped with tracking information</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">5</div>
+                    <div class="timeline-content">
+                        <h3>Delivery</h3>
+                        <p>Delivered to your door with signature required</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Area -->
+    <section class="coverage-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>UK Coverage Areas</h2>
+                <p>We deliver nationwide with zone-based pricing</p>
+            </div>
+            
+            <div class="coverage-content">
+                <div class="coverage-info">
+                    <h3>Delivery Zones</h3>
+                    <p>Our delivery network covers the entire UK with competitive rates based on your location.</p>
+                    
+                    <div class="coverage-zones">
+                        <div class="zone-item">
+                            <div class="zone-color zone-1"></div>
+                            <div>
+                                <strong>Zone 1: Central England</strong><br>
+                                <span>Next day available • From £45</span>
+                            </div>
+                        </div>
+                        <div class="zone-item">
+                            <div class="zone-color zone-2"></div>
+                            <div>
+                                <strong>Zone 2: England & Wales</strong><br>
+                                <span>2-3 days • From £65</span>
+                            </div>
+                        </div>
+                        <div class="zone-item">
+                            <div class="zone-color zone-3"></div>
+                            <div>
+                                <strong>Zone 3: Scotland & NI</strong><br>
+                                <span>3-5 days • From £85</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="coverage-map">
+                    <p style="color: var(--gray);">
+                        <i class="fas fa-map-marked-alt fa-3x"></i><br><br>
+                        Interactive delivery map
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section class="pricing-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Delivery Pricing</h2>
+                <p>Transparent pricing with no hidden costs</p>
+            </div>
+            
+            <div class="pricing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order Value</th>
+                            <th>Zone 1</th>
+                            <th>Zone 2</th>
+                            <th>Zone 3</th>
+                            <th>Express (Zone 1 only)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Under £500</td>
+                            <td>£45</td>
+                            <td>£65</td>
+                            <td>£85</td>
+                            <td>£95</td>
+                        </tr>
+                        <tr>
+                            <td>£500 - £1000</td>
+                            <td>£35</td>
+                            <td>£55</td>
+                            <td>£75</td>
+                            <td>£75</td>
+                        </tr>
+                        <tr>
+                            <td>£1000 - £2500</td>
+                            <td>£25</td>
+                            <td>£45</td>
+                            <td>£65</td>
+                            <td>£55</td>
+                        </tr>
+                        <tr>
+                            <td>Over £2500</td>
+                            <td><strong>FREE</strong></td>
+                            <td>£25</td>
+                            <td>£45</td>
+                            <td>£35</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <p><strong>Note:</strong> Prices exclude VAT. Additional charges may apply for:</p>
+                <p>• Timed deliveries • Saturday delivery • Crane offload • Installation services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Order?</h2>
+            <p>Configure your glass system now and get it delivered in as little as 3 days</p>
+            <div>
+                <a href="home.html#configurator" class="btn btn-primary">Start Configuring</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>BORDOGLASS</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">
+                    The UK's leading supplier of ultra-slim glass partition systems. 
+                    Minimal. Strong. Beautiful.
+                </p>
+                <p style="opacity: 0.6;">Made with pride in Britain 🇬🇧</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="home.html">Home</a>
+                <a href="products.html">All Products</a>
+                <a href="delivery.html">Delivery Info</a>
+                <a href="faq.html">FAQs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h3>Products</h3>
+                <a href="products.html#glass">Glass Types</a>
+                <a href="products.html#profiles">Profiles</a>
+                <a href="products.html#hardware">Hardware</a>
+                <a href="products.html#systems">Complete Systems</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <a href="tel:01217929167">0121 792 9167</a>
+                <a href="mailto:info@bordoglass.co.uk">info@bordoglass.co.uk</a>
+                <p style="margin-top: 1rem; opacity: 0.8;">
+                    Ogden Road, Doncaster<br>
+                    DN2 4SG, United Kingdom
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bordoglass Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 5px 30px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
