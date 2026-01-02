@@ -1235,18 +1235,18 @@
             // Update preview text
             const type = document.querySelector('[data-type].selected')?.querySelector('h4')?.textContent || 'Hinged Door';
             const glass = document.querySelector('[data-glass].selected')?.querySelector('h4')?.textContent || 'Clear Glass';
-            const frameSelect = document.querySelector('select');
+            const frameSelect = document.getElementById('configFrameColor');
             const frame = frameSelect?.options[frameSelect.selectedIndex]?.text || 'RAL 9005 - Jet Black';
-            
+
             document.getElementById('preview-type').textContent = type;
             document.getElementById('preview-glass').textContent = glass;
             document.getElementById('preview-frame').textContent = frame;
-            
+
             // Update dimensions
-            const width = document.querySelector('input[type="number"][min="600"]')?.value || 1000;
-            const height = document.querySelector('input[type="number"][min="1800"]')?.value || 2100;
+            const width = document.getElementById('configWidth')?.value || 1000;
+            const height = document.getElementById('configHeight')?.value || 2100;
             document.getElementById('preview-size').textContent = `${width} x ${height}mm`;
-            
+
             // Update preview image
             updatePreviewImage();
         }
