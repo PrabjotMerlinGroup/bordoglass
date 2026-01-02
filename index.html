@@ -485,6 +485,29 @@
             color: var(--gray);
             animation: pulse 1.5s infinite;
         }
+
+        .config-success-message {
+            background: #22c55e;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .config-error-message {
+            background: #dc3545;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
         
         .preview-details h3 {
             font-size: 1.5rem;
@@ -776,11 +799,11 @@
                         
                         <div class="form-group">
                             <label>Frame Color</label>
-                            <select>
-                                <option>RAL 9005 - Jet Black</option>
-                                <option>RAL 7016 - Anthracite Grey</option>
-                                <option>RAL 9016 - Pure White</option>
-                                <option>Custom RAL Color</option>
+                            <select id="configFrameColor">
+                                <option value="RAL 9005 - Jet Black">RAL 9005 - Jet Black</option>
+                                <option value="RAL 7016 - Anthracite Grey">RAL 7016 - Anthracite Grey</option>
+                                <option value="RAL 9016 - Pure White">RAL 9016 - Pure White</option>
+                                <option value="Custom RAL Color">Custom RAL Color</option>
                             </select>
                         </div>
                         
@@ -821,12 +844,12 @@
                         
                         <div class="form-group">
                             <label>Glass Thickness</label>
-                            <select>
-                                <option>6mm Tempered</option>
-                                <option>8mm Tempered</option>
-                                <option>10mm Tempered</option>
-                                <option>6.4mm Laminated</option>
-                                <option>8.8mm Laminated</option>
+                            <select id="configGlassThickness">
+                                <option value="6mm Tempered">6mm Tempered</option>
+                                <option value="8mm Tempered">8mm Tempered</option>
+                                <option value="10mm Tempered">10mm Tempered</option>
+                                <option value="6.4mm Laminated">6.4mm Laminated</option>
+                                <option value="8.8mm Laminated">8.8mm Laminated</option>
                             </select>
                         </div>
                         
@@ -842,58 +865,66 @@
                             <span class="step-number">3</span>
                             <h3>Enter Dimensions</h3>
                         </div>
-                        
+
                         <div class="form-group">
                             <label>Width (mm)</label>
-                            <input type="number" value="1000" min="600" max="3000">
+                            <input type="number" id="configWidth" value="1000" min="600" max="3000">
                         </div>
-                        
+
                         <div class="form-group">
                             <label>Height (mm)</label>
-                            <input type="number" value="2100" min="1800" max="3000">
+                            <input type="number" id="configHeight" value="2100" min="1800" max="3000">
                         </div>
-                        
+
                         <div class="form-group">
                             <label>Additional Notes</label>
-                            <textarea rows="3" placeholder="Any special requirements..."></textarea>
+                            <textarea id="configNotes" rows="3" placeholder="Any special requirements..."></textarea>
                         </div>
-                        
+
                         <div class="form-actions">
                             <button class="btn btn-secondary" onclick="prevStep()">Previous</button>
                             <button class="btn btn-primary" onclick="nextStep()">Next Step</button>
                         </div>
                     </div>
-                    
+
                     <!-- Contact Details Step -->
                     <div class="config-step" id="details-step">
                         <div class="step-header">
                             <span class="step-number">4</span>
                             <h3>Your Details</h3>
                         </div>
-                        
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" required>
+
+                        <div id="configSuccessMessage" class="config-success-message" style="display: none;">
+                            <i class="fas fa-check-circle"></i> Thank you! Your quote request has been submitted. We'll email you within 24 hours.
                         </div>
-                        
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" required>
+
+                        <div id="configErrorMessage" class="config-error-message" style="display: none;">
+                            <i class="fas fa-exclamation-circle"></i> Sorry, there was an error. Please try again or call us directly.
                         </div>
-                        
+
                         <div class="form-group">
-                            <label>Phone</label>
-                            <input type="tel" required>
+                            <label>Name *</label>
+                            <input type="text" id="configName" required>
                         </div>
-                        
+
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" id="configEmail" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" id="configPhone" required>
+                        </div>
+
                         <div class="form-group">
                             <label>Company (Optional)</label>
-                            <input type="text">
+                            <input type="text" id="configCompany">
                         </div>
-                        
+
                         <div class="form-actions">
                             <button class="btn btn-secondary" onclick="prevStep()">Previous</button>
-                            <button class="btn btn-primary" onclick="submitQuote()">Get Quote</button>
+                            <button class="btn btn-primary" id="submitQuoteBtn" onclick="submitQuote()">Get Quote</button>
                         </div>
                     </div>
                 </div>
@@ -1087,8 +1118,98 @@
             }
         }
 
-        function submitQuote() {
-            alert('Thank you! Your quote request has been submitted. We\'ll email you within 24 hours.');
+        // Google Apps Script URL
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwxro1E2bLBq6xNmCg_tHe6u8RaJY6vU4UWtd_jwZReiezCEO2geJ0b8hcr08S2bzFFA/exec';
+
+        async function submitQuote() {
+            const submitBtn = document.getElementById('submitQuoteBtn');
+            const successMessage = document.getElementById('configSuccessMessage');
+            const errorMessage = document.getElementById('configErrorMessage');
+
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            // Get form values
+            const name = document.getElementById('configName').value.trim();
+            const email = document.getElementById('configEmail').value.trim();
+            const phone = document.getElementById('configPhone').value.trim();
+
+            // Validate required fields
+            if (!name || !email || !phone) {
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fill in all required fields.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please enter a valid email address.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Disable button and show loading
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+
+            // Get selected design type
+            const selectedDesign = document.querySelector('[data-type].selected');
+            const designType = selectedDesign ? selectedDesign.dataset.type : 'hinged';
+
+            // Get selected glass type
+            const selectedGlass = document.querySelector('[data-glass].selected');
+            const glassType = selectedGlass ? selectedGlass.dataset.glass : 'clear';
+
+            // Collect all form data
+            const formData = {
+                formType: 'configurator',
+                name: name,
+                email: email,
+                phone: phone,
+                company: document.getElementById('configCompany').value.trim(),
+                designType: designType,
+                frameColor: document.getElementById('configFrameColor').value,
+                glassType: glassType,
+                glassThickness: document.getElementById('configGlassThickness').value,
+                width: document.getElementById('configWidth').value,
+                height: document.getElementById('configHeight').value,
+                notes: document.getElementById('configNotes').value.trim()
+            };
+
+            try {
+                await fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                // Show success message
+                successMessage.style.display = 'block';
+
+                // Reset form fields
+                document.getElementById('configName').value = '';
+                document.getElementById('configEmail').value = '';
+                document.getElementById('configPhone').value = '';
+                document.getElementById('configCompany').value = '';
+                document.getElementById('configNotes').value = '';
+
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            } catch (error) {
+                console.error('Error submitting quote:', error);
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Sorry, there was an error. Please try again or call us on 0121 792 9167.';
+                errorMessage.style.display = 'block';
+            } finally {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
         }
 
         // Option selection
