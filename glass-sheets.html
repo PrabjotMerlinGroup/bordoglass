@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Sheets - Bordoglass</title>
+    <meta name="description" content="Order 4mm glass sheets. Pre-cut sizes available. Fast UK delivery.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#0d0d0d;--accent:#8B1538;--gold:#c9a962;--gray:#5a5a5a;--light-gray:#f5f5f3;--white:#fff;--success:#22c55e;--font-heading:'Cormorant Garamond',serif;--font-body:'DM Sans',sans-serif}
+        body{font-family:var(--font-body);color:var(--primary);background:var(--white);line-height:1.7}
+        h1,h2,h3{font-family:var(--font-heading);font-weight:500;line-height:1.15}
+        .promo-banner{background:linear-gradient(135deg,var(--primary) 0%,#1a1a1a 50%,var(--accent) 100%);color:var(--white);padding:12px 20px;text-align:center;z-index:1001;position:relative}
+        .promo-content{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+        .promo-price{font-size:1.1rem;font-weight:600}.promo-price span{color:var(--gold);font-size:1.3rem;font-weight:700}
+        .promo-divider{width:1px;height:20px;background:rgba(255,255,255,0.3)}
+        .navbar{position:fixed;top:52px;width:100%;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);z-index:1000;transition:all 0.3s;border-bottom:1px solid rgba(0,0,0,0.05)}
+        .navbar.scrolled{top:0;box-shadow:0 4px 30px rgba(0,0,0,0.08)}
+        .nav-container{max-width:1400px;margin:0 auto;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+        .nav-logo-img{height:45px}
+        .nav-logo-text{font-family:var(--font-heading);font-size:1.6rem;font-weight:600;color:var(--primary);letter-spacing:3px}
+        .nav-menu{display:flex;list-style:none;gap:2.5rem;align-items:center}
+        .nav-link{text-decoration:none;color:var(--primary);font-weight:500;font-size:0.95rem;transition:all 0.3s;position:relative}
+        .nav-link::after{content:'';position:absolute;bottom:-8px;left:0;width:0;height:2px;background:var(--accent);transition:width 0.3s}
+        .nav-link:hover::after,.nav-link.active::after{width:100%}
+        .nav-cta{background:var(--primary);color:var(--white);padding:12px 28px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.3s;border:2px solid var(--primary)}
+        .nav-cta:hover{background:var(--accent);border-color:var(--accent)}
+        .mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px}
+        .mobile-toggle span{width:25px;height:2px;background:var(--primary)}
+        .page-header{padding:180px 2rem 80px;background:linear-gradient(165deg,rgba(13,13,13,0.95) 0%,rgba(139,21,56,0.9) 100%),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center;text-align:center;color:var(--white)}
+        .page-header h1{font-size:clamp(2.5rem,6vw,4rem);margin-bottom:1rem}
+        .page-header p{font-size:1.2rem;opacity:0.9;max-width:600px;margin:0 auto}
+        .order-section{padding:6rem 2rem;background:var(--white)}
+        .container{max-width:1100px;margin:0 auto}
+        .order-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+        .product-info{background:var(--light-gray);padding:3rem;border:1px solid rgba(0,0,0,0.05)}
+        .product-info h2{font-size:2rem;margin-bottom:1.5rem}
+        .product-info p{color:var(--gray);margin-bottom:1.5rem}
+        .price-card{background:var(--white);padding:2rem;margin-bottom:1.5rem;border-left:4px solid var(--accent)}
+        .price-card h3{font-size:1.3rem;margin-bottom:0.5rem;font-family:var(--font-body);font-weight:600}
+        .price-card .price{font-size:2.5rem;color:var(--accent);font-weight:700;font-family:var(--font-heading)}
+        .price-card p{color:var(--gray);font-size:0.95rem;margin-top:0.5rem}
+        .sizes-note{background:var(--primary);color:var(--white);padding:1.5rem;margin-top:2rem}
+        .sizes-note h4{color:var(--gold);margin-bottom:0.75rem;font-family:var(--font-body);font-weight:600}
+        .sizes-note p{opacity:0.9;font-size:0.95rem;line-height:1.6}
+        .sizes-note ul{list-style:none;margin-top:1rem}
+        .sizes-note li{padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-weight:500}
+        .sizes-note li:last-child{border-bottom:none}
+        .order-form{background:var(--white);padding:3rem;box-shadow:0 25px 80px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.05)}
+        .order-form h2{font-size:1.8rem;margin-bottom:2rem}
+        .form-group{margin-bottom:1.5rem}
+        .form-group label{display:block;margin-bottom:0.5rem;font-weight:600;text-transform:uppercase;font-size:0.8rem;letter-spacing:1.5px;color:var(--gray)}
+        .form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;border:1px solid #e0e0e0;font-size:1rem;transition:all 0.3s;font-family:inherit;background:var(--white)}
+        .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(139,21,56,0.1)}
+        .quantity-selector{display:flex;align-items:center;gap:1rem}
+        .quantity-btn{width:45px;height:45px;border:1px solid #e0e0e0;background:var(--white);font-size:1.5rem;cursor:pointer;transition:all 0.3s}
+        .quantity-btn:hover{background:var(--light-gray)}
+        .quantity-input{width:80px;text-align:center;font-size:1.2rem;font-weight:600}
+        .order-summary{background:var(--light-gray);padding:1.5rem;margin:2rem 0}
+        .order-summary h4{margin-bottom:1rem;font-family:var(--font-body);font-weight:600}
+        .summary-row{display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid rgba(0,0,0,0.1)}
+        .summary-row:last-child{border-bottom:none;font-weight:700;font-size:1.1rem;padding-top:1rem}
+        .btn{display:block;width:100%;padding:16px 40px;border:none;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all 0.3s;text-transform:uppercase;letter-spacing:1px;font-family:inherit;text-align:center;text-decoration:none}
+        .btn-primary{background:var(--accent);color:var(--white)}
+        .btn-primary:hover{background:var(--primary);transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+        .btn:disabled{opacity:0.6;cursor:not-allowed}
+        .success-message{display:none;background:linear-gradient(135deg,#22c55e 0%,#16a34a 100%);color:var(--white);padding:1.5rem;text-align:center;margin-bottom:2rem}
+        .error-message{display:none;background:linear-gradient(135deg,#dc3545 0%,#b91c1c 100%);color:var(--white);padding:1.5rem;text-align:center;margin-bottom:2rem}
+        .footer{background:var(--primary);color:var(--white);padding:5rem 2rem 2rem;position:relative}
+        .footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+        .footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem}
+        .footer-column h3{margin-bottom:1.5rem;font-size:1.1rem;font-family:var(--font-body);font-weight:600;color:var(--gold)}
+        .footer-column p{opacity:0.7;line-height:1.8;font-size:0.95rem}
+        .footer-column a{display:block;color:rgba(255,255,255,0.7);text-decoration:none;margin-bottom:0.8rem;transition:all 0.3s;font-size:0.95rem}
+        .footer-column a:hover{color:var(--gold);padding-left:5px}
+        .footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);font-size:0.9rem}
+        @media(max-width:1024px){.order-grid{grid-template-columns:1fr}.footer-content{grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){.promo-content{gap:1rem}.promo-divider{display:none}.navbar{top:85px}.navbar.scrolled{top:0}.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;padding:2rem;gap:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,0.1)}.nav-menu.active{display:flex}.mobile-toggle{display:flex}.page-header{padding:160px 2rem 60px}.footer-content{grid-template-columns:1fr;text-align:center}.footer-column a:hover{padding-left:0}}
+    </style>
+</head>
+<body>
+    <div class="promo-banner">
+        <div class="promo-content">
+            <div class="promo-price">4mm Glass Sheets only <span>£65</span></div>
+            <div class="promo-divider"></div>
+            <div class="promo-price">4mm K Glass Sheets only <span>£85</span></div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo"><img src="logo.png" alt="Bordoglass" class="nav-logo-img" onerror="this.style.display='none'"><span class="nav-logo-text">BORDOGLASS</span></a>
+            <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')"><span></span><span></span><span></span></div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/products" class="nav-link">Products</a></li>
+                <li><a href="/glass-sheets" class="nav-link active">Glass Sheets</a></li>
+                <li><a href="/delivery" class="nav-link">Delivery</a></li>
+                <li><a href="/faq" class="nav-link">FAQ</a></li>
+                <li><a href="/contact" class="nav-link">Contact</a></li>
+                <li><a href="/#configurator" class="nav-cta">Configure Now</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="page-header">
+        <h1>Glass Sheets</h1>
+        <p>Premium 4mm glass sheets, pre-cut and ready for delivery</p>
+    </header>
+    <section class="order-section">
+        <div class="container">
+            <div class="order-grid">
+                <div class="product-info">
+                    <h2>Pre-Cut Glass Sheets</h2>
+                    <p>Our glass sheets come pre-cut in standard sizes, perfect for partitions, doors, and architectural applications. Each order includes all 3 sheet sizes.</p>
+
+                    <div class="price-card">
+                        <h3>4mm Clear Glass</h3>
+                        <div class="price">£65</div>
+                        <p>Standard clear float glass</p>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>4mm K Glass</h3>
+                        <div class="price">£85</div>
+                        <p>Low-E thermal insulating glass</p>
+                    </div>
+
+                    <div class="sizes-note">
+                        <h4>Pre-Cut Sheet Sizes Included</h4>
+                        <p>Each order includes all 3 pre-cut sizes:</p>
+                        <ul>
+                            <li>960mm x 2250mm</li>
+                            <li>1070mm x 2250mm</li>
+                            <li>1180mm x 2250mm</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="order-form">
+                    <h2>Order Now</h2>
+
+                    <div id="successMessage" class="success-message">
+                        <i class="fas fa-check-circle"></i> Thank you! Your order has been submitted. We'll be in touch shortly.
+                    </div>
+
+                    <div id="errorMessage" class="error-message">
+                        <i class="fas fa-exclamation-circle"></i> Sorry, there was an error. Please try again or call us.
+                    </div>
+
+                    <div class="form-group">
+                        <label>Glass Type *</label>
+                        <select id="glassType" onchange="updateSummary()">
+                            <option value="4mm Clear Glass" data-price="65">4mm Clear Glass - £65</option>
+                            <option value="4mm K Glass" data-price="85">4mm K Glass - £85</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quantity (Sets of 3 sheets) *</label>
+                        <div class="quantity-selector">
+                            <button type="button" class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="100" onchange="updateSummary()">
+                            <button type="button" class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="order-summary">
+                        <h4>Order Summary</h4>
+                        <div class="summary-row">
+                            <span>Glass Type:</span>
+                            <span id="summaryType">4mm Clear Glass</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Quantity:</span>
+                            <span id="summaryQty">1 set (3 sheets)</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Total:</span>
+                            <span id="summaryTotal">£65</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Name *</label>
+                        <input type="text" id="customerName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="customerEmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" id="customerPhone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Delivery Address *</label>
+                        <textarea id="customerAddress" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional Notes</label>
+                        <textarea id="customerNotes" rows="2"></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" id="submitBtn" onclick="submitOrder()">
+                        Place Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column"><h3>BORDOGLASS</h3><p style="margin-bottom:1.5rem">The UK's leading supplier of ultra-slim glass partition systems.</p><p style="opacity:0.5">Made with pride in Britain</p></div>
+            <div class="footer-column"><h3>Quick Links</h3><a href="/">Home</a><a href="/products">All Products</a><a href="/glass-sheets">Glass Sheets</a><a href="/delivery">Delivery Info</a><a href="/faq">FAQs</a><a href="/contact">Contact</a></div>
+            <div class="footer-column"><h3>Products</h3><a href="/products#glass">Glass Types</a><a href="/products#profiles">Profiles</a><a href="/products#hardware">Hardware</a><a href="/products#systems">Complete Systems</a></div>
+            <div class="footer-column"><h3>Contact</h3><a href="tel:01217929167">0121 792 9167</a><a href="mailto:info@bordoglass.co.uk">info@bordoglass.co.uk</a><p style="margin-top:1rem;opacity:0.7;font-size:0.9rem">Ogden Road, Doncaster<br>DN2 4SG, United Kingdom</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2024 Bordoglass Ltd. All rights reserved.</p></div>
+    </footer>
+    <script>
+        // Google Apps Script URL
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwxro1E2bLBq6xNmCg_tHe6u8RaJY6vU4UWtd_jwZReiezCEO2geJ0b8hcr08S2bzFFA/exec';
+
+        function changeQuantity(delta) {
+            const input = document.getElementById('quantity');
+            let value = parseInt(input.value) + delta;
+            if (value < 1) value = 1;
+            if (value > 100) value = 100;
+            input.value = value;
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const glassSelect = document.getElementById('glassType');
+            const quantity = parseInt(document.getElementById('quantity').value) || 1;
+            const price = parseInt(glassSelect.options[glassSelect.selectedIndex].dataset.price);
+            const glassName = glassSelect.value;
+
+            document.getElementById('summaryType').textContent = glassName;
+            document.getElementById('summaryQty').textContent = quantity + ' set' + (quantity > 1 ? 's' : '') + ' (' + (quantity * 3) + ' sheets)';
+            document.getElementById('summaryTotal').textContent = '£' + (price * quantity);
+        }
+
+        async function submitOrder() {
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            // Get form values
+            const name = document.getElementById('customerName').value.trim();
+            const email = document.getElementById('customerEmail').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const address = document.getElementById('customerAddress').value.trim();
+
+            // Validate
+            if (!name || !email || !phone || !address) {
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fill in all required fields.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please enter a valid email address.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Disable button
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+
+            // Get order details
+            const glassSelect = document.getElementById('glassType');
+            const quantity = parseInt(document.getElementById('quantity').value) || 1;
+            const price = parseInt(glassSelect.options[glassSelect.selectedIndex].dataset.price);
+
+            const formData = {
+                formType: 'glass-sheets-order',
+                name: name,
+                email: email,
+                phone: phone,
+                address: address,
+                glassType: glassSelect.value,
+                quantity: quantity,
+                totalSheets: quantity * 3,
+                totalPrice: '£' + (price * quantity),
+                notes: document.getElementById('customerNotes').value.trim(),
+                sheetSizes: '960x2250, 1070x2250, 1180x2250'
+            };
+
+            try {
+                await fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                successMessage.style.display = 'block';
+
+                // Reset form
+                document.getElementById('customerName').value = '';
+                document.getElementById('customerEmail').value = '';
+                document.getElementById('customerPhone').value = '';
+                document.getElementById('customerAddress').value = '';
+                document.getElementById('customerNotes').value = '';
+                document.getElementById('quantity').value = '1';
+                document.getElementById('glassType').selectedIndex = 0;
+                updateSummary();
+
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            } catch (error) {
+                console.error('Error:', error);
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Sorry, there was an error. Please call us on 0121 792 9167.';
+                errorMessage.style.display = 'block';
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const promoBanner = document.querySelector('.promo-banner');
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+                promoBanner.style.transform = 'translateY(-100%)';
+                promoBanner.style.transition = 'transform 0.3s';
+            } else {
+                navbar.classList.remove('scrolled');
+                promoBanner.style.transform = 'translateY(0)';
+            }
+        });
+    </script>
+</body>
+</html>
