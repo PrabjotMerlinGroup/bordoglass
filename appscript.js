@@ -5,6 +5,7 @@
 const SPREADSHEET_ID = '1DokxKxCRhsaCpdnXQcaOpc7hfML7Yf6tJM2-wHJhPWg';
 const CONTACT_SHEET_NAME = 'Contact Enquiries';
 const CONFIGURATOR_SHEET_NAME = 'Configurator Quotes';
+const GLASS_SHEETS_SHEET_NAME = 'Glass Sheets Orders';
 const BUSINESS_EMAIL = 'info@bordoglass.co.uk';
 const NOTIFICATION_EMAIL = '007prabs@gmail.com'; // Your email for notifications
 
@@ -15,6 +16,8 @@ function doPost(e) {
     // Determine which form submitted based on formType field
     if (data.formType === 'configurator') {
       return handleConfiguratorSubmission(data);
+    } else if (data.formType === 'glass-sheets-order') {
+      return handleGlassSheetsOrder(data);
     } else {
       return handleContactSubmission(data);
     }
@@ -648,6 +651,319 @@ This is an automated confirmation email.
 
   } catch (error) {
     console.error('Error sending configurator customer confirmation:', error);
+  }
+}
+
+// ============================================
+// GLASS SHEETS ORDER HANDLER
+// ============================================
+function handleGlassSheetsOrder(data) {
+  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  let sheet = ss.getSheetByName(GLASS_SHEETS_SHEET_NAME);
+
+  // Create sheet if it doesn't exist
+  if (!sheet) {
+    sheet = ss.insertSheet(GLASS_SHEETS_SHEET_NAME);
+    setupGlassSheetsHeaders(sheet);
+  }
+
+  // Check if headers exist
+  if (sheet.getLastRow() === 0) {
+    setupGlassSheetsHeaders(sheet);
+  }
+
+  // Append row to spreadsheet
+  sheet.appendRow([
+    new Date(),
+    data.name || '',
+    data.email || '',
+    data.phone || '',
+    data.address || '',
+    data.glassType || '',
+    data.quantity || '',
+    data.totalSheets || '',
+    data.totalPrice || '',
+    data.sheetSizes || '',
+    data.notes || '',
+    'New Order'
+  ]);
+
+  // Send email notifications
+  sendGlassSheetsBusinessNotification(data);
+  sendGlassSheetsCustomerConfirmation(data);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: 'success', message: 'Glass sheets order submitted successfully' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function setupGlassSheetsHeaders(sheet) {
+  sheet.appendRow([
+    'Timestamp',
+    'Name',
+    'Email',
+    'Phone',
+    'Delivery Address',
+    'Glass Type',
+    'Quantity (Sets)',
+    'Total Sheets',
+    'Total Price',
+    'Sheet Sizes',
+    'Notes',
+    'Status'
+  ]);
+
+  const headerRange = sheet.getRange(1, 1, 1, 12);
+  headerRange.setFontWeight('bold');
+  headerRange.setBackground('#c9a962');
+  headerRange.setFontColor('#0d0d0d');
+  sheet.setFrozenRows(1);
+}
+
+function sendGlassSheetsBusinessNotification(data) {
+  try {
+    const subject = `New Glass Sheets Order: ${data.name} - ${data.glassType} x${data.quantity}`;
+
+    const htmlBody = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background-color: #1a1a1a; color: white; padding: 30px; text-align: center;">
+          <h1 style="margin: 0; font-size: 28px; letter-spacing: 2px;">BORDOGLASS</h1>
+          <p style="margin: 10px 0 0 0; color: #c9a962;">New Glass Sheets Order</p>
+        </div>
+
+        <div style="padding: 30px; background-color: #f8f8f8;">
+          <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+            <h2 style="color: #1a1a1a; margin-top: 0; border-bottom: 2px solid #c9a962; padding-bottom: 10px;">Customer Details</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr>
+                <td style="padding: 10px 0; font-weight: bold; width: 35%; color: #666;">Name:</td>
+                <td style="padding: 10px 0;">${data.name}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 0; font-weight: bold; color: #666;">Email:</td>
+                <td style="padding: 10px 0;"><a href="mailto:${data.email}" style="color: #8B1538;">${data.email}</a></td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 0; font-weight: bold; color: #666;">Phone:</td>
+                <td style="padding: 10px 0;"><a href="tel:${data.phone}" style="color: #8B1538;">${data.phone}</a></td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 0; font-weight: bold; color: #666;">Delivery Address:</td>
+                <td style="padding: 10px 0;">${data.address}</td>
+              </tr>
+            </table>
+          </div>
+
+          <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+            <h2 style="color: #1a1a1a; margin-top: 0; border-bottom: 2px solid #c9a962; padding-bottom: 10px;">Order Details</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr>
+                <td style="padding: 10px 0; font-weight: bold; width: 35%; color: #666;">Glass Type:</td>
+                <td style="padding: 10px 0; color: #8B1538; font-weight: bold;">${data.glassType}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 0; font-weight: bold; color: #666;">Quantity:</td>
+                <td style="padding: 10px 0;">${data.quantity} set(s)</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 0; font-weight: bold; color: #666;">Total Sheets:</td>
+                <td style="padding: 10px 0;">${data.totalSheets} sheets</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 0; font-weight: bold; color: #666;">Sheet Sizes:</td>
+                <td style="padding: 10px 0;">${data.sheetSizes}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 0; font-weight: bold; color: #666;">Total Price:</td>
+                <td style="padding: 10px 0; font-weight: bold; font-size: 1.2em; color: #c9a962;">${data.totalPrice}</td>
+              </tr>
+            </table>
+          </div>
+
+          ${data.notes ? `
+          <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; border-left: 4px solid #c9a962; margin-bottom: 20px;">
+            <h3 style="margin: 0 0 15px 0; color: #1a1a1a;">Additional Notes</h3>
+            <p style="margin: 0; color: #666; line-height: 1.6;">${data.notes}</p>
+          </div>
+          ` : ''}
+
+          <div style="margin-top: 20px; text-align: center;">
+            <a href="https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}"
+               style="display: inline-block; background-color: #c9a962; color: #0d0d0d; padding: 12px 30px; text-decoration: none; border-radius: 4px; font-weight: bold;">
+              View All Orders
+            </a>
+          </div>
+        </div>
+
+        <div style="background-color: #1a1a1a; color: #999; padding: 20px; text-align: center; font-size: 12px;">
+          <p style="margin: 0;">Order received: ${new Date().toLocaleString('en-GB')}</p>
+        </div>
+      </div>
+    `;
+
+    const plainBody = `
+NEW GLASS SHEETS ORDER - BORDOGLASS
+===================================
+
+CUSTOMER DETAILS:
+- Name: ${data.name}
+- Email: ${data.email}
+- Phone: ${data.phone}
+- Delivery Address: ${data.address}
+
+ORDER DETAILS:
+- Glass Type: ${data.glassType}
+- Quantity: ${data.quantity} set(s)
+- Total Sheets: ${data.totalSheets}
+- Sheet Sizes: ${data.sheetSizes}
+- Total Price: ${data.totalPrice}
+
+ADDITIONAL NOTES:
+${data.notes || 'None'}
+
+Order Time: ${new Date().toLocaleString('en-GB')}
+
+View spreadsheet: https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}
+    `;
+
+    MailApp.sendEmail({
+      to: NOTIFICATION_EMAIL,
+      cc: BUSINESS_EMAIL,
+      subject: subject,
+      body: plainBody,
+      htmlBody: htmlBody
+    });
+
+    console.log('Glass sheets business notification sent');
+
+  } catch (error) {
+    console.error('Error sending glass sheets business notification:', error);
+  }
+}
+
+function sendGlassSheetsCustomerConfirmation(data) {
+  try {
+    if (!data.email) {
+      console.log('No customer email provided, skipping confirmation email');
+      return;
+    }
+
+    const subject = 'Your Bordoglass Glass Sheets Order';
+
+    const htmlBody = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background-color: #1a1a1a; color: white; padding: 30px; text-align: center;">
+          <h1 style="margin: 0; font-size: 28px; letter-spacing: 2px;">BORDOGLASS</h1>
+          <p style="margin: 10px 0 0 0; color: #c9a962;">Order Confirmation</p>
+        </div>
+
+        <div style="padding: 30px; background-color: #f8f8f8;">
+          <p style="font-size: 16px; color: #333; margin-bottom: 25px;">
+            Dear ${data.name},<br><br>
+            Thank you for your glass sheets order. We've received your order and our team will contact you within 24 hours to confirm delivery arrangements and payment.
+          </p>
+
+          <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; border-left: 4px solid #c9a962; margin-bottom: 25px;">
+            <h3 style="color: #1a1a1a; margin-top: 0;">Your Order Summary</h3>
+            <table style="width: 100%;">
+              <tr>
+                <td style="padding: 8px 0; color: #666;">Glass Type:</td>
+                <td style="padding: 8px 0; font-weight: bold; color: #8B1538;">${data.glassType}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; color: #666;">Quantity:</td>
+                <td style="padding: 8px 0; font-weight: bold; color: #333;">${data.quantity} set(s) (${data.totalSheets} sheets)</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; color: #666;">Sheet Sizes:</td>
+                <td style="padding: 8px 0; font-weight: bold; color: #333;">${data.sheetSizes}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; color: #666;">Total:</td>
+                <td style="padding: 8px 0; font-weight: bold; color: #c9a962; font-size: 1.2em;">${data.totalPrice}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; color: #666;">Delivery Address:</td>
+                <td style="padding: 8px 0; color: #333;">${data.address}</td>
+              </tr>
+            </table>
+          </div>
+
+          <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 25px;">
+            <h3 style="color: #1a1a1a; margin-top: 0;">What Happens Next?</h3>
+            <ol style="margin: 10px 0; padding-left: 20px; color: #666;">
+              <li style="margin-bottom: 8px;">Our team will review your order</li>
+              <li style="margin-bottom: 8px;">We'll contact you within 24 hours to confirm delivery</li>
+              <li style="margin-bottom: 8px;">Payment details will be provided</li>
+              <li style="margin-bottom: 8px;">Your glass will be carefully packed and dispatched</li>
+            </ol>
+          </div>
+
+          <div style="background-color: #1a1a1a; padding: 20px; border-radius: 8px; margin-bottom: 25px;">
+            <h3 style="color: #c9a962; margin-top: 0;">Contact Us</h3>
+            <p style="margin: 10px 0; color: #ffffff;">
+              <strong>Phone:</strong> <a href="tel:01217929167" style="color: #c9a962; text-decoration: none;">0121 792 9167</a><br>
+              <strong>Email:</strong> <a href="mailto:info@bordoglass.co.uk" style="color: #c9a962; text-decoration: none;">info@bordoglass.co.uk</a><br>
+              <strong>Address:</strong> Ogden Road, Wheatley Hills, Doncaster DN2 4SG
+            </p>
+          </div>
+
+          <p style="color: #666; font-size: 14px; line-height: 1.6;">
+            If you have any questions about your order, please don't hesitate to contact us.
+          </p>
+        </div>
+
+        <div style="background-color: #1a1a1a; color: #999; padding: 20px; text-align: center; font-size: 12px;">
+          <p style="margin: 0;">Bordoglass Ltd - Ultra-Slim Glass Partitions & Doors</p>
+          <p style="margin: 5px 0 0 0;">This is an automated confirmation. Please do not reply to this email.</p>
+        </div>
+      </div>
+    `;
+
+    const plainBody = `
+YOUR BORDOGLASS GLASS SHEETS ORDER
+==================================
+
+Dear ${data.name},
+
+Thank you for your glass sheets order. We've received your order and our team will contact you within 24 hours to confirm delivery arrangements and payment.
+
+YOUR ORDER SUMMARY:
+- Glass Type: ${data.glassType}
+- Quantity: ${data.quantity} set(s) (${data.totalSheets} sheets)
+- Sheet Sizes: ${data.sheetSizes}
+- Total: ${data.totalPrice}
+- Delivery Address: ${data.address}
+
+WHAT HAPPENS NEXT:
+1. Our team will review your order
+2. We'll contact you within 24 hours to confirm delivery
+3. Payment details will be provided
+4. Your glass will be carefully packed and dispatched
+
+CONTACT US:
+Phone: 0121 792 9167
+Email: info@bordoglass.co.uk
+Address: Ogden Road, Wheatley Hills, Doncaster DN2 4SG
+
+Thank you for choosing Bordoglass!
+
+This is an automated confirmation email.
+    `;
+
+    MailApp.sendEmail({
+      to: data.email,
+      subject: subject,
+      body: plainBody,
+      htmlBody: htmlBody,
+      name: 'Bordoglass',
+      replyTo: BUSINESS_EMAIL
+    });
+
+    console.log('Glass sheets customer confirmation sent to:', data.email);
+
+  } catch (error) {
+    console.error('Error sending glass sheets customer confirmation:', error);
   }
 }
 
