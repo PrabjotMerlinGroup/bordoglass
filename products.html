@@ -455,11 +455,42 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.5);
         }
-        
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
             .nav-menu {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
             }
             
             .categories-container {
@@ -495,14 +526,16 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="home.html" class="nav-logo">BORDOGLASS</a>
-            <ul class="nav-menu">
-                <li><a href="home.html" class="nav-link">Home</a></li>
+            <a href="index.html" class="nav-logo">BORDOGLASS</a>
+            <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="products.html" class="nav-link active">Products</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="delivery.html" class="nav-link">Delivery</a></li>
-                <li><a href="faq.html" class="nav-link">FAQ</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="home.html#configurator" class="nav-cta">Configure Now</a></li>
             </ul>
         </div>
     </nav>
