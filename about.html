@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Bordoglass</title>
-    <meta name="description" content="Frequently asked questions about Bordoglass glass systems.">
+    <title>About - Bordoglass</title>
+    <meta name="description" content="Learn about Bordoglass - the UK's leading supplier of ultra-slim glass partition systems.">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -32,21 +32,24 @@
         .nav-cta:hover{background:var(--accent);border-color:var(--accent)}
         .mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px}
         .mobile-toggle span{width:25px;height:2px;background:var(--primary)}
-        .page-header{padding:180px 2rem 80px;background:linear-gradient(165deg,rgba(13,13,13,0.95) 0%,rgba(139,21,56,0.9) 100%),url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center;text-align:center;color:var(--white)}
+        .page-header{padding:180px 2rem 80px;background:linear-gradient(165deg,rgba(13,13,13,0.95) 0%,rgba(139,21,56,0.9) 100%),url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center;text-align:center;color:var(--white)}
         .page-header h1{font-size:clamp(2.5rem,6vw,4rem);margin-bottom:1rem}
         .page-header p{font-size:1.2rem;opacity:0.9;max-width:600px;margin:0 auto}
-        .faq-section{padding:6rem 2rem;background:var(--white)}
-        .container{max-width:900px;margin:0 auto}
-        .faq-item{border-bottom:1px solid var(--light-gray);margin-bottom:0}
-        .faq-question{width:100%;padding:1.5rem 0;background:none;border:none;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-body);font-size:1.1rem;font-weight:600;color:var(--primary);transition:color 0.3s}
-        .faq-question:hover{color:var(--accent)}
-        .faq-question i{transition:transform 0.3s;color:var(--accent)}
-        .faq-question.active i{transform:rotate(180deg)}
-        .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease}
-        .faq-answer.active{max-height:500px;padding-bottom:1.5rem}
-        .faq-answer p{color:var(--gray);line-height:1.8}
-        .faq-category{margin-bottom:3rem}
-        .faq-category h2{font-size:1.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--accent)}
+        .about-section{padding:6rem 2rem;background:var(--white)}
+        .about-section:nth-child(even){background:var(--light-gray)}
+        .container{max-width:1100px;margin:0 auto}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .about-content h2{font-size:2.5rem;margin-bottom:1.5rem}
+        .about-content p{color:var(--gray);margin-bottom:1.5rem;font-size:1.05rem}
+        .values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem}
+        .value-card{background:var(--white);padding:2rem;box-shadow:0 25px 80px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.05);transition:all 0.3s}
+        .value-card:hover{transform:translateY(-5px);box-shadow:0 35px 100px rgba(0,0,0,0.12)}
+        .value-card i{font-size:2rem;color:var(--accent);margin-bottom:1rem}
+        .value-card h3{font-size:1.3rem;margin-bottom:0.75rem;font-family:var(--font-body);font-weight:600}
+        .value-card p{color:var(--gray);font-size:0.95rem}
+        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;margin-top:4rem}
+        .stat-item h3{font-size:3rem;color:var(--accent);margin-bottom:0.5rem}
+        .stat-item p{color:var(--gray);font-size:0.9rem;text-transform:uppercase;letter-spacing:1px}
         .cta-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--accent) 0%,var(--primary) 100%);color:var(--white);text-align:center}
         .cta-content{max-width:800px;margin:0 auto}
         .cta-content h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem}
@@ -64,8 +67,8 @@
         .footer-column a{display:block;color:rgba(255,255,255,0.7);text-decoration:none;margin-bottom:0.8rem;transition:all 0.3s;font-size:0.95rem}
         .footer-column a:hover{color:var(--gold);padding-left:5px}
         .footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);font-size:0.9rem}
-        @media(max-width:1024px){.footer-content{grid-template-columns:1fr 1fr}}
-        @media(max-width:768px){.promo-content{gap:1rem}.promo-divider{display:none}.navbar{top:85px}.navbar.scrolled{top:0}.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;padding:2rem;gap:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,0.1)}.nav-menu.active{display:flex}.mobile-toggle{display:flex}.page-header{padding:160px 2rem 60px}.footer-content{grid-template-columns:1fr;text-align:center}.footer-column a:hover{padding-left:0}}
+        @media(max-width:1024px){.about-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.footer-content{grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){.promo-content{gap:1rem}.promo-divider{display:none}.navbar{top:85px}.navbar.scrolled{top:0}.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;padding:2rem;gap:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,0.1)}.nav-menu.active{display:flex}.mobile-toggle{display:flex}.page-header{padding:160px 2rem 60px}.values-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}.footer-content{grid-template-columns:1fr;text-align:center}.footer-column a:hover{padding-left:0}}
     </style>
 </head>
 <body>
@@ -75,103 +78,105 @@
             <div class="promo-divider"></div>
             <div class="promo-price">4mm K Glass Sheets <span>£85</span></div>
             <div class="promo-divider"></div>
-            <a href="glass-sheets.html" class="promo-cta">Order Now →</a>
+            <a href="glass-sheets.html" class="promo-cta">Order Now</a>
         </div>
     </div>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo"><img src="logo.png" alt="Bordoglass" class="nav-logo-img" onerror="this.style.display='none'"><span class="nav-logo-text">BORDOGLASS</span></a>
+            <a href="/" class="nav-logo"><img src="logo.png" alt="Bordoglass" class="nav-logo-img" onerror="this.style.display='none'"><span class="nav-logo-text">BORDOGLASS</span></a>
             <div class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')"><span></span><span></span><span></span></div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="glass-sheets.html" class="nav-link">Glass Sheets</a></li>
-                <li><a href="delivery.html" class="nav-link">Delivery</a></li>
-                <li><a href="faq.html" class="nav-link active">FAQ</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="index.html#configurator" class="nav-cta">Configure Now</a></li>
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/products" class="nav-link">Products</a></li>
+                <li><a href="/about" class="nav-link active">About</a></li>
+                <li><a href="/delivery" class="nav-link">Delivery</a></li>
+                <li><a href="/faq" class="nav-link">FAQ</a></li>
+                <li><a href="/contact" class="nav-link">Contact</a></li>
+                <li><a href="/#configurator" class="nav-cta">Configure Now</a></li>
             </ul>
         </div>
     </nav>
     <header class="page-header">
-        <h1>Frequently Asked Questions</h1>
-        <p>Find answers to common questions about our glass systems, delivery, and services</p>
+        <h1>About Bordoglass</h1>
+        <p>The UK's leading supplier of ultra-slim glass partition systems</p>
     </header>
-    <section class="faq-section">
+    <section class="about-section">
         <div class="container">
-            <div class="faq-category">
-                <h2>Products & Glass</h2>
-                <div class="faq-item">
-                    <button class="faq-question">What makes your profiles the slimmest on the market?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Our signature 25mm profile is engineered using high-strength aluminium alloys that allow for minimal frame width while maintaining structural integrity. This gives you maximum glass area and light transmission compared to standard 35-50mm profiles from other manufacturers.</p></div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Our Story</h2>
+                    <p>At Bordoglass, we believe that exceptional design begins with understanding the perfect balance between form and function. We have been at the forefront of developing innovative internal door and partition systems that transform spaces while maintaining the highest standards of quality and craftsmanship.</p>
+                    <p>Our flagship systems represent years of research and development, combining traditional aesthetic appeal with cutting-edge engineering. Inspired by classic Georgian steel doors, we've created modern solutions that bring together lightness, functionality, and timeless elegance.</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">What types of glass do you offer?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>We offer clear float, tempered safety glass, laminated glass, frosted privacy glass, tinted glass (grey, bronze, blue), and mirror glass. Thicknesses range from 4mm to 12mm depending on application. All safety-critical applications use tempered or laminated glass to British Standards.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Can I get custom RAL colours for the frames?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Yes, we can powder coat frames in any RAL colour. Standard colours (Jet Black RAL 9005, Anthracite Grey RAL 7016, Pure White RAL 9016) are held in stock for faster delivery. Custom colours add approximately 5 working days to lead times.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">What's the difference between tempered and laminated glass?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Tempered glass is heat-treated to be 5x stronger than standard glass and breaks into small, safer pieces. Laminated glass has a PVB interlayer that holds the glass together if broken, providing security and sound insulation. We recommend laminated for doors and areas requiring extra security.</p></div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Bordoglass Glass Systems" style="width:100%;border-radius:0;box-shadow:0 25px 80px rgba(0,0,0,0.15)">
                 </div>
             </div>
-            <div class="faq-category">
-                <h2>Ordering & Delivery</h2>
-                <div class="faq-item">
-                    <button class="faq-question">How quickly can you deliver?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Standard rectangular glass in stock sizes: 3 working days. Custom sizes and tempered glass: 5-7 working days. Complete door systems and partitions: 10-14 working days. Express delivery is available for Zone 1 (Central England) at additional cost.</p></div>
+        </div>
+    </section>
+    <section class="about-section">
+        <div class="container">
+            <h2 style="text-align:center;font-size:2.5rem;margin-bottom:1rem">Our Values</h2>
+            <p style="text-align:center;color:var(--gray);max-width:600px;margin:0 auto 2rem">What drives us to deliver excellence every day</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Quality Excellence</h3>
+                    <p>We maintain the highest standards through rigorous quality control, ensuring every product meets our exacting specifications.</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">What are the pre-cut glass sheet sizes?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Our pre-cut 4mm glass sheets come in three sizes: 960×2250mm, 1070×2250mm, and 1180×2250mm. When you order, you receive all three sizes as a complete set. Standard glass is £65 per set, K glass (low-E) is £85 per set.</p></div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>Our innovative assembly systems revolutionize fabrication, eliminating complex machining operations while reducing costs and assembly time.</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">Do you deliver nationwide?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Yes, we deliver across the UK. Zone 1 (Central England) from £45, Zone 2 (England & Wales) from £65, Zone 3 (Scotland & NI) from £85. Orders over £2500 qualify for free delivery to Zone 1.</p></div>
+                <div class="value-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Customization</h3>
+                    <p>We understand that every project is unique. Our modular system offers unlimited design possibilities with extensive color and configuration options.</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">How is the glass packaged for delivery?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>All glass is professionally packaged with edge protection, foam separators, and secure strapping on wooden stillages or in cardboard cases depending on size. Large orders are delivered on dedicated glass transport vehicles with tail lift offload.</p></div>
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Partnership</h3>
+                    <p>We work closely with architects, designers, and contractors to deliver solutions that exceed expectations and bring visions to life.</p>
                 </div>
             </div>
-            <div class="faq-category">
-                <h2>Installation & Technical</h2>
-                <div class="faq-item">
-                    <button class="faq-question">Do you offer installation services?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Yes, we offer professional installation through our network of approved installers. Installation is quoted separately and includes site survey, fitting, and final sign-off. Contact us for a combined supply and install quotation.</p></div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Years Experience</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">What's the maximum glass size you can supply?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Maximum sizes depend on glass type: Clear float up to 3210×6000mm, Tempered up to 2400×4800mm, Laminated up to 2400×4500mm. For door and partition systems, maximum single panel width is typically 1500mm and height 3000mm.</p></div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Projects Completed</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">Are your products compliant with building regulations?<i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Yes, all our glass products meet relevant British Standards. Safety glass is supplied to BS EN 12150 (tempered) and BS EN 14449 (laminated). We provide compliance documentation and can advise on Part K (glazing safety) and Part L (thermal) requirements.</p></div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Product Options</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Quality Guaranteed</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="cta-section">
         <div class="cta-content">
-            <h2>Still Have Questions?</h2>
-            <p>Our team is here to help with technical queries, custom requirements, and quotations</p>
-            <div><a href="contact.html" class="btn btn-primary">Contact Us</a><a href="tel:01217929167" class="btn btn-secondary">Call 0121 792 9167</a></div>
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Get in touch with our team to discuss your project requirements</p>
+            <div><a href="/contact" class="btn btn-primary">Contact Us</a><a href="tel:01217929167" class="btn btn-secondary">Call 0121 792 9167</a></div>
         </div>
     </section>
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-column"><h3>BORDOGLASS</h3><p style="margin-bottom:1.5rem">The UK's leading supplier of ultra-slim glass partition systems.</p><p style="opacity:0.5">Made with pride in Britain 🇬🇧</p></div>
-            <div class="footer-column"><h3>Quick Links</h3><a href="index.html">Home</a><a href="products.html">All Products</a><a href="glass-sheets.html">Glass Sheets</a><a href="delivery.html">Delivery Info</a><a href="faq.html">FAQs</a><a href="contact.html">Contact</a></div>
-            <div class="footer-column"><h3>Products</h3><a href="products.html#glass">Glass Types</a><a href="products.html#profiles">Profiles</a><a href="products.html#hardware">Hardware</a><a href="products.html#systems">Complete Systems</a></div>
+            <div class="footer-column"><h3>BORDOGLASS</h3><p style="margin-bottom:1.5rem">The UK's leading supplier of ultra-slim glass partition systems.</p><p style="opacity:0.5">Made with pride in Britain</p></div>
+            <div class="footer-column"><h3>Quick Links</h3><a href="/">Home</a><a href="/products">All Products</a><a href="/about">About</a><a href="/delivery">Delivery Info</a><a href="/contact">Contact</a></div>
+            <div class="footer-column"><h3>Products</h3><a href="/products#glass">Glass Types</a><a href="/products#profiles">Profiles</a><a href="/products#hardware">Hardware</a><a href="/products#systems">Complete Systems</a></div>
             <div class="footer-column"><h3>Contact</h3><a href="tel:01217929167">0121 792 9167</a><a href="mailto:info@bordoglass.co.uk">info@bordoglass.co.uk</a><p style="margin-top:1rem;opacity:0.7;font-size:0.9rem">Ogden Road, Doncaster<br>DN2 4SG, United Kingdom</p></div>
         </div>
         <div class="footer-bottom"><p>&copy; 2024 Bordoglass Ltd. All rights reserved.</p></div>
     </footer>
     <script>
-        document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',function(){this.classList.toggle('active');this.nextElementSibling.classList.toggle('active');});});
         window.addEventListener('scroll',function(){const n=document.querySelector('.navbar');const p=document.querySelector('.promo-banner');if(window.scrollY>60){n.classList.add('scrolled');p.style.transform='translateY(-100%)';p.style.transition='transform 0.3s';}else{n.classList.remove('scrolled');p.style.transform='translateY(0)';}});
     </script>
 </body>

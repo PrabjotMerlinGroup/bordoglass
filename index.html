@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glass Sheets - Bordoglass | 4mm Glass from £65</title>
-    <meta name="description" content="Order pre-cut 4mm glass sheets. Standard glass £65, K glass £85. Pre-cut sizes: 960x2250, 1070x2250, 1180x2250mm. Fast UK delivery.">
+    <title>Bordoglass - Ultra-Slim Glass Partitions & Doors</title>
+    <meta name="description" content="The thinnest profile on the market. Minimal. Strong. Beautiful. Transform your space with our ultra-slim glass systems.">
     
+    <!-- Google Fonts - Refined Typography -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         :root {
             --primary: #0d0d0d;
@@ -34,8 +41,29 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        h1, h2, h3 { font-family: var(--font-heading); font-weight: 500; line-height: 1.15; }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
         
+        ::-webkit-scrollbar-track {
+            background: var(--light-gray);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+        
+        /* Top Promo Banner */
         .promo-banner {
             background: linear-gradient(135deg, var(--primary) 0%, #1a1a1a 50%, var(--accent) 100%);
             color: var(--white);
@@ -74,9 +102,29 @@
             z-index: 1;
         }
         
-        .promo-price { font-size: 1.1rem; font-weight: 600; }
-        .promo-price span { color: var(--gold); font-size: 1.3rem; font-weight: 700; }
-        .promo-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.3); }
+        .promo-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .promo-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .promo-price span {
+            color: var(--gold);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .promo-divider {
+            width: 1px;
+            height: 20px;
+            background: rgba(255,255,255,0.3);
+        }
         
         .promo-cta {
             background: var(--gold);
@@ -88,10 +136,16 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            border-radius: 2px;
         }
         
-        .promo-cta:hover { background: var(--white); transform: translateY(-2px); }
+        .promo-cta:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(201, 169, 98, 0.4);
+        }
 
+        /* Navigation */
         .navbar {
             position: fixed;
             top: 52px;
@@ -103,7 +157,10 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         
-        .navbar.scrolled { top: 0; box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+        .navbar.scrolled {
+            top: 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+        }
         
         .nav-container {
             max-width: 1400px;
@@ -114,11 +171,32 @@
             align-items: center;
         }
         
-        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo-img { height: 45px; width: auto; }
-        .nav-logo-text { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; color: var(--primary); letter-spacing: 3px; }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
         
-        .nav-menu { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+        .nav-logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .nav-logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 3px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
         
         .nav-link {
             text-decoration: none;
@@ -127,6 +205,7 @@
             font-size: 0.95rem;
             transition: all 0.3s ease;
             position: relative;
+            letter-spacing: 0.5px;
         }
         
         .nav-link::after {
@@ -140,7 +219,10 @@
             transition: width 0.3s ease;
         }
         
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
         
         .nav-cta {
             background: var(--primary);
@@ -149,196 +231,365 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
+            letter-spacing: 0.5px;
             transition: all 0.3s ease;
             border: 2px solid var(--primary);
         }
         
-        .nav-cta:hover { background: var(--accent); border-color: var(--accent); }
+        .nav-cta:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
         
-        .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; }
-        .mobile-toggle span { width: 25px; height: 2px; background: var(--primary); }
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
 
-        .page-header {
-            padding: 180px 2rem 80px;
-            background: linear-gradient(165deg, rgba(13,13,13,0.95) 0%, rgba(139,21,56,0.9) 100%),
-                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2053&q=80');
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding-top: 120px;
+            background: linear-gradient(165deg, rgba(13,13,13,0.92) 0%, rgba(139,21,56,0.85) 100%),
+                        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             color: var(--white);
-        }
-        
-        .page-header h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; }
-        .page-header p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-
-        .glass-sheets-section { padding: 6rem 2rem; background: var(--light-gray); }
-        .container { max-width: 1200px; margin: 0 auto; }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-        
-        .product-card {
-            background: var(--white);
-            padding: 3rem;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 25px 80px rgba(0,0,0,0.08);
             position: relative;
-            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--white), transparent);
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 169, 98, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 10px 24px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -2px;
+            line-height: 1.05;
+        }
+        
+        .hero-tagline {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero-tagline span {
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            color: var(--white);
+            border: 2px solid var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background: var(--accent-light);
+            border-color: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 21, 56, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: var(--primary);
+            color: var(--white);
+            position: relative;
+        }
+        
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s ease;
         }
         
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 35px 100px rgba(0,0,0,0.12); }
-        .product-card.featured { border: 2px solid var(--gold); }
-        
-        .product-card.featured::before {
-            content: 'POPULAR';
-            position: absolute;
-            top: 20px;
-            right: -35px;
-            background: var(--gold);
-            color: var(--primary);
-            padding: 5px 40px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            transform: rotate(45deg);
+        .feature:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--gold);
+            transform: translateY(-5px);
         }
         
-        .product-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--light-gray) 0%, #e8e8e6 100%);
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .feature p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Configurator Section */
+        .configurator-section {
+            padding: 8rem 2rem;
+            background: var(--light-gray);
+            position: relative;
+        }
+        
+        .configurator-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+        
+        .configurator-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .configurator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .config-form {
+            background: var(--white);
+            padding: 3rem;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .config-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        
+        .config-tab {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            white-space: nowrap;
+            font-family: var(--font-body);
+            letter-spacing: 0.5px;
+        }
+        
+        .config-tab.active {
+            color: var(--primary);
+        }
+        
+        .config-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .config-step {
+            display: none;
+        }
+        
+        .config-step.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .step-number {
+            background: var(--accent);
+            color: var(--white);
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .product-icon i { font-size: 2rem; color: var(--accent); }
-        .product-card h2 { font-family: var(--font-body); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .product-card .product-type { color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; }
-        
-        .product-price { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 1.5rem; }
-        .product-price .amount { font-size: 3rem; font-weight: 700; color: var(--accent); font-family: var(--font-heading); }
-        .product-price .currency { font-size: 1.5rem; font-weight: 600; color: var(--accent); }
-        .product-price .per { color: var(--gray); font-size: 0.9rem; }
-        
-        .product-features { list-style: none; margin-bottom: 2rem; }
-        .product-features li { padding: 0.75rem 0; border-bottom: 1px solid var(--light-gray); display: flex; align-items: center; gap: 0.75rem; }
-        .product-features li:last-child { border-bottom: none; }
-        .product-features i { color: var(--success); font-size: 0.9rem; }
-        
-        .quantity-selector { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-        .quantity-selector label { font-weight: 600; font-size: 0.9rem; color: var(--gray); }
-        .quantity-controls { display: flex; align-items: center; border: 1px solid #e0e0e0; }
-        
-        .quantity-btn {
-            width: 45px;
-            height: 45px;
-            background: var(--light-gray);
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .quantity-btn:hover { background: var(--primary); color: var(--white); }
-        .quantity-input { width: 60px; height: 45px; border: none; text-align: center; font-size: 1.1rem; font-weight: 600; font-family: inherit; }
-        .quantity-input:focus { outline: none; }
-        
-        .total-price {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: var(--light-gray);
-            text-align: center;
-        }
-        
-        .total-price span { color: var(--accent); font-size: 1.5rem; }
-        
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 16px 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            text-align: center;
-            text-transform: uppercase;
-            cursor: pointer;
-            border: none;
-            font-family: inherit;
-        }
-        
-        .btn-accent { background: var(--accent); color: var(--white); }
-        .btn-accent:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(139, 21, 56, 0.3); }
-        .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; }
-
-        .info-box {
-            background: var(--white);
-            padding: 3rem;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 25px 80px rgba(0,0,0,0.08);
-            margin-bottom: 3rem;
-        }
-        
-        .info-box h3 {
-            font-family: var(--font-body);
-            font-size: 1.3rem;
             font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .step-header h3 {
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .form-group {
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
         }
         
-        .info-box h3 i { color: var(--gold); }
-        
-        .sizes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
-        
-        .size-card {
-            background: var(--light-gray);
-            padding: 1.5rem;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .size-card:hover { border-color: var(--accent); }
-        .size-card .dimension { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.25rem; }
-        .size-card .label { font-size: 0.85rem; color: var(--gray); }
-        
-        .info-note {
-            background: linear-gradient(135deg, rgba(201, 169, 98, 0.1) 0%, rgba(201, 169, 98, 0.05) 100%);
-            border-left: 4px solid var(--gold);
-            padding: 1.25rem 1.5rem;
-            font-size: 0.95rem;
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
             color: var(--gray);
         }
-        
-        .info-note strong { color: var(--primary); }
-
-        .order-section { padding: 6rem 2rem; background: var(--white); }
-        .order-form-container { max-width: 700px; margin: 0 auto; }
-        
-        .section-header { text-align: center; margin-bottom: 3rem; }
-        .section-header h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
-        .section-header p { color: var(--gray); font-size: 1.1rem; }
-        
-        .order-form { background: var(--light-gray); padding: 3rem; }
-        
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--gray); }
         
         .form-group input,
         .form-group select,
@@ -360,55 +611,265 @@
             box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
         }
         
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        
-        .order-summary {
-            background: var(--white);
-            padding: 1.5rem;
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
             margin-bottom: 2rem;
-            border: 2px solid var(--primary);
         }
         
-        .order-summary h4 {
-            font-family: var(--font-body);
+        .option-card {
+            padding: 1.5rem;
+            border: 2px solid #e0e0e0;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+        
+        .option-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .option-card.selected {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .option-card i {
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        
+        .option-card h4 {
             font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
         }
         
-        .summary-item {
+        .option-card p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+        
+        .form-actions {
             display: flex;
-            justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--light-gray);
+            gap: 1rem;
+            margin-top: 2rem;
         }
         
-        .summary-item:last-child { border-bottom: none; font-weight: 700; font-size: 1.1rem; padding-top: 1rem; }
-        .summary-item span:last-child { color: var(--accent); }
+        .form-actions .btn {
+            flex: 1;
+            padding: 14px 24px;
+        }
         
-        .success-message {
+        .config-preview {
+            background: var(--white);
+            padding: 3rem;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: sticky;
+            top: 150px;
+        }
+        
+        .preview-3d {
+            background: linear-gradient(135deg, var(--light-gray) 0%, #e8e8e6 100%);
+            height: 400px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-visual {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-visual img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 40px rgba(0,0,0,0.15));
+            transition: all 0.5s ease;
+        }
+        
+        .product-visual img:hover {
+            transform: scale(1.03);
+        }
+        
+        .preview-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: var(--gray);
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .config-success-message {
             background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
             color: white;
-            padding: 2rem;
+            padding: 1.25rem;
             text-align: center;
             margin-bottom: 1.5rem;
-            display: none;
+            font-weight: 500;
         }
-        
-        .success-message i { font-size: 3rem; margin-bottom: 1rem; display: block; }
-        .success-message h3 { font-family: var(--font-body); font-size: 1.3rem; margin-bottom: 0.5rem; }
-        
-        .error-message {
+
+        .config-error-message {
             background: linear-gradient(135deg, #dc3545 0%, #b91c1c 100%);
             color: white;
             padding: 1.25rem;
             text-align: center;
             margin-bottom: 1.5rem;
-            display: none;
+            font-weight: 500;
         }
 
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .preview-details h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 0.95rem;
+        }
+        
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-item span:first-child {
+            color: var(--gray);
+        }
+        
+        .detail-item span:last-child {
+            font-weight: 600;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 8rem 2rem;
+            background: var(--white);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            height: 450px;
+            cursor: pointer;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+            padding: 3rem 2rem 2rem;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .portfolio-overlay h3 {
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-overlay p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-content h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
         .footer {
             background: var(--primary);
             color: var(--white);
@@ -444,7 +905,11 @@
             color: var(--gold);
         }
         
-        .footer-column p { opacity: 0.7; line-height: 1.8; font-size: 0.95rem; }
+        .footer-column p {
+            opacity: 0.7;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
         
         .footer-column a {
             display: block;
@@ -455,7 +920,10 @@
             font-size: 0.95rem;
         }
         
-        .footer-column a:hover { color: var(--gold); padding-left: 5px; }
+        .footer-column a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
         
         .footer-bottom {
             text-align: center;
@@ -465,252 +933,481 @@
             font-size: 0.9rem;
         }
 
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
         @media (max-width: 1024px) {
-            .products-grid { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr 1fr; gap: 3rem; }
+            .features-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .configurator-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .config-preview {
+                position: relative;
+                top: 0;
+                margin-top: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
         }
         
         @media (max-width: 768px) {
-            .promo-content { gap: 1rem; font-size: 0.9rem; }
-            .promo-divider { display: none; }
-            .navbar { top: 85px; }
-            .navbar.scrolled { top: 0; }
-            .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 2rem; gap: 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-            .nav-menu.active { display: flex; }
-            .mobile-toggle { display: flex; }
-            .page-header { padding: 160px 2rem 60px; }
-            .sizes-grid { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
-            .footer-column a:hover { padding-left: 0; }
+            .promo-banner {
+                padding: 10px 15px;
+            }
+            
+            .promo-content {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .promo-divider {
+                display: none;
+            }
+            
+            .promo-item {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .navbar {
+                top: 85px;
+            }
+            
+            .navbar.scrolled {
+                top: 0;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .hero {
+                padding-top: 180px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .features-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .option-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .footer-column a:hover {
+                padding-left: 0;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Promo Banner -->
     <div class="promo-banner">
         <div class="promo-content">
-            <div class="promo-price">4mm Glass Sheets <span>£65</span></div>
+            <div class="promo-item">
+                <span class="promo-price">4mm Glass Sheets <span>£65</span></span>
+            </div>
             <div class="promo-divider"></div>
-            <div class="promo-price">4mm K Glass Sheets <span>£85</span></div>
+            <div class="promo-item">
+                <span class="promo-price">4mm K Glass Sheets <span>£85</span></span>
+            </div>
             <div class="promo-divider"></div>
-            <a href="#order-form" class="promo-cta">Order Now →</a>
+            <a href="glass-sheets.html" class="promo-cta">Order Now →</a>
         </div>
     </div>
 
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo">
+            <a href="index.html" class="nav-logo">
+                <!-- Logo placeholder - replace src with your logo -->
                 <img src="logo.png" alt="Bordoglass" class="nav-logo-img" onerror="this.style.display='none'">
                 <span class="nav-logo-text">BORDOGLASS</span>
             </a>
             <div class="mobile-toggle" onclick="toggleMobileMenu()">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="/" class="nav-link active">Home</a></li>
-                <li><a href="/products" class="nav-link">Products</a></li>
-                <li><a href="/about" class="nav-link">About</a></li>
-                <li><a href="/delivery" class="nav-link">Delivery</a></li>
-                <li><a href="/contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="glass-sheets.html" class="nav-link">Glass Sheets</a></li>
+                <li><a href="delivery.html" class="nav-link">Delivery</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#configurator" class="nav-cta">Configure Now</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="page-header">
-        <h1>Glass Sheets</h1>
-        <p>Premium pre-cut 4mm glass sheets. Order online and get all 3 sizes delivered to your door.</p>
-    </section>
-
-    <section class="glass-sheets-section">
-        <div class="container">
-            <div class="info-box">
-                <h3><i class="fas fa-info-circle"></i> Pre-Cut Sheet Sizes</h3>
-                <p style="margin-bottom: 1.5rem; color: var(--gray);">Each order includes all 3 pre-cut sizes below. Perfect for standard door and partition installations.</p>
-                <div class="sizes-grid">
-                    <div class="size-card">
-                        <div class="dimension">960 × 2250mm</div>
-                        <div class="label">Size 1</div>
-                    </div>
-                    <div class="size-card">
-                        <div class="dimension">1070 × 2250mm</div>
-                        <div class="label">Size 2</div>
-                    </div>
-                    <div class="size-card">
-                        <div class="dimension">1180 × 2250mm</div>
-                        <div class="label">Size 3</div>
-                    </div>
-                </div>
-                <div class="info-note">
-                    <strong>Note:</strong> When you order, you receive all 3 sheet sizes. Price shown is per complete set of 3 sheets.
-                </div>
-            </div>
-
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-icon"><i class="fas fa-square"></i></div>
-                    <h2>4mm Standard Glass</h2>
-                    <p class="product-type">Clear Float Glass</p>
-                    <div class="product-price">
-                        <span class="currency">£</span>
-                        <span class="amount">65</span>
-                        <span class="per">per set of 3 sheets</span>
-                    </div>
-                    <ul class="product-features">
-                        <li><i class="fas fa-check"></i> 4mm thickness</li>
-                        <li><i class="fas fa-check"></i> Clear float glass</li>
-                        <li><i class="fas fa-check"></i> All 3 pre-cut sizes included</li>
-                        <li><i class="fas fa-check"></i> Polished edges</li>
-                        <li><i class="fas fa-check"></i> Fast UK delivery</li>
-                    </ul>
-                    <div class="quantity-selector">
-                        <label>Quantity (sets):</label>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn" onclick="updateQuantity('standard', -1)">−</button>
-                            <input type="number" class="quantity-input" id="standard-qty" value="1" min="1" max="99" onchange="calculateTotal('standard')">
-                            <button class="quantity-btn" onclick="updateQuantity('standard', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="total-price" id="standard-total">Total: <span>£65</span></div>
-                    <button class="btn btn-accent" onclick="selectProduct('standard')">Add to Order</button>
-                </div>
-
-                <div class="product-card featured">
-                    <div class="product-icon"><i class="fas fa-sun"></i></div>
-                    <h2>4mm K Glass</h2>
-                    <p class="product-type">Low-E Energy Efficient Glass</p>
-                    <div class="product-price">
-                        <span class="currency">£</span>
-                        <span class="amount">85</span>
-                        <span class="per">per set of 3 sheets</span>
-                    </div>
-                    <ul class="product-features">
-                        <li><i class="fas fa-check"></i> 4mm thickness</li>
-                        <li><i class="fas fa-check"></i> Low-E coating for insulation</li>
-                        <li><i class="fas fa-check"></i> All 3 pre-cut sizes included</li>
-                        <li><i class="fas fa-check"></i> Reduces heat loss</li>
-                        <li><i class="fas fa-check"></i> Energy efficient</li>
-                    </ul>
-                    <div class="quantity-selector">
-                        <label>Quantity (sets):</label>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn" onclick="updateQuantity('kglass', -1)">−</button>
-                            <input type="number" class="quantity-input" id="kglass-qty" value="1" min="1" max="99" onchange="calculateTotal('kglass')">
-                            <button class="quantity-btn" onclick="updateQuantity('kglass', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="total-price" id="kglass-total">Total: <span>£85</span></div>
-                    <button class="btn btn-accent" onclick="selectProduct('kglass')">Add to Order</button>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Thinnest Profile on the Market</span>
+            <h1>Ultra-Slim Glass Systems</h1>
+            <p class="hero-tagline">
+                <span>25mm</span> profiles. Maximum light. Minimal frame.
+            </p>
+            <div class="hero-buttons">
+                <a href="#configurator" class="btn btn-primary">Configure Your System</a>
+                <a href="products.html" class="btn btn-secondary">View Products</a>
             </div>
         </div>
     </section>
 
-    <section class="order-section" id="order-form">
-        <div class="order-form-container">
-            <div class="section-header">
-                <h2>Complete Your Order</h2>
-                <p>Fill in your details below and we'll be in touch to confirm your order.</p>
+    <!-- Features -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature">
+                <div class="feature-icon">25mm</div>
+                <h3>Slimmest Profile</h3>
+                <p>Market-leading thin frames</p>
             </div>
+            <div class="feature">
+                <div class="feature-icon">3</div>
+                <h3>Day Delivery</h3>
+                <p>On standard glass orders</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🇬🇧</div>
+                <h3>British Made</h3>
+                <p>Quality you can trust</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">100%</div>
+                <h3>Customizable</h3>
+                <p>Any size, any style</p>
+            </div>
+        </div>
+    </section>
 
-            <div class="order-form">
-                <div class="success-message" id="successMessage">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Order Submitted Successfully!</h3>
-                    <p>Thank you for your order. Ginny will be in touch shortly to confirm delivery details.</p>
-                </div>
-
-                <div class="error-message" id="errorMessage">
-                    <i class="fas fa-exclamation-circle"></i> Sorry, there was an error. Please try again or call us on 0121 792 9167.
-                </div>
-
-                <div class="order-summary" id="orderSummary" style="display: none;">
-                    <h4>Order Summary</h4>
-                    <div class="summary-item" id="summaryStandard" style="display: none;">
-                        <span>4mm Standard Glass</span>
-                        <span id="summaryStandardPrice">£0</span>
+    <!-- Configurator -->
+    <section id="configurator" class="configurator-section">
+        <div class="configurator-container">
+            <div class="section-header">
+                <h2>Configure Your Perfect Door</h2>
+                <p>Design your custom glass system in minutes. Get an instant quote.</p>
+            </div>
+            
+            <div class="configurator-grid">
+                <div class="config-form">
+                    <div class="config-tabs">
+                        <button class="config-tab active" onclick="showStep('design')">Design</button>
+                        <button class="config-tab" onclick="showStep('glass')">Glass</button>
+                        <button class="config-tab" onclick="showStep('dimensions')">Size</button>
+                        <button class="config-tab" onclick="showStep('details')">Details</button>
                     </div>
-                    <div class="summary-item" id="summaryKglass" style="display: none;">
-                        <span>4mm K Glass</span>
-                        <span id="summaryKglassPrice">£0</span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Total</span>
-                        <span id="summaryTotal">£0</span>
-                    </div>
-                </div>
-
-                <form id="glassOrderForm">
-                    <div class="form-row">
+                    
+                    <!-- Design Step -->
+                    <div class="config-step active" id="design-step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>Choose Your Design</h3>
+                        </div>
+                        
+                        <div class="option-grid">
+                            <div class="option-card selected" data-type="hinged">
+                                <i class="fas fa-door-open fa-2x"></i>
+                                <h4>Hinged Door</h4>
+                                <p>Classic swing door</p>
+                            </div>
+                            <div class="option-card" data-type="sliding">
+                                <i class="fas fa-arrows-alt-h fa-2x"></i>
+                                <h4>Sliding Door</h4>
+                                <p>Space saving</p>
+                            </div>
+                            <div class="option-card" data-type="pivot">
+                                <i class="fas fa-sync-alt fa-2x"></i>
+                                <h4>Pivot Door</h4>
+                                <p>Contemporary style</p>
+                            </div>
+                            <div class="option-card" data-type="partition">
+                                <i class="fas fa-columns fa-2x"></i>
+                                <h4>Partition</h4>
+                                <p>Room divider</p>
+                            </div>
+                        </div>
+                        
                         <div class="form-group">
-                            <label>Glass Type *</label>
-                            <select id="orderGlassType" required onchange="updateOrderSummary()">
-                                <option value="">Select glass type...</option>
-                                <option value="4mm Standard Glass - £65/set">4mm Standard Glass (£65/set)</option>
-                                <option value="4mm K Glass - £85/set">4mm K Glass (£85/set)</option>
-                                <option value="Both Types">Both Types</option>
+                            <label>Frame Color</label>
+                            <select id="configFrameColor">
+                                <option value="RAL 9005 - Jet Black">RAL 9005 - Jet Black</option>
+                                <option value="RAL 7016 - Anthracite Grey">RAL 7016 - Anthracite Grey</option>
+                                <option value="RAL 9016 - Pure White">RAL 9016 - Pure White</option>
+                                <option value="Custom RAL Color">Custom RAL Color</option>
                             </select>
                         </div>
-                        <div class="form-group" id="singleQtyGroup">
-                            <label>Quantity (sets) *</label>
-                            <input type="number" id="orderQuantity" min="1" value="1" required onchange="updateOrderSummary()">
+                        
+                        <div class="form-actions">
+                            <button class="btn btn-accent" onclick="nextStep()">Next Step</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Glass Step -->
+                    <div class="config-step" id="glass-step">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>Select Glass Type</h3>
+                        </div>
+                        
+                        <div class="option-grid">
+                            <div class="option-card selected" data-glass="clear">
+                                <i class="fas fa-square fa-2x"></i>
+                                <h4>Clear Glass</h4>
+                                <p>Maximum transparency</p>
+                            </div>
+                            <div class="option-card" data-glass="frosted">
+                                <i class="fas fa-cloud fa-2x"></i>
+                                <h4>Frosted Glass</h4>
+                                <p>Privacy option</p>
+                            </div>
+                            <div class="option-card" data-glass="tinted">
+                                <i class="fas fa-adjust fa-2x"></i>
+                                <h4>Tinted Glass</h4>
+                                <p>Solar control</p>
+                            </div>
+                            <div class="option-card" data-glass="mirror">
+                                <i class="fas fa-th-large fa-2x"></i>
+                                <h4>Mirror Glass</h4>
+                                <p>Reflective finish</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Glass Thickness</label>
+                            <select id="configGlassThickness">
+                                <option value="6mm Tempered">6mm Tempered</option>
+                                <option value="8mm Tempered">8mm Tempered</option>
+                                <option value="10mm Tempered">10mm Tempered</option>
+                                <option value="6.4mm Laminated">6.4mm Laminated</option>
+                                <option value="8.8mm Laminated">8.8mm Laminated</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="btn btn-secondary" style="color: var(--primary); border-color: var(--primary);" onclick="prevStep()">Previous</button>
+                            <button class="btn btn-accent" onclick="nextStep()">Next Step</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Dimensions Step -->
+                    <div class="config-step" id="dimensions-step">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3>Enter Dimensions</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Width (mm)</label>
+                            <input type="number" id="configWidth" value="1000" min="600" max="3000">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Height (mm)</label>
+                            <input type="number" id="configHeight" value="2100" min="1800" max="3000">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Additional Notes</label>
+                            <textarea id="configNotes" rows="3" placeholder="Any special requirements..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-secondary" style="color: var(--primary); border-color: var(--primary);" onclick="prevStep()">Previous</button>
+                            <button class="btn btn-accent" onclick="nextStep()">Next Step</button>
                         </div>
                     </div>
 
-                    <div id="bothTypesQty" style="display: none;">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Standard Glass Sets</label>
-                                <input type="number" id="orderStandardQty" min="0" value="1" onchange="updateOrderSummary()">
-                            </div>
-                            <div class="form-group">
-                                <label>K Glass Sets</label>
-                                <input type="number" id="orderKglassQty" min="0" value="1" onchange="updateOrderSummary()">
-                            </div>
+                    <!-- Contact Details Step -->
+                    <div class="config-step" id="details-step">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <h3>Your Details</h3>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label>Name *</label>
-                        <input type="text" id="orderName" required>
-                    </div>
+                        <div id="configSuccessMessage" class="config-success-message" style="display: none;">
+                            <i class="fas fa-check-circle"></i> Thank you! Your quote request has been submitted. We'll email you within 24 hours.
+                        </div>
 
-                    <div class="form-row">
+                        <div id="configErrorMessage" class="config-error-message" style="display: none;">
+                            <i class="fas fa-exclamation-circle"></i> Sorry, there was an error. Please try again or call us directly.
+                        </div>
+
+                        <div class="form-group">
+                            <label>Name *</label>
+                            <input type="text" id="configName" required>
+                        </div>
+
                         <div class="form-group">
                             <label>Email *</label>
-                            <input type="email" id="orderEmail" required>
+                            <input type="email" id="configEmail" required>
                         </div>
+
                         <div class="form-group">
                             <label>Phone *</label>
-                            <input type="tel" id="orderPhone" required>
+                            <input type="tel" id="configPhone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Company (Optional)</label>
+                            <input type="text" id="configCompany">
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-secondary" style="color: var(--primary); border-color: var(--primary);" onclick="prevStep()">Previous</button>
+                            <button class="btn btn-accent" id="submitQuoteBtn" onclick="submitQuote()">Get Quote</button>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label>Company (Optional)</label>
-                        <input type="text" id="orderCompany">
+                </div>
+                
+                <div class="config-preview">
+                    <div class="preview-3d">
+                        <div class="product-visual" id="productVisual">
+                            <div class="preview-loading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
+                            <img id="previewImage" src="" alt="Product Preview" style="display: none;">
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                        <label>Delivery Address *</label>
-                        <textarea id="orderAddress" rows="3" required placeholder="Full delivery address..."></textarea>
+                    <h3>Your Configuration</h3>
+                    <div class="detail-item">
+                        <span>Type</span>
+                        <span id="preview-type">Hinged Door</span>
                     </div>
-
-                    <div class="form-group">
-                        <label>Additional Notes</label>
-                        <textarea id="orderNotes" rows="2" placeholder="Any special requirements..."></textarea>
+                    <div class="detail-item">
+                        <span>Glass</span>
+                        <span id="preview-glass">Clear Glass</span>
                     </div>
-
-                    <button type="submit" class="btn btn-accent" id="submitOrderBtn">Submit Order</button>
-                </form>
+                    <div class="detail-item">
+                        <span>Size</span>
+                        <span id="preview-size">1000 x 2100mm</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Frame</span>
+                        <span id="preview-frame">RAL 9005</span>
+                    </div>
+                    <div class="detail-item" style="font-weight: 700;">
+                        <span>Lead Time</span>
+                        <span style="color: var(--accent);">3-5 Days</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Portfolio -->
+    <section class="portfolio">
+        <div class="configurator-container">
+            <div class="section-header">
+                <h2>Recent Installations</h2>
+                <p>See how our systems transform spaces</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Modern Office">
+                    <div class="portfolio-overlay">
+                        <h3>Corporate Office</h3>
+                        <p>25mm slim profile partitions</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800" alt="Residential">
+                    <div class="portfolio-overlay">
+                        <h3>Luxury Residence</h3>
+                        <p>Pivot doors with clear glass</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800" alt="Restaurant">
+                    <div class="portfolio-overlay">
+                        <h3>Restaurant Design</h3>
+                        <p>Sliding partition system</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Get your custom quote in minutes or speak to our design experts</p>
+            <div class="hero-buttons">
+                <a href="#configurator" class="btn btn-primary">Start Configuring</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-column">
                 <h3>BORDOGLASS</h3>
-                <p style="margin-bottom: 1.5rem;">The UK's leading supplier of ultra-slim glass partition systems. Minimal. Strong. Beautiful.</p>
+                <p style="margin-bottom: 1.5rem;">
+                    The UK's leading supplier of ultra-slim glass partition systems. 
+                    Minimal. Strong. Beautiful.
+                </p>
                 <p style="opacity: 0.5;">Made with pride in Britain 🇬🇧</p>
             </div>
             <div class="footer-column">
@@ -733,7 +1430,10 @@
                 <h3>Contact</h3>
                 <a href="tel:01217929167">0121 792 9167</a>
                 <a href="mailto:info@bordoglass.co.uk">info@bordoglass.co.uk</a>
-                <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.9rem;">Ogden Road, Doncaster<br>DN2 4SG, United Kingdom</p>
+                <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.9rem;">
+                    Ogden Road, Doncaster<br>
+                    DN2 4SG, United Kingdom
+                </p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -742,181 +1442,281 @@
     </footer>
 
     <script>
-        const PRICES = { standard: 65, kglass: 85 };
+        // Product image configurations
+        const productImages = {
+            hinged: {
+                clear: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
+                frosted: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+                tinted: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+                mirror: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80"
+            },
+            sliding: {
+                clear: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80",
+                frosted: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80",
+                tinted: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+                mirror: "https://images.unsplash.com/photo-1600607688105-0273-5def7a5c?w=800&q=80"
+            },
+            pivot: {
+                clear: "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80",
+                frosted: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800&q=80",
+                tinted: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
+                mirror: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80"
+            },
+            partition: {
+                clear: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+                frosted: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+                tinted: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
+                mirror: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80"
+            }
+        };
 
+        // Mobile menu toggle
         function toggleMobileMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
         }
 
-        function updateQuantity(type, change) {
-            const input = document.getElementById(type + '-qty');
-            let value = parseInt(input.value) || 1;
-            value = Math.max(1, Math.min(99, value + change));
-            input.value = value;
-            calculateTotal(type);
-        }
+        // Configurator functionality
+        const steps = ['design', 'glass', 'dimensions', 'details'];
+        let currentStep = 0;
+        let currentConfig = {
+            type: 'hinged',
+            glass: 'clear',
+            width: 1000,
+            height: 2100,
+            frame: 'RAL 9005 - Jet Black'
+        };
 
-        function calculateTotal(type) {
-            const qty = parseInt(document.getElementById(type + '-qty').value) || 1;
-            const total = qty * PRICES[type];
-            document.getElementById(type + '-total').innerHTML = `Total: <span>£${total}</span>`;
-        }
-
-        function selectProduct(type) {
-            const qty = parseInt(document.getElementById(type + '-qty').value) || 1;
-            document.getElementById('orderGlassType').value = type === 'standard' ? '4mm Standard Glass - £65/set' : '4mm K Glass - £85/set';
-            document.getElementById('orderQuantity').value = qty;
-            updateOrderSummary();
-            document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function updateOrderSummary() {
-            const glassType = document.getElementById('orderGlassType').value;
-            const summaryDiv = document.getElementById('orderSummary');
-            const bothTypesDiv = document.getElementById('bothTypesQty');
-            const singleQtyGroup = document.getElementById('singleQtyGroup');
+        function showStep(stepName) {
+            document.querySelectorAll('.config-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.querySelectorAll('.config-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
             
-            if (!glassType) {
-                summaryDiv.style.display = 'none';
-                bothTypesDiv.style.display = 'none';
-                singleQtyGroup.style.display = 'block';
-                return;
+            document.getElementById(stepName + '-step').classList.add('active');
+            document.querySelector(`.config-tab[onclick="showStep('${stepName}')"]`).classList.add('active');
+            
+            currentStep = steps.indexOf(stepName);
+        }
+
+        function nextStep() {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(steps[currentStep]);
             }
-
-            summaryDiv.style.display = 'block';
-            let total = 0;
-            
-            if (glassType === 'Both Types') {
-                bothTypesDiv.style.display = 'block';
-                singleQtyGroup.style.display = 'none';
-                
-                const standardQty = parseInt(document.getElementById('orderStandardQty').value) || 0;
-                const kglassQty = parseInt(document.getElementById('orderKglassQty').value) || 0;
-                
-                total = (standardQty * 65) + (kglassQty * 85);
-                
-                document.getElementById('summaryStandard').style.display = standardQty > 0 ? 'flex' : 'none';
-                document.getElementById('summaryStandardPrice').textContent = `${standardQty} × £65 = £${standardQty * 65}`;
-                
-                document.getElementById('summaryKglass').style.display = kglassQty > 0 ? 'flex' : 'none';
-                document.getElementById('summaryKglassPrice').textContent = `${kglassQty} × £85 = £${kglassQty * 85}`;
-            } else {
-                bothTypesDiv.style.display = 'none';
-                singleQtyGroup.style.display = 'block';
-                
-                const qty = parseInt(document.getElementById('orderQuantity').value) || 1;
-                
-                if (glassType.includes('Standard')) {
-                    total = qty * 65;
-                    document.getElementById('summaryStandard').style.display = 'flex';
-                    document.getElementById('summaryStandardPrice').textContent = `${qty} × £65 = £${total}`;
-                    document.getElementById('summaryKglass').style.display = 'none';
-                } else {
-                    total = qty * 85;
-                    document.getElementById('summaryKglass').style.display = 'flex';
-                    document.getElementById('summaryKglassPrice').textContent = `${qty} × £85 = £${total}`;
-                    document.getElementById('summaryStandard').style.display = 'none';
-                }
-            }
-            
-            document.getElementById('summaryTotal').textContent = `£${total}`;
         }
 
-        const GLASS_SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwxro1E2bLBq6xNmCg_tHe6u8RaJY6vU4UWtd_jwZReiezCEO2geJ0b8hcr08S2bzFFA/exec';
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(steps[currentStep]);
+            }
+        }
 
-        document.getElementById('glassOrderForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submitOrderBtn');
-            const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
-            
+        // Google Apps Script URL
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwxro1E2bLBq6xNmCg_tHe6u8RaJY6vU4UWtd_jwZReiezCEO2geJ0b8hcr08S2bzFFA/exec';
+
+        async function submitQuote() {
+            const submitBtn = document.getElementById('submitQuoteBtn');
+            const successMessage = document.getElementById('configSuccessMessage');
+            const errorMessage = document.getElementById('configErrorMessage');
+
+            // Hide previous messages
             successMessage.style.display = 'none';
             errorMessage.style.display = 'none';
-            
-            const glassType = document.getElementById('orderGlassType').value;
-            const name = document.getElementById('orderName').value.trim();
-            const email = document.getElementById('orderEmail').value.trim();
-            const phone = document.getElementById('orderPhone').value.trim();
-            
-            if (!glassType || !name || !email || !phone) {
+
+            // Get form values
+            const name = document.getElementById('configName').value.trim();
+            const email = document.getElementById('configEmail').value.trim();
+            const phone = document.getElementById('configPhone').value.trim();
+
+            // Validate required fields
+            if (!name || !email || !phone) {
                 errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fill in all required fields.';
                 errorMessage.style.display = 'block';
                 return;
             }
-            
+
+            // Validate email format
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please enter a valid email address.';
                 errorMessage.style.display = 'block';
                 return;
             }
-            
-            const originalText = submitBtn.textContent;
+
+            // Disable button and show loading
+            const originalBtnText = submitBtn.textContent;
             submitBtn.textContent = 'Submitting...';
             submitBtn.disabled = true;
-            
-            let orderDetails = '';
-            let totalAmount = 0;
-            
-            if (glassType === 'Both Types') {
-                const standardQty = parseInt(document.getElementById('orderStandardQty').value) || 0;
-                const kglassQty = parseInt(document.getElementById('orderKglassQty').value) || 0;
-                totalAmount = (standardQty * 65) + (kglassQty * 85);
-                orderDetails = `Standard Glass: ${standardQty} sets (£${standardQty * 65}), K Glass: ${kglassQty} sets (£${kglassQty * 85})`;
-            } else {
-                const qty = parseInt(document.getElementById('orderQuantity').value) || 1;
-                if (glassType.includes('Standard')) {
-                    totalAmount = qty * 65;
-                    orderDetails = `Standard Glass: ${qty} sets (£${totalAmount})`;
-                } else {
-                    totalAmount = qty * 85;
-                    orderDetails = `K Glass: ${qty} sets (£${totalAmount})`;
-                }
-            }
-            
+
+            // Get selected design type
+            const selectedDesign = document.querySelector('[data-type].selected');
+            const designType = selectedDesign ? selectedDesign.dataset.type : 'hinged';
+
+            // Get selected glass type
+            const selectedGlass = document.querySelector('[data-glass].selected');
+            const glassType = selectedGlass ? selectedGlass.dataset.glass : 'clear';
+
+            // Collect all form data
             const formData = {
-                formType: 'glass-sheets',
+                formType: 'configurator',
                 name: name,
                 email: email,
                 phone: phone,
-                company: document.getElementById('orderCompany').value.trim(),
+                company: document.getElementById('configCompany').value.trim(),
+                designType: designType,
+                frameColor: document.getElementById('configFrameColor').value,
                 glassType: glassType,
-                orderDetails: orderDetails,
-                totalAmount: `£${totalAmount}`,
-                address: document.getElementById('orderAddress').value.trim(),
-                notes: document.getElementById('orderNotes').value.trim(),
-                sheetSizes: '960x2250, 1070x2250, 1180x2250mm'
+                glassThickness: document.getElementById('configGlassThickness').value,
+                width: document.getElementById('configWidth').value,
+                height: document.getElementById('configHeight').value,
+                notes: document.getElementById('configNotes').value.trim()
             };
-            
+
             try {
-                await fetch(GLASS_SHEET_SCRIPT_URL, {
+                await fetch(APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
                     body: JSON.stringify(formData)
                 });
-                
+
+                // Show success message
                 successMessage.style.display = 'block';
-                document.getElementById('glassOrderForm').reset();
-                document.getElementById('orderSummary').style.display = 'none';
-                document.getElementById('bothTypesQty').style.display = 'none';
+
+                // Reset form fields
+                document.getElementById('configName').value = '';
+                document.getElementById('configEmail').value = '';
+                document.getElementById('configPhone').value = '';
+                document.getElementById('configCompany').value = '';
+                document.getElementById('configNotes').value = '';
+
+                // Scroll to success message
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
+
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Error submitting quote:', error);
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Sorry, there was an error. Please try again or call us on 0121 792 9167.';
                 errorMessage.style.display = 'block';
             } finally {
-                submitBtn.textContent = originalText;
+                submitBtn.textContent = originalBtnText;
                 submitBtn.disabled = false;
             }
+        }
+
+        // Option selection
+        document.querySelectorAll('.option-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.parentElement.querySelectorAll('.option-card').forEach(c => {
+                    c.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                
+                // Update current configuration
+                if (this.dataset.type) {
+                    currentConfig.type = this.dataset.type;
+                } else if (this.dataset.glass) {
+                    currentConfig.glass = this.dataset.glass;
+                }
+                
+                updatePreview();
+            });
         });
 
+        function updatePreview() {
+            // Update preview text
+            const type = document.querySelector('[data-type].selected')?.querySelector('h4')?.textContent || 'Hinged Door';
+            const glass = document.querySelector('[data-glass].selected')?.querySelector('h4')?.textContent || 'Clear Glass';
+            const frameSelect = document.getElementById('configFrameColor');
+            const frame = frameSelect?.options[frameSelect.selectedIndex]?.text || 'RAL 9005 - Jet Black';
+
+            document.getElementById('preview-type').textContent = type;
+            document.getElementById('preview-glass').textContent = glass;
+            document.getElementById('preview-frame').textContent = frame;
+
+            // Update dimensions
+            const width = document.getElementById('configWidth')?.value || 1000;
+            const height = document.getElementById('configHeight')?.value || 2100;
+            document.getElementById('preview-size').textContent = `${width} x ${height}mm`;
+
+            // Update preview image
+            updatePreviewImage();
+        }
+
+        function updatePreviewImage() {
+            const previewImg = document.getElementById('previewImage');
+            const loadingSpinner = document.querySelector('.preview-loading');
+            
+            // Show loading
+            loadingSpinner.style.display = 'block';
+            previewImg.style.display = 'none';
+            
+            // Get current selections
+            const selectedType = document.querySelector('[data-type].selected')?.dataset.type || 'hinged';
+            const selectedGlass = document.querySelector('[data-glass].selected')?.dataset.glass || 'clear';
+            
+            // Get the appropriate image
+            const imageUrl = productImages[selectedType]?.[selectedGlass] || productImages.hinged.clear;
+            
+            // Create new image to preload
+            const tempImg = new Image();
+            tempImg.onload = function() {
+                previewImg.src = imageUrl;
+                previewImg.style.display = 'block';
+                loadingSpinner.style.display = 'none';
+                
+                // Add a subtle animation
+                previewImg.style.opacity = '0';
+                setTimeout(() => {
+                    previewImg.style.transition = 'opacity 0.5s ease';
+                    previewImg.style.opacity = '1';
+                }, 50);
+            };
+            tempImg.src = imageUrl;
+        }
+
+        // Initialize preview on load
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePreview();
+        });
+
+        // Update preview when dimensions change
+        document.querySelectorAll('input[type="number"]').forEach(input => {
+            input.addEventListener('input', updatePreview);
+        });
+
+        // Update preview when select changes
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', updatePreview);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             const promoBanner = document.querySelector('.promo-banner');
+            const currentScroll = window.scrollY;
             
-            if (window.scrollY > 60) {
+            if (currentScroll > 60) {
                 navbar.classList.add('scrolled');
                 promoBanner.style.transform = 'translateY(-100%)';
                 promoBanner.style.transition = 'transform 0.3s ease';
@@ -924,14 +1724,8 @@
                 navbar.classList.remove('scrolled');
                 promoBanner.style.transform = 'translateY(0)';
             }
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
+            
+            lastScroll = currentScroll;
         });
     </script>
 </body>
