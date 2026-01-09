@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Sheets - Bordoglass | 4mm Glass from £65</title>
+    <meta name="description" content="Order pre-cut 4mm glass sheets. Standard glass £65, K glass £85. Pre-cut sizes: 960x2250, 1070x2250, 1180x2250mm. Fast UK delivery.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #0d0d0d;
+            --accent: #8B1538;
+            --accent-light: #a91d45;
+            --gold: #c9a962;
+            --gray: #5a5a5a;
+            --light-gray: #f5f5f3;
+            --white: #ffffff;
+            --success: #22c55e;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--primary);
+            background-color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3 { font-family: var(--font-heading); font-weight: 500; line-height: 1.15; }
+        
+        .promo-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a1a1a 50%, var(--accent) 100%);
+            color: var(--white);
+            padding: 12px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1001;
+            overflow: hidden;
+        }
+        
+        .promo-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+        
+        .promo-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .promo-price { font-size: 1.1rem; font-weight: 600; }
+        .promo-price span { color: var(--gold); font-size: 1.3rem; font-weight: 700; }
+        .promo-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.3); }
+        
+        .promo-cta {
+            background: var(--gold);
+            color: var(--primary);
+            padding: 8px 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .promo-cta:hover { background: var(--white); transform: translateY(-2px); }
+
+        .navbar {
+            position: fixed;
+            top: 52px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .navbar.scrolled { top: 0; box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav-logo-img { height: 45px; width: auto; }
+        .nav-logo-text { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; color: var(--primary); letter-spacing: 3px; }
+        
+        .nav-menu { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .nav-cta:hover { background: var(--accent); border-color: var(--accent); }
+        
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; }
+        .mobile-toggle span { width: 25px; height: 2px; background: var(--primary); }
+
+        .page-header {
+            padding: 180px 2rem 80px;
+            background: linear-gradient(165deg, rgba(13,13,13,0.95) 0%, rgba(139,21,56,0.9) 100%),
+                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2053&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .page-header h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; }
+        .page-header p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+        .glass-sheets-section { padding: 6rem 2rem; background: var(--light-gray); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .product-card {
+            background: var(--white);
+            padding: 3rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 25px 80px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 35px 100px rgba(0,0,0,0.12); }
+        .product-card.featured { border: 2px solid var(--gold); }
+        
+        .product-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--gold);
+            color: var(--primary);
+            padding: 5px 40px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transform: rotate(45deg);
+        }
+        
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--light-gray) 0%, #e8e8e6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-icon i { font-size: 2rem; color: var(--accent); }
+        .product-card h2 { font-family: var(--font-body); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .product-card .product-type { color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        
+        .product-price { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .product-price .amount { font-size: 3rem; font-weight: 700; color: var(--accent); font-family: var(--font-heading); }
+        .product-price .currency { font-size: 1.5rem; font-weight: 600; color: var(--accent); }
+        .product-price .per { color: var(--gray); font-size: 0.9rem; }
+        
+        .product-features { list-style: none; margin-bottom: 2rem; }
+        .product-features li { padding: 0.75rem 0; border-bottom: 1px solid var(--light-gray); display: flex; align-items: center; gap: 0.75rem; }
+        .product-features li:last-child { border-bottom: none; }
+        .product-features i { color: var(--success); font-size: 0.9rem; }
+        
+        .quantity-selector { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .quantity-selector label { font-weight: 600; font-size: 0.9rem; color: var(--gray); }
+        .quantity-controls { display: flex; align-items: center; border: 1px solid #e0e0e0; }
+        
+        .quantity-btn {
+            width: 45px;
+            height: 45px;
+            background: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .quantity-btn:hover { background: var(--primary); color: var(--white); }
+        .quantity-input { width: 60px; height: 45px; border: none; text-align: center; font-size: 1.1rem; font-weight: 600; font-family: inherit; }
+        .quantity-input:focus { outline: none; }
+        
+        .total-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            text-align: center;
+        }
+        
+        .total-price span { color: var(--accent); font-size: 1.5rem; }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        
+        .btn-accent { background: var(--accent); color: var(--white); }
+        .btn-accent:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(139, 21, 56, 0.3); }
+        .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; }
+
+        .info-box {
+            background: var(--white);
+            padding: 3rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 25px 80px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+        
+        .info-box h3 {
+            font-family: var(--font-body);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .info-box h3 i { color: var(--gold); }
+        
+        .sizes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+        
+        .size-card {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .size-card:hover { border-color: var(--accent); }
+        .size-card .dimension { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.25rem; }
+        .size-card .label { font-size: 0.85rem; color: var(--gray); }
+        
+        .info-note {
+            background: linear-gradient(135deg, rgba(201, 169, 98, 0.1) 0%, rgba(201, 169, 98, 0.05) 100%);
+            border-left: 4px solid var(--gold);
+            padding: 1.25rem 1.5rem;
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+        
+        .info-note strong { color: var(--primary); }
+
+        .order-section { padding: 6rem 2rem; background: var(--white); }
+        .order-form-container { max-width: 700px; margin: 0 auto; }
+        
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+        .section-header p { color: var(--gray); font-size: 1.1rem; }
+        
+        .order-form { background: var(--light-gray); padding: 3rem; }
+        
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--gray); }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            background: var(--white);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+        }
+        
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        
+        .order-summary {
+            background: var(--white);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 2px solid var(--primary);
+        }
+        
+        .order-summary h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .summary-item:last-child { border-bottom: none; font-weight: 700; font-size: 1.1rem; padding-top: 1rem; }
+        .summary-item span:last-child { color: var(--accent); }
+        
+        .success-message {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+        
+        .success-message i { font-size: 3rem; margin-bottom: 1rem; display: block; }
+        .success-message h3 { font-family: var(--font-body); font-size: 1.3rem; margin-bottom: 0.5rem; }
+        
+        .error-message {
+            background: linear-gradient(135deg, #dc3545 0%, #b91c1c 100%);
+            color: white;
+            padding: 1.25rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 5rem 2rem 2rem;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--gold);
+        }
+        
+        .footer-column p { opacity: 0.7; line-height: 1.8; font-size: 0.95rem; }
+        
+        .footer-column a {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .footer-column a:hover { color: var(--gold); padding-left: 5px; }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 1024px) {
+            .products-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; gap: 3rem; }
+        }
+        
+        @media (max-width: 768px) {
+            .promo-content { gap: 1rem; font-size: 0.9rem; }
+            .promo-divider { display: none; }
+            .navbar { top: 85px; }
+            .navbar.scrolled { top: 0; }
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 2rem; gap: 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+            .nav-menu.active { display: flex; }
+            .mobile-toggle { display: flex; }
+            .page-header { padding: 160px 2rem 60px; }
+            .sizes-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+            .footer-column a:hover { padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="promo-banner">
+        <div class="promo-content">
+            <div class="promo-price">4mm Glass Sheets <span>£65</span></div>
+            <div class="promo-divider"></div>
+            <div class="promo-price">4mm K Glass Sheets <span>£85</span></div>
+            <div class="promo-divider"></div>
+            <a href="#order-form" class="promo-cta">Order Now →</a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="Bordoglass" class="nav-logo-img" onerror="this.style.display='none'">
+                <span class="nav-logo-text">BORDOGLASS</span>
+            </a>
+            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="glass-sheets.html" class="nav-link active">Glass Sheets</a></li>
+                <li><a href="delivery.html" class="nav-link">Delivery</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="index.html#configurator" class="nav-cta">Configure Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Glass Sheets</h1>
+        <p>Premium pre-cut 4mm glass sheets. Order online and get all 3 sizes delivered to your door.</p>
+    </section>
+
+    <section class="glass-sheets-section">
+        <div class="container">
+            <div class="info-box">
+                <h3><i class="fas fa-info-circle"></i> Pre-Cut Sheet Sizes</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--gray);">Each order includes all 3 pre-cut sizes below. Perfect for standard door and partition installations.</p>
+                <div class="sizes-grid">
+                    <div class="size-card">
+                        <div class="dimension">960 × 2250mm</div>
+                        <div class="label">Size 1</div>
+                    </div>
+                    <div class="size-card">
+                        <div class="dimension">1070 × 2250mm</div>
+                        <div class="label">Size 2</div>
+                    </div>
+                    <div class="size-card">
+                        <div class="dimension">1180 × 2250mm</div>
+                        <div class="label">Size 3</div>
+                    </div>
+                </div>
+                <div class="info-note">
+                    <strong>Note:</strong> When you order, you receive all 3 sheet sizes. Price shown is per complete set of 3 sheets.
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-square"></i></div>
+                    <h2>4mm Standard Glass</h2>
+                    <p class="product-type">Clear Float Glass</p>
+                    <div class="product-price">
+                        <span class="currency">£</span>
+                        <span class="amount">65</span>
+                        <span class="per">per set of 3 sheets</span>
+                    </div>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> 4mm thickness</li>
+                        <li><i class="fas fa-check"></i> Clear float glass</li>
+                        <li><i class="fas fa-check"></i> All 3 pre-cut sizes included</li>
+                        <li><i class="fas fa-check"></i> Polished edges</li>
+                        <li><i class="fas fa-check"></i> Fast UK delivery</li>
+                    </ul>
+                    <div class="quantity-selector">
+                        <label>Quantity (sets):</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="updateQuantity('standard', -1)">−</button>
+                            <input type="number" class="quantity-input" id="standard-qty" value="1" min="1" max="99" onchange="calculateTotal('standard')">
+                            <button class="quantity-btn" onclick="updateQuantity('standard', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="total-price" id="standard-total">Total: <span>£65</span></div>
+                    <button class="btn btn-accent" onclick="selectProduct('standard')">Add to Order</button>
+                </div>
+
+                <div class="product-card featured">
+                    <div class="product-icon"><i class="fas fa-sun"></i></div>
+                    <h2>4mm K Glass</h2>
+                    <p class="product-type">Low-E Energy Efficient Glass</p>
+                    <div class="product-price">
+                        <span class="currency">£</span>
+                        <span class="amount">85</span>
+                        <span class="per">per set of 3 sheets</span>
+                    </div>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> 4mm thickness</li>
+                        <li><i class="fas fa-check"></i> Low-E coating for insulation</li>
+                        <li><i class="fas fa-check"></i> All 3 pre-cut sizes included</li>
+                        <li><i class="fas fa-check"></i> Reduces heat loss</li>
+                        <li><i class="fas fa-check"></i> Energy efficient</li>
+                    </ul>
+                    <div class="quantity-selector">
+                        <label>Quantity (sets):</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="updateQuantity('kglass', -1)">−</button>
+                            <input type="number" class="quantity-input" id="kglass-qty" value="1" min="1" max="99" onchange="calculateTotal('kglass')">
+                            <button class="quantity-btn" onclick="updateQuantity('kglass', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="total-price" id="kglass-total">Total: <span>£85</span></div>
+                    <button class="btn btn-accent" onclick="selectProduct('kglass')">Add to Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-section" id="order-form">
+        <div class="order-form-container">
+            <div class="section-header">
+                <h2>Complete Your Order</h2>
+                <p>Fill in your details below and we'll be in touch to confirm your order.</p>
+            </div>
+
+            <div class="order-form">
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Order Submitted Successfully!</h3>
+                    <p>Thank you for your order. Ginny will be in touch shortly to confirm delivery details.</p>
+                </div>
+
+                <div class="error-message" id="errorMessage">
+                    <i class="fas fa-exclamation-circle"></i> Sorry, there was an error. Please try again or call us on 0121 792 9167.
+                </div>
+
+                <div class="order-summary" id="orderSummary" style="display: none;">
+                    <h4>Order Summary</h4>
+                    <div class="summary-item" id="summaryStandard" style="display: none;">
+                        <span>4mm Standard Glass</span>
+                        <span id="summaryStandardPrice">£0</span>
+                    </div>
+                    <div class="summary-item" id="summaryKglass" style="display: none;">
+                        <span>4mm K Glass</span>
+                        <span id="summaryKglassPrice">£0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Total</span>
+                        <span id="summaryTotal">£0</span>
+                    </div>
+                </div>
+
+                <form id="glassOrderForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Glass Type *</label>
+                            <select id="orderGlassType" required onchange="updateOrderSummary()">
+                                <option value="">Select glass type...</option>
+                                <option value="4mm Standard Glass - £65/set">4mm Standard Glass (£65/set)</option>
+                                <option value="4mm K Glass - £85/set">4mm K Glass (£85/set)</option>
+                                <option value="Both Types">Both Types</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="singleQtyGroup">
+                            <label>Quantity (sets) *</label>
+                            <input type="number" id="orderQuantity" min="1" value="1" required onchange="updateOrderSummary()">
+                        </div>
+                    </div>
+
+                    <div id="bothTypesQty" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Standard Glass Sets</label>
+                                <input type="number" id="orderStandardQty" min="0" value="1" onchange="updateOrderSummary()">
+                            </div>
+                            <div class="form-group">
+                                <label>K Glass Sets</label>
+                                <input type="number" id="orderKglassQty" min="0" value="1" onchange="updateOrderSummary()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Name *</label>
+                        <input type="text" id="orderName" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" id="orderEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" id="orderPhone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company (Optional)</label>
+                        <input type="text" id="orderCompany">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Delivery Address *</label>
+                        <textarea id="orderAddress" rows="3" required placeholder="Full delivery address..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional Notes</label>
+                        <textarea id="orderNotes" rows="2" placeholder="Any special requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-accent" id="submitOrderBtn">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>BORDOGLASS</h3>
+                <p style="margin-bottom: 1.5rem;">The UK's leading supplier of ultra-slim glass partition systems. Minimal. Strong. Beautiful.</p>
+                <p style="opacity: 0.5;">Made with pride in Britain 🇬🇧</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="products.html">All Products</a>
+                <a href="glass-sheets.html">Glass Sheets</a>
+                <a href="delivery.html">Delivery Info</a>
+                <a href="faq.html">FAQs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h3>Products</h3>
+                <a href="products.html#glass">Glass Types</a>
+                <a href="products.html#profiles">Profiles</a>
+                <a href="products.html#hardware">Hardware</a>
+                <a href="products.html#systems">Complete Systems</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <a href="tel:01217929167">0121 792 9167</a>
+                <a href="mailto:info@bordoglass.co.uk">info@bordoglass.co.uk</a>
+                <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.9rem;">Ogden Road, Doncaster<br>DN2 4SG, United Kingdom</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bordoglass Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const PRICES = { standard: 65, kglass: 85 };
+
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        function updateQuantity(type, change) {
+            const input = document.getElementById(type + '-qty');
+            let value = parseInt(input.value) || 1;
+            value = Math.max(1, Math.min(99, value + change));
+            input.value = value;
+            calculateTotal(type);
+        }
+
+        function calculateTotal(type) {
+            const qty = parseInt(document.getElementById(type + '-qty').value) || 1;
+            const total = qty * PRICES[type];
+            document.getElementById(type + '-total').innerHTML = `Total: <span>£${total}</span>`;
+        }
+
+        function selectProduct(type) {
+            const qty = parseInt(document.getElementById(type + '-qty').value) || 1;
+            document.getElementById('orderGlassType').value = type === 'standard' ? '4mm Standard Glass - £65/set' : '4mm K Glass - £85/set';
+            document.getElementById('orderQuantity').value = qty;
+            updateOrderSummary();
+            document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function updateOrderSummary() {
+            const glassType = document.getElementById('orderGlassType').value;
+            const summaryDiv = document.getElementById('orderSummary');
+            const bothTypesDiv = document.getElementById('bothTypesQty');
+            const singleQtyGroup = document.getElementById('singleQtyGroup');
+            
+            if (!glassType) {
+                summaryDiv.style.display = 'none';
+                bothTypesDiv.style.display = 'none';
+                singleQtyGroup.style.display = 'block';
+                return;
+            }
+
+            summaryDiv.style.display = 'block';
+            let total = 0;
+            
+            if (glassType === 'Both Types') {
+                bothTypesDiv.style.display = 'block';
+                singleQtyGroup.style.display = 'none';
+                
+                const standardQty = parseInt(document.getElementById('orderStandardQty').value) || 0;
+                const kglassQty = parseInt(document.getElementById('orderKglassQty').value) || 0;
+                
+                total = (standardQty * 65) + (kglassQty * 85);
+                
+                document.getElementById('summaryStandard').style.display = standardQty > 0 ? 'flex' : 'none';
+                document.getElementById('summaryStandardPrice').textContent = `${standardQty} × £65 = £${standardQty * 65}`;
+                
+                document.getElementById('summaryKglass').style.display = kglassQty > 0 ? 'flex' : 'none';
+                document.getElementById('summaryKglassPrice').textContent = `${kglassQty} × £85 = £${kglassQty * 85}`;
+            } else {
+                bothTypesDiv.style.display = 'none';
+                singleQtyGroup.style.display = 'block';
+                
+                const qty = parseInt(document.getElementById('orderQuantity').value) || 1;
+                
+                if (glassType.includes('Standard')) {
+                    total = qty * 65;
+                    document.getElementById('summaryStandard').style.display = 'flex';
+                    document.getElementById('summaryStandardPrice').textContent = `${qty} × £65 = £${total}`;
+                    document.getElementById('summaryKglass').style.display = 'none';
+                } else {
+                    total = qty * 85;
+                    document.getElementById('summaryKglass').style.display = 'flex';
+                    document.getElementById('summaryKglassPrice').textContent = `${qty} × £85 = £${total}`;
+                    document.getElementById('summaryStandard').style.display = 'none';
+                }
+            }
+            
+            document.getElementById('summaryTotal').textContent = `£${total}`;
+        }
+
+        const GLASS_SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwxro1E2bLBq6xNmCg_tHe6u8RaJY6vU4UWtd_jwZReiezCEO2geJ0b8hcr08S2bzFFA/exec';
+
+        document.getElementById('glassOrderForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitOrderBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            const glassType = document.getElementById('orderGlassType').value;
+            const name = document.getElementById('orderName').value.trim();
+            const email = document.getElementById('orderEmail').value.trim();
+            const phone = document.getElementById('orderPhone').value.trim();
+            
+            if (!glassType || !name || !email || !phone) {
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fill in all required fields.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please enter a valid email address.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+            
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            let orderDetails = '';
+            let totalAmount = 0;
+            
+            if (glassType === 'Both Types') {
+                const standardQty = parseInt(document.getElementById('orderStandardQty').value) || 0;
+                const kglassQty = parseInt(document.getElementById('orderKglassQty').value) || 0;
+                totalAmount = (standardQty * 65) + (kglassQty * 85);
+                orderDetails = `Standard Glass: ${standardQty} sets (£${standardQty * 65}), K Glass: ${kglassQty} sets (£${kglassQty * 85})`;
+            } else {
+                const qty = parseInt(document.getElementById('orderQuantity').value) || 1;
+                if (glassType.includes('Standard')) {
+                    totalAmount = qty * 65;
+                    orderDetails = `Standard Glass: ${qty} sets (£${totalAmount})`;
+                } else {
+                    totalAmount = qty * 85;
+                    orderDetails = `K Glass: ${qty} sets (£${totalAmount})`;
+                }
+            }
+            
+            const formData = {
+                formType: 'glass-sheets',
+                name: name,
+                email: email,
+                phone: phone,
+                company: document.getElementById('orderCompany').value.trim(),
+                glassType: glassType,
+                orderDetails: orderDetails,
+                totalAmount: `£${totalAmount}`,
+                address: document.getElementById('orderAddress').value.trim(),
+                notes: document.getElementById('orderNotes').value.trim(),
+                sheetSizes: '960x2250, 1070x2250, 1180x2250mm'
+            };
+            
+            try {
+                await fetch(GLASS_SHEET_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                successMessage.style.display = 'block';
+                document.getElementById('glassOrderForm').reset();
+                document.getElementById('orderSummary').style.display = 'none';
+                document.getElementById('bothTypesQty').style.display = 'none';
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+            } catch (error) {
+                console.error('Error:', error);
+                errorMessage.style.display = 'block';
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const promoBanner = document.querySelector('.promo-banner');
+            
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+                promoBanner.style.transform = 'translateY(-100%)';
+                promoBanner.style.transition = 'transform 0.3s ease';
+            } else {
+                navbar.classList.remove('scrolled');
+                promoBanner.style.transform = 'translateY(0)';
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
